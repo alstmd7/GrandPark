@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../리셋.css" rel="stylesheet">
+    <title>오시는길</title>
+</head>
+<style>
+    header {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+
+    #guide_traf {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    #guide_traf_map {
+        width: 100%;
+        height: 10%;
+        margin-bottom: 30px;
+    }
+
+    #guide_traf_addr {
+        margin-bottom: 30px;
+    }
+
+    #guide_traf_ikon {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 버스 */
+    #guide_traf_bus {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 30px;
+    }
+
+    #guide_traf_bus>div {
+        float: left;
+    }
+
+    #guide_traf_buss {
+        width: 100px;
+        height: 100px;
+        background-color: khaki;
+        border: 3px solid rgb(250, 163, 0);
+    }
+
+    #guide_traf_buss {
+        text-align: center;
+    }
+
+    #guide_traf_bus>div>#a>li {
+        display: inline-block;
+    }
+
+    #guide_traf_bus>div>#b>li {
+        display: inline-block;
+    }
+
+    #guide_traf_bus>div>#a>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_bus>div>#b>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_bus>div>#a>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgba(0, 255, 42, 0.836);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #guide_traf_bus>div>#b>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgba(0, 255, 42, 0.836);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    /* 지하철 */
+    #guide_traf_subway {
+        width: 100%;
+        margin-bottom: 30px;
+        height: 100px;
+        
+    }
+
+    #guide_traf_subway>div {
+        float: left;
+    }
+
+    #guide_traf_subwayy {
+        width: 100px;
+        height: 100px;
+        background-color: khaki;
+        border: 3px solid rgb(250, 163, 0);
+    }
+
+    #guide_traf_subwayy {
+        text-align: center;
+    }
+
+    #guide_traf_subway>div>#a>li {
+        display: inline-block;
+    }
+
+    #guide_traf_subway>div>#b>li {
+        display: inline-block;
+    }
+
+    #guide_traf_subway>div>#a>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_subway>div>#b>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_subway>div>#a>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgb(4, 194, 4);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #guide_traf_subway>div>#b>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: rgba(255, 0, 34, 0.774);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    /* 택시 */
+    #guide_traf_taxi {
+        width: 100%;
+        margin-bottom: 30px;
+        height: 150px;
+        
+    }
+
+    #guide_traf_taxi>div {
+        float: left;
+    }
+
+    #guide_traf_taxii {
+        width: 100px;
+        height: 150px;
+        background-color: khaki;
+        border: 3px solid rgb(250, 163, 0);
+    }
+
+    #guide_traf_taxii {
+        text-align: center;
+    }
+
+    #guide_traf_taxi>div>#a>li {
+        display: inline-block;
+    }
+
+    #guide_traf_taxi>div>#b>li {
+        display: inline-block;
+    }
+
+    #guide_traf_taxi>div>#a>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_taxi>div>#b>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 180px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_taxi>div>#c>li>h3 {
+        border-radius: 20px;
+        background-color: darkgrey;
+        width: 290px;
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    #guide_traf_taxi>div>#a>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color:dodgerblue;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    #guide_traf_taxi>div>#b>li>h2 {
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color:dodgerblue;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    footer {
+            width: 100%;
+            background-color: silver;
+        }
+        footer>ol>li {
+            display: inline-block;
+            padding: 0% 1%;
+        }
+        footer>ol {
+            text-align: center;
+        }
+        footer>ul {
+            margin-top: 30px;
+            margin-left: 8%;
+        }
+</style>
+
+<body>
+    <header>
+        <h1>강남 대공원</h1>
+    </header>
+    <div id="guide_traf">
+        <h1>오시는길</h1>
+    </div>
+    <div><img id="guide_traf_map" src="../사진/호수사진.jpg"></div>
+
+    <div id="guide_traf_addr">
+        <ol>
+            <li>
+                <h1>주소</h1>
+            </li>
+            <li>
+                <h2>강원 평창군 봉평면 태기로 174 (우)25307</h2>
+            </li>
+        </ol>
+    </div>
+
+    <div id="guide_traf_info">
+        <div id="guide_traf">
+            <h1>대중교통 안내</h1>
+        </div>
+
+        <div id="guide_traf_bus">
+            <div id="guide_traf_buss">
+                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+                <h1>버스</h1>
+            </div>
+
+            <div>
+                <div id="a">
+                    <li>
+                        <h2>정문 정류장</h2>
+                    </li>
+                    <li>
+                        <h3>100번, 32번, 40-5번 , 1번</h3>
+                    </li>
+                </div>
+
+                <div id="b">
+                    <li>
+                        <h2>후문 정류장</h2>
+                    </li>
+                    <li>
+                        <h3>32번, 7000번, 2-1번</h3>
+                    </li>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="guide_traf_subway">
+            <div id="guide_traf_subwayy">
+                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+                <h1>지하철</h1>
+            </div>
+
+            <div>
+                <div id="a">
+                    <li>
+                        <h2>2호선</h2>
+                    </li>
+                    <li>
+                        <h3>OO역 하자, 2번 출구 </h3>
+                    </li>
+                </div>
+                <div id="b">
+                    <li>
+                        <h2>신분당선</h2>
+                    </li>
+                    <li>
+                        <h3>OO역 하자, 2번 출구</h3>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="guide_traf_taxi">
+            <div id="guide_traf_taxii">
+                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+                <h1>택시</h1>
+            </div>
+
+            <div>
+                <div id="a">
+                    <li>
+                        <h2>콜택시</h2>
+                    </li>
+                    <li>
+                        <h3>010 - 1577 - 1577 </h3>
+                    </li>
+                </div>
+                <div id="b">
+                    <li>
+                        <h2>지역택시</h2>
+                    </li>
+                    <li>
+                        <h3>02 - 0909 - 9090 </h3>
+                    </li>
+                </div>
+                <div id="c">
+                    <li>
+                        <h3>정문 바로 앞에 택시 정류장이 있습니다.</h3>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <ol>
+            <li>
+                <h3>개인정보처리방침</h3>
+             </li>
+             <li>
+                 <h2>I</h2>
+             </li>
+             <li>
+                 <h3>이메일무단수집거부</h3>
+             </li>
+             <li>
+                 <h2>I</h2>
+             </li>
+             <li>
+                <h3>시비스이용약관</h3>
+             </li>
+        </ol>
+        <ul>
+            <li>(우편번호)서울시 강남구 ~~로</li>
+            <li>문의전화 : (주)02 - 1234 / 010 - 1234 - 5678</li>
+            <li>C copyrights all reserved</li>
+        </ul>
+    </footer>
+</body>
+
+</html>

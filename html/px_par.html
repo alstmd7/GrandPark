@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../리셋.css" rel="stylesheet">
+    <title>주차장 안내</title>
+    <style>
+        header {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        #px_par_map {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 10%;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* 2줄을 한줄로 */
+            /* 테두리 사이의 간격을 한줄로 바꾼다 */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        tr {
+            height: 60px;
+            /* 표의 세로 크기 */
+        }
+
+        td,
+        th {
+            text-align: center;
+            /* 글자 가운데로 */
+            border: 1px solid black;
+            /* 표 아래 선*/
+        }
+
+        th {
+            background-color: silver;
+        }
+        #px_par_s{
+            margin-bottom: 20px;
+        }
+        #px_par_pay{
+            margin-bottom: 20px;
+        }
+
+        #px_par_s li {
+            margin: 3% 0%;
+            padding: 0.1% 0%;
+        }
+
+        footer {
+            width: 100%;
+            background-color: silver;
+        }
+
+        footer>ol>li {
+            display: inline-block;
+        }
+
+        footer>ol {
+            text-align: center;
+        }
+
+        footer>ul {
+            margin-top: 30px;
+            margin-left: 8%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>강남 대공원</h1>
+    </header>
+    <div id="px_par_map">
+        <h1>주차장 안내</h1>
+    </div>
+
+    <div><img src="../사진/호수사진.jpg"></div>
+
+    <div id="px_par_pay">
+        <ol>
+            <li>
+                <h2>* 운영시간 : 24시간</h2>
+            </li>
+            <li>
+                <h2>* 주차요금 안내(후불)</h2>
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <table>
+            <tr><!-- 행 -->
+                <th>
+                    <h2>차종</h2>
+                </th><!-- 표 제목 -->
+                <th>
+                    <h2>요금</h2>
+                </th><!-- 표 제목 -->
+                <th>
+                    <h2>비고</h2>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h2>소형</h2>
+                </td>
+                <td>
+                    <h2>시간당 500원</h2>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>중형</h2>
+                </td>
+                <td>
+                    <h2>시간당 800원</h2>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="px_par_s">
+        <ul>
+            <li>장애인 및 국가유공자 : 80% 할인 (장애인 자동차표지를 부착하고
+                장애인이 탑승하여 장애인등록증을 제시, 유공자는 카드 및 증서를 제시해야 할인가능)</li>
+            <li>경차 및 저공해자동차 : 50% 할인 (저공해 스티커 부착차량)</li>
+            <li>다둥이 행복카드 소지자 : 30%(2자녀), 50%(3자녀) 할인(자녀가 13세이하 까지 해당)</li>
+        </ul>
+    </div>
+
+    <div id="px_par_pay">
+        <ol>
+            <li>
+                <h2>* 결제 수단 : 신용카드,체크카드,교통카드</h2>
+            </li>
+            <li>
+                <h2>* 문의 : 010 - 1234 - 5678</h2>
+            </li>
+        </ol>
+    </div>
+
+    <footer>
+        <ol>
+            <li>
+                <h3>개인정보처리방침</h3>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
+                <h3>이메일무단수집거부</h3>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
+                <h3>시비스이용약관</h3>
+            </li>
+        </ol>
+        <ul>
+            <li>(우편번호)서울시 강남구 ~~로</li>
+            <li>문의전화 : (주)02 - 1234 / 010 - 1234 - 5678</li>
+            <li>C copyrights all reserved</li>
+        </ul>
+    </footer>
+</body>
+
+</html>
