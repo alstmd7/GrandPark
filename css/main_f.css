@@ -1,0 +1,39 @@
+/* 전체 박스들을 감싸고 있는 부모 박스 */
+div.wrap {
+    display: flex;
+    /* flexible 박스 이용 */
+    flex-direction: column;
+    /* 각 항목들을 세로로 배치 */
+    /* 100vh는 전체 viewport height의 100%를 의미하며, 100vh height는 브라우저 창의 전체 높이와 같게 하여 전체 내용을 표시한다는 것 */
+    height: 100vh;
+}
+
+/* main_event와 main_notice의 div 요소 세로 배치 */
+div.main_event>*,
+div.main_notice>* {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 로고 부분 */
+div.banner_logo{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2% 0;
+}
+
+/* 헤더 메뉴 감추기 */
+div.header_menu{
+    display: none;
+}
+
+/* 배너 이미지 */
+div.banner_img>img{
+    width: 100%;
+    max-height: 20vh; /* 전체 화면의 20% 초과하여 차지하지 않게 하기 */
+}
+
+div.main_event{
+
+}
