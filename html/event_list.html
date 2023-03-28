@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <title>Document</title>
+    <style>
+        /* 헤더 */
+        .header {
+            width: 100%;
+            height: 200px;
+        }
+
+        /* 타이틀 이미지 영역 */
+        .event_list_title {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* 타이틀 이미지 가상영역 */
+        .event_list_title::after {
+            width: 100%;
+            height: 50vh;
+            content: "";
+            background: url(../images/event1.jpg);
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .event_list_img a {
+            max-width: 1920px;
+            height: 40vh;
+            margin-top: 40px;
+            background: url(../images/event1.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+        }
+
+        .event_list_img img {
+            width: 100%;
+        }
+
+        .event_list_page {
+            margin: 80px 0;
+        }
+
+        .event_list_page {
+            text-align: center;
+        }
+    </style>
+        
+    <script>
+
+    </script>
+</head>
+<body>
+    <header class="header"></header>
+    <!-- "행사/체험" 타이틀 -->
+    <div class="event_list_title">
+        행사/체험
+    </div>
+    <!-- 행사 목록 -->
+    <div class="event_list_img">
+        <ul>
+            <li>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </li>
+        </ul>
+    </div>
+    <!-- 행사 목록 내용 -->
+    <div class="event_list_text"></div>
+    <!-- 행사 목록 페이징 -->
+    <div class="event_list_page">
+        1 2 3 4
+    </div>
+</body>
+</html>
