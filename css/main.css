@@ -1,94 +1,128 @@
-div{
-    width: 100%;
-    margin-bottom: 5%;
+html {
+    /* 기준이 되는 루트 요소(html)의 폰트 사이즈 설정 */
+    font-size: 18px;
 }
 
-img{
-   width: 100%;
+/* 전체 박스들을 감싸고 있는 부모 박스 */
+div.wrap {
+    /* flex 사용 */
+    display: flex;
+    /* 가로배치(flex-direction: row;), 줄바꿈(flex-wrap: wrap;) */
+    flex-flow: row wrap;
+    /* 100vh는 전체 viewport height의 100%를 의미하며, 100vh height는 브라우저 창의 전체 높이와 같게 하여 전체 내용을 표시한다는 것 */
+    height: 100vh;
+    /* justify-content: ; 메인축 방향 정렬 */
+    /* align-items: ; 수직축 방향 정렬 */
+    /* align-content: ; wrap 사용 시 넘쳐나서 아래로 내려간 내용 정렬 */
 }
 
-/* 각 파트 제목 p 태그 사용 */
-p{
-    font-size: 20px;
+/* 기본적으로 wrap 안의 큰 div들은 가로의 100%를 차지 */
+div.wrap>div {
+    flex-basis: 100%;
 }
 
-/* 로고 */
-div.banner_logo{
-    text-align: center;
-    font-size: 28px;
+/*==== 로고 부분 ====*/
+div.banner_logo {
+    /* 부모 폰트 사이즈(18px)의 3배 */
+    font-size: 2.5rem;
+    /* 폰트 굵기 두껍게 */
     font-weight: bold;
-    padding: 3% 0;
-    margin: 0;
-}
-/* 배너 이미지 */
-div.banner_img>img{
-    height: 120px;
+    /* 글자 가운데 위치 */
+    text-align: center;
+    /* 로고 박스의 위/아래 패딩 2% */
+    padding: 2% 0;
 }
 
-/* 헤더 메뉴 */
-div.header_menu{
-    display: none; /* 토글 버튼 누르면 나오게, 평소에는 없앰 */
-}
-
-/* 추천 관광지 소개 */
-div.main_intro>img{
+/*==== 헤더 메뉴 ====*/
+div.header_menu>ul {
+    /* 각 리스트들을 배치하기 위해 ul에 flex 속성 설정 */
+    display: flex;
+    /* 주 축(가로)을 기준으로 가운데 정렬 */
+    justify-content: center;
+    /* 교차 축(세로)을 기준으로 가운데 정렬 */
+    align-items: center;
+    /* 메뉴의 위아래 마진 설정 */
     margin: 3% 0;
 }
-div.main_intro>p{
-    text-align: center;
-    font-size: 20px;
-}
-div.main_intro>span{
-    font-size: 14px;
+
+/* 각 메뉴 list 설정 */
+div.header_menu li {
+    /* 각 리스트의 양 옆 마진 설정 */
+    margin: 0 5%;
+    /* 폰트 크기는 부모(18px)의 2배*/
+    font-size: 2rem;
 }
 
-/* 추천 행사 */
-div.main_event>img{
-    margin-top: 3%;
-}
-div.main_event>span{
-    font-size: 12px;
-}
-
-/* 주요 공지사항 */
-div.main_notice div{
-    background-color:bisque;
-    padding: 3% 0;
-    min-height: 60px;
-    
-}
-div.main_notice p{
-    font-size: 18px;
+/*=== 배너 ===*/
+div.banner_img {
+    /* 아래 마진 3% */
     margin-bottom: 3%;
 }
-div.main_notice span{
-    font-size: 12px;
+
+div.banner_img>img {
+    /* 이미지가 화면의 전체(100%)를 차지하도록 늘리기 */
+    width: 100%;
+    /* 전체 화면의 60% 초과하여 차지하지 않게 하기 */
+    max-height: 60vh;
+    /* vh는 viewport height */
 }
 
-/* 푸터 */
-div.footer{
-    background-color: gray;
-    margin-bottom: 0;
-    font-size: 8px;
-    color: white;
+/*==== 추천 관광지 소개 부분 ====*/
+div.main_info {
+    display: flex;
+    /* 모든 요소의 높이를 부모 요소의 높이에 맞춤 */
+    align-items: stretch;
 }
-div.footer>ul{
-    text-align: center;
-    padding: 2%;
+
+div.main_info>div {
+    /* 확인용 테두리, 지울것 */
+    border: 1px solid black;
 }
-div.footer>ul>li{
-    display: inline-block;
-    padding: 0 2%;
+
+/* 소개 내용 박스의 양쪽 끝 박스 */
+div.main_info>div:first-child,
+div.main_info>div:last-child {
+    /* 속성을 flex로 설정하여 수직,수평 정렬 기능 사용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-grow, flex-shrink, flex-basis 단축 */
+    flex: 0 0 3%; /* 전체 너비의 3% 차지 */
 }
-div.footer>ul>li:nth-child(2){
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+
+/* 이미지가 들어가 있는 두 번째 박스 */
+div.main_info>div:nth-child(2) {
+    flex: 0 0 60%; /* 전체 너비의 60% 차지 */
 }
-div.footer>div{
-    margin: 0;
-    padding: 0 0 2% 2%;
+
+/* 두 번째 박스의 이미지 크기 조절 */
+div.main_info img {
+    width: 60%;
 }
-div.footer p{
-    font-size: 8px;
-    padding-top: 2%;
+
+/* 제목과 내용이 들어가 있는 세 번째 박스 */
+div.main_info>div:nth-child(3) {
+    /* 위에서 1,2,4번째 박스들은 모두 각 크기를 정해줬으므로 세 번째 내용 박스는 남아있는 넓이 모두 차지 */
+    flex: 1;
+}
+
+
+
+
+
+
+/* 미디어쿼리, 태블릿 */
+@media screen and (max-width:1023px) {
+    html {
+        /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
+        font-size: 12px;
+    }
+}
+
+/* 미디어쿼리, 모바일 */
+@media screen and (max-width:767px) {
+    html {
+        /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
+        font-size: 6px;
+    }
 }
