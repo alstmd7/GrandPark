@@ -5,278 +5,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../리셋.css" rel="stylesheet">
+    <link href="../css/JJWresete.css" rel="stylesheet">
     <title>오시는길</title>
 </head>
 <style>
     header {
+        /* 헤더부분 임시 */
         text-align: center;
         font-size: 1.5rem;
     }
 
-
     #guide_traf {
+        /* 오시는 길 */
         text-align: center;
         font-size: 1rem;
         margin-bottom: 30px;
     }
 
     #guide_traf_map {
+        /* 맵 지도 부분 */
         width: 100%;
         height: 10%;
         margin-bottom: 30px;
     }
 
     #guide_traf_addr {
+        /* 주소 부분 */
         margin-bottom: 30px;
     }
 
     #guide_traf_ikon {
+        /* 전체 아이콘 부분*/
         width: 60px;
         height: 60px;
     }
 
     /* 버스 */
-    #guide_traf_bus {
+    .g{/* 버스,지하철,택시 전제 부분 */
         width: 100%;
-        height: 100px;
         margin-bottom: 30px;
+    }
+    #guide_traf_bus {/* 버스 전체 부분 */
+        height: 100px;
     }
 
     #guide_traf_bus>div {
+        /* 버스 안에있는 div 부분 */
         float: left;
     }
 
-    #guide_traf_buss {
+    .bb {
+        /* 버스,지하철,택시 아이콘이랑 글자부분 */
         width: 100px;
-        height: 100px;
+        text-align: center;
         background-color: khaki;
         border: 3px solid rgb(250, 163, 0);
     }
-
     #guide_traf_buss {
-        text-align: center;
+        /* 버스 로고부분 세로 */
+        height: 100px;
     }
-
     #guide_traf_bus>div>#a>li {
+        /* 정문 후문 정류장 부분 */
         display: inline-block;
     }
-
-    #guide_traf_bus>div>#b>li {
-        display: inline-block;
-    }
-
-    #guide_traf_bus>div>#a>li>h3 {
+    .aaa {/* 회색 부분 */
         border-radius: 20px;
         background-color: darkgrey;
         width: 180px;
         height: 35px;
         padding-top: 15px;
     }
-
-    #guide_traf_bus>div>#b>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
-        width: 180px;
-        height: 35px;
-        padding-top: 15px;
+    #guide_traf_bus .aa {/* 정문 후문 정류장 이름부분 */
+        background-color: rgba(0, 255, 42, 0.836);
     }
-
-    #guide_traf_bus>div>#a>li>h2 {
+    .aa {/* 버스,지하철,택시 종류 공통부분 */
         border: 2px solid black;
         border-radius: 20px;
-        background-color: rgba(0, 255, 42, 0.836);
         width: 100px;
         height: 40px;
         text-align: center;
         padding-top: 10px;
     }
-
-    #guide_traf_bus>div>#b>li>h2 {
-        border: 2px solid black;
-        border-radius: 20px;
-        background-color: rgba(0, 255, 42, 0.836);
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        padding-top: 10px;
-    }
-
     /* 지하철 */
     #guide_traf_subway {
-        width: 100%;
-        margin-bottom: 30px;
+        /* 지하철 전체 부분 */
         height: 100px;
-        
+    }
+
+    #guide_traf_subwayy {
+        /* 지하철 로고부분 세로 */
+        height: 100px;
     }
 
     #guide_traf_subway>div {
+        /* 지하철 안에 있는 div 부분 */
         float: left;
     }
-
-    #guide_traf_subwayy {
-        width: 100px;
-        height: 100px;
-        background-color: khaki;
-        border: 3px solid rgb(250, 163, 0);
-    }
-
-    #guide_traf_subwayy {
-        text-align: center;
-    }
-
-    #guide_traf_subway>div>#a>li {
+    #guide_traf_subway>div>#a>li {/* 2호선 부분 */
         display: inline-block;
     }
-
-    #guide_traf_subway>div>#b>li {
+    #guide_traf_subway>div>#b>li {/* 신분당선 부분 */
         display: inline-block;
     }
-
-    #guide_traf_subway>div>#a>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
-        width: 180px;
-        height: 35px;
-        padding-top: 15px;
-    }
-
-    #guide_traf_subway>div>#b>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
-        width: 180px;
-        height: 35px;
-        padding-top: 15px;
-    }
-
-    #guide_traf_subway>div>#a>li>h2 {
-        border: 2px solid black;
-        border-radius: 20px;
+    #guide_traf_subway>div>#a>li>h2 {/* 2호선 배경색 */
         background-color: rgb(4, 194, 4);
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        padding-top: 10px;
     }
-
-    #guide_traf_subway>div>#b>li>h2 {
-        border: 2px solid black;
-        border-radius: 20px;
+    #guide_traf_subway>div>#b>li>h2 {/* 신분당선 배경색 */
         background-color: rgba(255, 0, 34, 0.774);
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        padding-top: 10px;
     }
 
     /* 택시 */
     #guide_traf_taxi {
-        width: 100%;
-        margin-bottom: 30px;
         height: 150px;
-        
     }
-
     #guide_traf_taxi>div {
         float: left;
     }
 
     #guide_traf_taxii {
-        width: 100px;
         height: 150px;
-        background-color: khaki;
-        border: 3px solid rgb(250, 163, 0);
-    }
-
-    #guide_traf_taxii {
-        text-align: center;
     }
 
     #guide_traf_taxi>div>#a>li {
         display: inline-block;
     }
-
-    #guide_traf_taxi>div>#b>li {
-        display: inline-block;
-    }
-
-    #guide_traf_taxi>div>#a>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
-        width: 180px;
-        height: 35px;
-        padding-top: 15px;
-    }
-
-    #guide_traf_taxi>div>#b>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
-        width: 180px;
-        height: 35px;
-        padding-top: 15px;
-    }
-
     #guide_traf_taxi>div>#c>li>h3 {
-        border-radius: 20px;
-        background-color: darkgrey;
         width: 290px;
-        height: 35px;
-        padding-top: 15px;
     }
+
 
     #guide_traf_taxi>div>#a>li>h2 {
-        border: 2px solid black;
-        border-radius: 20px;
-        background-color:dodgerblue;
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        padding-top: 10px;
-    }
-
-    #guide_traf_taxi>div>#b>li>h2 {
-        border: 2px solid black;
-        border-radius: 20px;
-        background-color:dodgerblue;
-        width: 100px;
-        height: 40px;
-        text-align: center;
-        padding-top: 10px;
+        background-color: dodgerblue;
     }
 
     footer {
-            width: 100%;
-            background-color: silver;
-        }
-        footer>ol>li {
-            display: inline-block;
-            padding: 0% 1%;
-        }
-        footer>ol {
-            text-align: center;
-        }
-        footer>ul {
-            margin-top: 30px;
-            margin-left: 8%;
-        }
+        width: 100%;
+        background-color: silver;
+    }
+    footer>ol>li {
+        display: inline-block;
+        padding: 0% 1%;
+    }
+    footer>ol {
+        text-align: center;
+    }
+    footer>ul {
+        margin-top: 30px;
+        margin-left: 8%;
+    }
 </style>
 
 <body>
-    <header>
+    <header><!-- 로고부분 임시 -->
         <h1>강남 대공원</h1>
     </header>
+
     <div id="guide_traf">
         <h1>오시는길</h1>
     </div>
-    <div><img id="guide_traf_map" src="../사진/호수사진.jpg"></div>
+    <!-- 맵 지도 부분 -->
+    <div><iframe id="guide_traf_map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71687.10364980399!2d127.01265953743096!3d37.43350629568422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5f6734d3c035%3A0x24dfa58979884d7b!2z7ISc7Jq464yA6rO17JuQ!5e0!3m2!1sko!2skr!4v1680063317715!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 
-    <div id="guide_traf_addr">
+    <div id="guide_traf_addr"><!-- 주소부분 -->
         <ol>
             <li>
-                <h1>주소</h1>
+                <h1>주소 : 강남대공원</h1>
             </li>
             <li>
-                <h2>강원 평창군 봉평면 태기로 174 (우)25307</h2>
+                <h2>경기도 과천시 대공원광장로 102</h2>
             </li>
         </ol>
     </div>
@@ -286,88 +186,86 @@
             <h1>대중교통 안내</h1>
         </div>
 
-        <div id="guide_traf_bus">
-            <div id="guide_traf_buss">
-                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+        <div id="guide_traf_bus" class="g"><!-- 버스정보 부분 -->
+            <div id="guide_traf_buss" class="bb">
+                <img id="guide_traf_ikon" src="../images/i - BUS.png">
                 <h1>버스</h1>
             </div>
 
             <div>
                 <div id="a">
                     <li>
-                        <h2>정문 정류장</h2>
+                        <h2 class="aa">정문 정류장</h2>
                     </li>
                     <li>
-                        <h3>100번, 32번, 40-5번 , 1번</h3>
+                        <h3 class="aaa">100번, 32번, 40-5번 , 1번</h3>
                     </li>
                 </div>
 
-                <div id="b">
+                <div id="a">
                     <li>
-                        <h2>후문 정류장</h2>
+                        <h2 class="aa">후문 정류장</h2>
                     </li>
                     <li>
-                        <h3>32번, 7000번, 2-1번</h3>
+                        <h3 class="aaa">32번, 7000번, 2-1번</h3>
                     </li>
                 </div>
-
             </div>
-
         </div>
 
-        <div id="guide_traf_subway">
-            <div id="guide_traf_subwayy">
-                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+        <div id="guide_traf_subway" class="g"><!-- 지하철정보 부분 -->
+            <div id="guide_traf_subwayy" class="bb">
+                <img id="guide_traf_ikon" src="../images/i - SUBWAY.png">
                 <h1>지하철</h1>
             </div>
 
             <div>
                 <div id="a">
                     <li>
-                        <h2>2호선</h2>
+                        <h2 class="aa">2호선</h2>
                     </li>
                     <li>
-                        <h3>OO역 하자, 2번 출구 </h3>
+                        <h3 class="aaa">OO역 하자, 2번 출구 </h3>
                     </li>
                 </div>
                 <div id="b">
                     <li>
-                        <h2>신분당선</h2>
+                        <h2 class="aa">신분당선</h2>
                     </li>
                     <li>
-                        <h3>OO역 하자, 2번 출구</h3>
+                        <h3 class="aaa">OO역 하자, 2번 출구</h3>
                     </li>
                 </div>
             </div>
 
         </div>
 
-        <div id="guide_traf_taxi">
-            <div id="guide_traf_taxii">
-                <img id="guide_traf_ikon" src="../사진/호수사진.jpg">
+        <div id="guide_traf_taxi" class="g"><!-- 택시정보 부분 -->
+            <div id="guide_traf_taxii" class="bb">
+                <img id="guide_traf_ikon" src="../images/i - TAXI.png">
                 <h1>택시</h1>
             </div>
 
             <div>
                 <div id="a">
                     <li>
-                        <h2>콜택시</h2>
+                        <h2 class="aa">콜택시</h2>
                     </li>
                     <li>
-                        <h3>010 - 1577 - 1577 </h3>
+                        <h3 class="aaa">010 - 1577 - 1577 </h3>
                     </li>
                 </div>
-                <div id="b">
+                <div id="a">
                     <li>
-                        <h2>지역택시</h2>
+                        <h2 class="aa">지역택시</h2>
                     </li>
                     <li>
-                        <h3>02 - 0909 - 9090 </h3>
+                        <h3 class="aaa">02 - 0909 - 9090 </h3>
                     </li>
                 </div>
                 <div id="c">
                     <li>
-                        <h3>정문 바로 앞에 택시 정류장이 있습니다.</h3>
+                        <h3 class="aaa">정문 바로 앞에 택시 정류장이 있습니다.</h3>
                     </li>
                 </div>
             </div>
@@ -375,23 +273,23 @@
 
     </div>
 
-    <footer>
+    <footer><!-- 풋터부분 임시 -->
         <ol>
             <li>
                 <h3>개인정보처리방침</h3>
-             </li>
-             <li>
-                 <h2>I</h2>
-             </li>
-             <li>
-                 <h3>이메일무단수집거부</h3>
-             </li>
-             <li>
-                 <h2>I</h2>
-             </li>
-             <li>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
+                <h3>이메일무단수집거부</h3>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
                 <h3>시비스이용약관</h3>
-             </li>
+            </li>
         </ol>
         <ul>
             <li>(우편번호)서울시 강남구 ~~로</li>

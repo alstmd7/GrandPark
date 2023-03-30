@@ -1,122 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../리셋.css" rel="stylesheet">
+    <link href="../css/JJWresete.css" rel="stylesheet">
     <title>시설안내</title>
 </head>
 <style>
-   
-     header {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+    header {
+        /* 로고부분 임시 */
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
 
-        #px_intro {
-            text-align: center;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-        #px_intro_map {
-            width: 100%;
-            height: 15%;
-            margin-bottom: 20px;
-        }
+    #px_intro {
+        /* 시설안내 로고 부분 */
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    #px_intro_map {
+        /* 시설안내 이미지 */
+        width: 100%;
+        height: 15%;
+        margin-bottom: 20px;
+    }
+
+    /* 전체보기 부분 */
+
+    .aaa {/* 전체보기 창 오른쪽 위로 */
+        position: relative;
+    }
+    #px_intro_menu {
+        width: 35%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-bottom: 300px;
         
-        #px_intro_menu>ol>li{
-            text-align: center;
-            border: 3px solid black;
-            width: 120px;
-            height: 40px;
-        }
+    }
 
-        #px_intro_info{
-            margin-bottom: 20px;
-        }
-        #px_intro_info>ol{
-            text-align: center;
-        }
-        #px_intro_info>ol>li{
-            padding: 1% 0%;
-        }
-        #px_intro_img{
-            width: 90%;
-            height: 30%;
-            margin-left: 5%;
-            margin-bottom: 20px;
-        }
-        footer {
-            width: 100%;
-            background-color: silver;
-        }
-        footer>ol>li {
-            display: inline-block;
-            padding: 0% 1%;
-        }
-        footer>ol {
-            text-align: center;
-        }
-        footer>ul {
-            margin-top: 30px;
-            margin-left: 8%;
-        }
+    #main-menu {/*전체보기*/
+        height: 50px;
+    }
+    #main-menu>li {/* 전체보기 글자부분 */
+        float: left;
+        border: 3px solid black;
+        width: 100%;
+         height: 100%;  
+         
+    }
+    #main-menu>li>a {/* 전체보기 글자부분 */
+        
+         height: 100%;  
+        display: block;
+        /* padding: 12px 36px; */   /* 여백 없이 */
+        text-align: center;/* 글자 가운데 */
+        font-size: 1.5rem;/* 글자 크기 */
+        background-color: bisque;/* 배경색 */
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        border-radius: 1px solid rgb(0, 0, 0);/* 테두리 */
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);/* 글자 그림자 */
+    }
 
+    #sub-menu {/* 서브메뉴 부분 */
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;/* 처음에 안보이게 */
+        transition: all 0.15s ease-in;/* 부드럽게 생기기 */
+    }
+
+    #sub-menu li {/* 서브메뉴 글자부분 */
+        text-align: center;
+        padding: 16px 28px;
+        border: 3px solid rgb(0, 0, 0);
+        /* 테두리 */
+        background-color: antiquewhite;
+    }
+
+    #sub-menu a {/* 서브메뉴 글자부분 */
+        font-size: 1.25rem;/* 글자 크기 */
+        text-decoration: none;
+    }
+
+    #main-menu>li:hover #sub-menu {/* 메인메뉴에 마우스대면 이벤트 발생 */
+        opacity: 1;
+        visibility: visible;
+        /* 부모 ul요소에 마우스를 오버할 떄 자손 ul요소가 나타난다. */
+    }
+    #sub-menu a:hover {/* 서브메뉴에 마우스 대면 */
+        text-decoration: underline;
+    }
+
+    /*서브메뉴 이벤트*/
+    #text h1 {
+        text-align: center;
+    }
+    #text li {
+        text-align: center;
+    }
+    #text img {
+        display: block;
+        margin: auto;
+        width: 400px;
+        height: 300px;
+    }
+
+    /*푸터부분 임시*/
+    footer {
+        width: 100%;
+        background-color: silver;
+    }
+
+    footer>ol>li {
+        display: inline-block;
+        padding: 0% 1%;
+    }
+
+    footer>ol {
+        text-align: center;
+    }
+
+    footer>ul {
+        margin-top: 30px;
+        margin-left: 8%;
+    }
 </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+    /* 전체보기에서 택스트 클릭시 이벤트 발생하게 하는 프로그램 */
+    $(function () {
+        // text로 시작하는 모든 id를 숨김
+        $("[id^=text]").hide();
+
+        // 클래스가 일치하는 버튼을 가지지만, float_l 클래스가 아닌 요소
+        $(".button:not(.float_l)").click(function (e) {
+            e.stopPropagation();
+
+            // index가 클릭한 것과 일치하는 요소를 찾음
+            $("[id^=text]").eq($(this).index()).fadeToggle();
+        });
+    });
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
 <body>
-    <header>
+
+    <header><!-- 로고구분 임시로 만듬 -->
         <h1>강남 대공원</h1>
     </header>
+
     <div id="px_intro">
         <h1>시설 안내</h1>
     </div>
 
-    <div><img id="px_intro_map" src="../사진/호수사진.jpg"></div>
 
-    <div id="px_intro_menu">
-        <ol>
-            <li><h2>전체보기</h2></li>
-            <li><h2>안내데스크</h2></li>
-            <li><h2>화장실</h2></li>
-            <li><h2>야외공연장</h2></li>
-            <li><h2>캠핑장</h2></li>
-            <li><h2>상점/편의시설</h2></li>
-            <li><h2>어린이놀이터</h2></li>
-            <li><h2>주차장</h2></li>
-        </ol>
+    <div class="aaa">
+
+        <div><!-- 시설안내 맵 이미지 -->
+            <img id="px_intro_map" src="../images/i - parking_map.jpg">
+        </div>
+
+        <div id="px_intro_menu"><!-- 전체보기 메뉴부분 -->
+
+            <ul id="main-menu"><!-- 메인메뉴 -->
+                <li><a href="#">전체보기</a>
+                    <ul id="sub-menu"><!-- 서브메뉴 -->
+
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        안내데스크
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        화장실
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        야외공연장
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        캠핑장
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        상점<br>편의시설
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        어린이<br>놀이터
+                                    </a></li>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="button float_l">
+                                <li><a href="#">
+                                        주차장
+                                    </a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+
     </div>
 
     <div id="px_intro_info">
-        <ol>
-        <h1>강남 대공원</h1>
+
+    </div>
+    <p><!-- 서브메뉴 이벤트 부분 -->
+    <div id="text">
+        <h1>안내데스크</h1>
         <li>위치 : 정문에서 도보로 500m 직진</li>
         <li>이용 시간 : 09:00 ~ 18:00</li>
         <li>문의전화 : 010 - 1234 - 5678</li>
-    </ol>
+        <img src="../images/px-1.jpg">
     </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>화장실</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-2.jpg">
+    </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>야외공연장</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-3.jpg">
+    </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>캠핑장</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-4.jpg">
+    </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>상점/편의시절</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-5.jpg">
+    </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>어린이놀이터</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-6.jpg">
+    </div>
+    </p>
+    <p>
+    <div id="text">
+        <h1>주차장</h1>
+        <li>위치 : 정문에서 도보로 500m 직진</li>
+        <li>이용 시간 : 09:00 ~ 18:00</li>
+        <li>문의전화 : 010 - 1234 - 5678</li><img src="../images/px-7.jpg">
+    </div>
+    </p>
 
-    <div><img id="px_intro_img" src="../사진/호수사진.jpg"></div>
-
-
-    <footer>
+    
+    <footer><!-- 풋터부분 임시-->
         <ol>
             <li>
                 <h3>개인정보처리방침</h3>
-             </li>
-             <li>
-                 <h2>I</h2>
-             </li>
-             <li>
-                 <h3>이메일무단수집거부</h3>
-             </li>
-             <li>
-                 <h2>I</h2>
-             </li>
-             <li>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
+                <h3>이메일무단수집거부</h3>
+            </li>
+            <li>
+                <h2>I</h2>
+            </li>
+            <li>
                 <h3>시비스이용약관</h3>
-             </li>
+            </li>
         </ol>
         <ul>
             <li>(우편번호)서울시 강남구 ~~로</li>
@@ -125,4 +320,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
