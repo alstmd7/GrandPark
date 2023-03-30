@@ -3,71 +3,166 @@ html {
     font-size: 12px;
 }
 
+/* 이미지 가로는 모두 가로에 꽉 차게 설정 */
+img{
+    width: 100%;
+}
+
 /* 전체 박스들을 감싸고 있는 부모 박스 */
 div.wrap {
     /* flex 사용 */
     display: flex;
-    /* 세로배치(flex-direction: column;), 줄바꿈(flex-wrap: wrap;) */
+    /* 세로배치(flex-direction: column;), 줄바꿈O(flex-wrap: wrap;) */
     flex-flow: column wrap;
-    /* 100vh는 전체 viewport height의 100%를 의미하며, 100vh height는 브라우저 창의 전체 높이와 같게 하여 전체 내용을 표시한다는 것 */
-    height: 100vh;
 }
 
-/* 기본적으로 wrap 안의 자식 div 영역들은 가로의 100%를 차지 */
+/* wrap 안의 자식 div 영역들 */
 div.wrap>div {
+    /* 가로의 100%를 차지 */
     width: 100%;
 }
 
 /*==== 로고 부분 ====*/
-/* 로고(텍스트) */
-div.wrap>div {
-    /* 부모 요소의 가로 너비를 100%로 설정 */
-    width: 100%;
+div.banner_logo{
+    /* 높이 설정, 전체 화면 높이의 6% 차지 */
+    height: 6vh;
+    /* 로고(텍스트)와 메뉴 버튼의 위치를 잡기 위해 position 속성 사용, 기준이 되는 부모에 relative 설정
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요*/
+    position: relative;
 }
-
 div.banner_logo>span.logo {
-    /* 로고 텍스트를 수직, 수평 중앙에 위치시키기 위해 flex 속성을 설정 */
-    display: flex;
-    /* 수직, 수평 정렬 */
-    justify-content: center;
-    align-items: center;
-    /* 부모 요소의 높이와 같도록 높이를 100%로 설정 */
-    height: 100%;
     /* 로고 텍스트의 글자를 부모 크기의 1.8배로 설정 */
     font-size: 1.8rem;
     /* 로고 텍스트의 글자 두께를 두껍게 설정 */
     font-weight: bold;
+    /* 배치를 위해 position 설정 
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요 */
+    position: absolute;
+    /* 중앙에 위치 */
+    top: 50%;
+    left: 50%;
+    /* span크기만큼 가로 -50%, 세로 -50% 이동하여 span 요소 자체가 부모(div) 가운데로 위치시키기 위해 사용 */
+    transform: translate(-50%, -50%);
 }
-
-div.banner_logo>button {
-    /* 버튼 요소를 왼쪽 마진에 붙여 오른쪽으로 배치하기 위해 */
-    margin-left: auto;
+/* 메뉴 토글 버튼 이미지 */
+div.banner_logo>img.menu_toggle_btn{
+    /* 크기 조정 */
+    width: 25px;
+    height: 25px;
+    /* 배치를 위해 position 설정
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요 */
+    position: absolute;
+    /* 세로정렬, 오른쪽에서 3% */
+    top:50%;
+    right:3%;
+    /* 이미지 크기만큼 세로 -50% 하여 가운데로 이동 */
+    transform: translateY(-50%);
 }
 
 /*==== 메뉴 부분 ====*/
-div.header_menu {
-    /* display: none; 기본적으로 보이지 않게 설정 */
+div.header_menu{
+    /* 기본적으로 화면에 보이지 않도록 처리 */
+    display: none;
 }
 
-/* 메뉴(ul) 전체 설정 설정 */
-div.header_menu>ul {
-    /* 주 축(가로)을 기준으로 가운데 정렬 */
+/* 메인 메뉴 */
+div.menu_title {
+    /* 마우스 커서 모양 바꾸기 */
+    cursor: pointer;
+    /* 메인 메뉴 부분 글자 두껍게 */
+    font-weight: bold;
+    /* 글자 크기 1.4배 */
+    font-size: 1.4rem;
+    /* 높이 설정 */
+    height: 5vh;
+    /* 배경 색 설정 */
+    background-color: rgb(255, 210, 148);
+    /* 양쪽 패딩 설정 */
+    padding: 0 3%;
+    /* flex 속성 설정 */
     display: flex;
-    /* 가로/세로 전부 가운데 정렬 */
-    justify-content: center;
+    /* 세로 가운데 정렬 */
     align-items: center;
-    /* 메뉴의 위,아래 마진 설정 */
-    margin: 3% 0;
+    /* 글과 아이콘 서로 양 쪽 끝으로 위치하게 정렬 */
+    justify-content: space-between;
+}
+/* 메인메뉴가 눌릴 경우 */
+div.menu_title:active{
+    /* 배경 색 변경 */
+    background-color: rgb(240, 142, 22);
+}
+/* 메인 메뉴 드롭다운 표시 아이콘 */
+div.menu_title>img{
+    width: 15px;
+    height: 15px;
 }
 
-/* 각 메뉴 list 세부 설정 */
-div.header_menu>ul>li {
-    /* 각 리스트의 양 옆 마진 설정 */
-    margin: 0 2%;
-    /* 글자 크기는 부모(html)의 1.2배 */
+/* 서브 메뉴 */
+div.menu_sub {
+    /* 기본적으로 화면에서 보이지 않음 */
+    display: none;
+}
+/* 서브 메뉴 각 li */
+div.menu_sub li{
+    /* 높이 설정 */
+    height: 5vh;
+    /* line-hight를 높이와 같게 하여 세로 가운데 정렬 */
+    line-height: 5vh;
+    /* 배경 색 */
+    background-color: rgb(254, 255, 211);
+}
+div.menu_sub a{
+    /* 기본적으로 a 태그는 inline 레벨 요소이므로 부모(li)의 크기만큼 가지게 하기 위해
+    inline-block요소 설정 */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* 왼쪽 패딩 추가 */
+    padding-left: 3%;
     font-size: 1.2rem;
 }
 
+
+/*==== 배너 이미지 ====*/
+div.banner_img>img{
+    /* 이미지의 최대 높이는 화면의 20%, 태블릿과 PC 버전 변경 필요 */
+    max-height: 20vh;
+}
+
+/*==== 추천 관광지 소개 ====*/
+div.main_info{
+    /* 자식 요소들의 배치를 위해 flex 속성 설정 */
+    display: flex;
+    /* 세로 정렬(flex의 기본 설정이 가로 정렬이기 때문에 다시 세로 정렬 설정해줘야 함) */
+    flex-direction: column;
+    /* 가운데 정렬 */
+    align-items: center;
+    /* 윗부분 마진 */
+    margin-top: 3%;
+}
+/* 제목 */
+div.main_info>div.main_info_title{
+    /* 글자 크기 1.6배 */
+    font-size: 1.6rem;
+    /* 글자 두껍게 */
+    font-weight: bold;
+}
+/* 이미지 */
+div.main_info>img{
+    /* 이미지 크기의 높이는 화면의 50%보다 커지지 않음 */
+    max-height: 50vh;
+    /* 이미지의 위,아래 마진 설정 */
+    margin: 2% 0;
+}
+/* 내용 */
+div.main_info>div.main_info_content{
+    /* 내용이 들어가는 박스(div)의 크기 또한 가로 전체로 설정 */
+    width: 100%;
+    /* 왼쪽 패딩 */
+    padding-left: 3%;
+}
+
+/*==== 추천 행사 ====*/
 
 
 
@@ -75,14 +170,105 @@ div.header_menu>ul>li {
 @media screen and (min-width:1024px) {
     html {
         /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
-        font-size: 6px;
+        font-size: 18px;
     }
+
+    /*==== 로고 부분 ====*/
+    div.banner_logo{
+        /* 포지션 해제(디폴트 값:static) */
+        position: static;
+        /* 중앙 정렬 위해 flex 속성 사용*/
+        display: flex;
+        /* 중앙 정렬 */
+        justify-content: center;
+        align-items: center;
+        
+    }
+    div.banner_logo>span.logo{
+        /* 포지션 해제 */
+        position: static;
+        /* top 값을 초기화 */
+        top: auto; 
+        /* left 값을 초기화 */
+        left: auto; 
+        /* transform 값을 초기화 */
+        transform: none; 
+    }
+    div.banner_logo>img.menu_toggle_btn{
+        /* 토글 버튼 없애주기 */
+        display: none;
+    }
+
+    /*==== 메뉴 부분 ====*/
+    div.header_menu, div.header_menu div {
+        /* 보이지 않게 설정되어 있던 요소들을 보이도록 설정, 
+        속성을 inline-block(줄바꿈X, 너비/높이 가짐) */
+        display: inline-block;
+    }
+
+    div.menu_title>img{
+        /* 드롭다운 표현하던 아이콘(이미지) 보이지 않게 하기 */
+        display: none;
+    }
+
+    /*==== 배너 이미지 ====*/
+    div.banner_img>img{
+    width: 100%;
+    /* 이미지의 최대 높이는 화면의 30% */
+    max-height: 30vh;
+    }
+
+
 }
 
 /* 미디어쿼리, 태블릿 */
 @media screen and (min-width:768px) {
     html {
         /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
-        font-size: 12px;
+        font-size: 14px;
     }
+
+    /*==== 로고 부분 ====*/
+    div.banner_logo{
+        /* 포지션 해제(디폴트 값:static) */
+        position: static;
+        /* 중앙 정렬 위해 flex 속성 사용*/
+        display: flex;
+        /* 중앙 정렬 */
+        justify-content: center;
+        align-items: center;
+        
+    }
+    div.banner_logo>span.logo{
+        /* 포지션 해제 */
+        position: static;
+        /* top 값을 초기화 */
+        top: auto; 
+        /* left 값을 초기화 */
+        left: auto; 
+        /* transform 값을 초기화 */
+        transform: none; 
+    }
+    div.banner_logo>img.menu_toggle_btn{
+        /* 토글 버튼 없애주기 */
+        display: none;
+    }
+
+    /*==== 메뉴 부분 ====*/
+    div.header_menu {
+        /* 보이지 않게 설정되어 있던 메뉴를 보이도록 설정 */
+        display: inline-block;
+    }
+    div.menu_title>img{
+        /* 드롭다운 표현하던 이미지 보이지 않게 하기 */
+        display: none;
+    }
+
+
+    /*==== 배너 이미지 ====*/
+    div.banner_img>img{
+    width: 100%;
+    /* 이미지의 최대 높이는 화면의 50% */
+    max-height: 50vh;
+}
 }

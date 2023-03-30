@@ -1,78 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- reset css -->
-    <link href="./css/reset.css" rel="stylesheet"/>
-    <!-- 플렉서블 이용 -->
-    <!-- <link href="./css/main.css" rel="stylesheet"/> -->
-    <title>연습</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- reset css -->
+  <link href="./css/reset.css" rel="stylesheet" />
+  <!-- main css 추가 -->
+  <link href="./css/main.css" rel="stylesheet" />
+  <!-- 제이쿼리 추가(구글) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <title>강남대공원</title>
 </head>
+
 <body>
-    <div class="wrap">
-        <div class="banner_logo">
-          <span class="logo">강남대공원</span>
-          <button>토글</button>
-        </div>
-        <div class="header_menu">
+  <div class="wrap">
+    <div class="banner_logo">
+      <span class="logo">강남대공원</span>
+      <img src="./images/menu_button.svg" class="menu_toggle_btn" alt="toggle_btn svg"></img> <!-- 모바일에서만 사용하는 버튼 -->
+    </div>
+    <div class="header_menu">
+      <div> 
+        <div class="menu_title"> <!-- 메인 메뉴 -->
+          <span>소개</span>
+          <img src="./images/down.svg" alt="down svg"/>
+        </div> 
+        <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
           <ul>
-            <li>
-              <a href="">소개</a>
-              <ul>
-                <li><a href="">벚나무산책길</a></li>
-                <li><a href="">식물원</a></li>
-                <li><a href="">중앙광장</a></li>
-                <li><a href="">생태호수</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">행사/예약</a>
-              <ul>
-                <li><a href="">행사목록</a></li>
-                <li><a href="">예약확인</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">시설</a>
-              <ul>
-                <li><a href="">안내도</a></li>
-                <li><a href="">주차장</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">이용안내</a>
-              <ul>
-                <li><a href="">오시는길</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">공지사항</a>
-              <ul>
-                <li><a href="">게시판</a></li>
-              </ul>
-            </li>
+              <li><a href="">벚나무산책길</a></li>
+              <li><a href="">식물원</a></li>
+              <li><a href="">중앙광장</a></li>
+              <li><a href="">생태호수</a></li>
           </ul>
         </div>
-        <div class="banner_img">
-            <img src="./images/banner.gif" alt="배너영상"/>
-        </div>
-        <div class="main_info">
-          <div>제목</div>
-          <div>내용</div>
-          <div>&lt;</div>
-          <img src="./images/blossom_road.jpg" alt="소개"/>
-          <div>&gt;</div>
-        </div>
-        <div class="main_event">
-        </div>
-        <div class="main_notice">
-          Main Notice
-          <div>Notice Item 1</div>
-          <div>Notice Item 2</div>
-        </div>
-        <div class="footer">Footer</div>
       </div>
+      <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <sapn>행사/예약</sapn>
+            <img src="./images/down.svg" alt="down svg"/>
+          </div> 
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">행사목록</a></li>
+              <li><a href="">예약확인</a></li>
+            </ul>
+          </div>
+        </div><div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <sapn>시설</sapn>
+            <img src="./images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">안내도</a></li>
+              <li><a href="">주차장</a></li>
+            </ul>
+          </div>
+        </div>
+        <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>이용안내</span>
+            <img src="./images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">오시는길</a></li>
+            </ul>
+          </div>
+        </div>
+        <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>공지사항</span>
+            <img src="./images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">게시판</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="banner_img">
+      <img src="./images/banner.gif" alt="배너영상" />
+    </div>
+    <div class="main_info">
+      <div class="main_info_title">제목</div>
+      <img src="./images/blossom_road.jpg" alt="소개" />
+      <div class="main_info_content">내용</div>
+    </div>
+    <div class="main_event">
+      <div class="main_event_title">행사/공연</div>
+      <img src="./images/event1.jpg" alt="행사1"/>
+      <div class="main_event_date">03.12~03.24</div>
+      <img src="./images/event1.jpg" alt="행사2"/>
+      <div class="main_event_date">03.12~03.24</div>
+    </div>
+    <div class="main_notice">
+      <div class="main_notice_title">공지사항</div>
+      <div>휴관안내</div>
+      <div>휴관안내</div>
+    </div>
+    <div class="footer">Footer</div>
+  </div>
+
+  <!-- 자바스크립트 추가 -->
+  <!-- 모바일일 경우 -->
+  <script type="text/javascript" src="./js/menu.js" media="(max-width:767px)"></script>
+  <!-- 태블릿일 경우 -->
+  <script type="text/javascript" src="./js/menu_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>
+  <!-- pc일 경우 -->
+  <script type="text/javascript" src="./js/menu_pc.js" media="(min-width:1024px)"></script>
 </body>
+
 </html>
