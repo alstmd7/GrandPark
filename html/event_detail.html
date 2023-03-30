@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <title>Document</title>
+    <style>
+        /* 헤더 영역 */
+        .header {
+            width: 100%;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        /* 행사 이름 영역 */
+        .event_detail_title {
+            text-align: center;
+            height: 70px;
+            margin-top: 80px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* 행사 내용 영역 */
+        .event_detail_info {
+            height: 170px;
+            width: 620px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        /* 행사 내용 글 */
+        .event_detail_info p{
+            margin: 30px 0;
+        }
+
+        /* 행사 예약 내용 글 영역 */
+        .event_detail_info div {
+            width: 45%;
+            margin: 0 auto;
+        }
+
+        /* 행사 예약 내용 세로줄 */
+        .info_line {
+            border-right: 1.5px solid gray;
+            height: 80%;
+        }
+
+        /* 예약버튼 */
+        .event_detail_btn {
+            height: 40px;
+            width: 280px;
+            margin: 25px auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            background-color: rgb(27,161,226);
+        }
+
+        /* 행사 포스터 */
+        .event_detail_poster {
+            height: 1080px;
+            width: 960px;
+            margin: 0 auto;
+            background-color: greenyellow;
+        }
+
+        /* 행사 시 유의사항 */
+        .event_detail_note {
+            width: 960px;
+            margin: 80px auto;
+            line-height: 23px;
+            font-size: 0.9rem;
+            color: rgb(68,68,68);
+            font-weight: bold;
+        }
+
+        .event_detail_note h1 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+        }
+    </style>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <!-- 헤더 영역 -->
+    <header class="header"></header>
+
+    <!-- 행사 이름 -->
+    <div class="event_detail_title">2023 메타세콰이어길 걷기</div>
+
+    <!-- 행사 내용 -->
+    <div class="event_detail_info">
+        <div>
+            <p>행사일시 | 2023.04.01 ~ 2023.04.30</p>
+            <p>접수기간 | 2023.03.31 ~ 2023.04.30</p>
+            <p>행사장소 | 식물원 옆 메타세콰이어길</p>
+        </div>
+        <span class="info_line"></span>
+        <div>
+            <p>행사정원 | 하루 30명</p>
+            <p>참가비용 | 무료</p>
+            <p>문의전화 | 012-345-6789</p>
+        </div>
+    </div>
+
+    <!-- 예약버튼 -->
+    <a href="event_book.html"><div class="event_detail_btn">예약하기</div></a>
+
+    <!-- 행사 포스터 -->
+    <div class="event_detail_poster"></div>
+
+    <!-- 행사 유의사항 -->
+    <div class="event_detail_note"> 
+        <h1>예약 시 유의사항</h1>
+        <p>- 예약은 1인 3매까지 가능하며, 희망좌석을 선택하실 수 있습니다.</p>
+        <p>- 입장권을 가져오시면 입장절차가 간편하며 출력이 안되는 경우, 예약번호 및 좌석번호를 메모하여 오시기 바랍니다.</p>
+        <p>- 예매취소 없이 참석하지 않으면 향후 3회간 예매가 불가하오니 부득이 참석이 어려운 경우에는 예매를 취소하여 주시기 바랍니다.</p>
+        <p>- 입장은 공연 시작 30분 전부터 가능하며, 공연이 시작되면 입장에 제한을 받을 수 있습니다.</p>
+        <p>- 공연시작전(19시 30분)까지 좌석표를 교부받지 않으면 예약은 무효처리 됩니다.</p>
+    </div>
+</body>
+
+</html>
