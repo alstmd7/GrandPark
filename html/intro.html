@@ -9,108 +9,113 @@
     <!-- intro css -->
     <link href="../css/intro.css" rel="stylesheet"/>
     <title>intro</title>
-    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- 소개 페이지(intro) style 시트 -->
 <style>
-  .tab {
-  display: flex;
-  justify-content: space-between;
+/* 탭 메뉴 */
+.tabs {
+  display: inline-block;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  border: 1px solid rgb(192, 180, 180);
+  width: 440px;
+  margin-top: 20px;
+  margin-left: 40%;
+  /* background-color: aqua; */
+  margin-right: 30%;
 }
 
-.tablinks {
+/* 탭 메뉴의 각 4개 버튼들 */
+.tab {
+  padding: 13px 20px;
   background-color: #eee;
-  color: #666;
-  border: none;
-  outline: none;
+  border: none; /* 1px solid #ddd; */
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
+  margin-right: 10px; /* 버튼간 간격 조절 */
+  /* background-color: rgb(98, 219, 61); */
 }
 
-.tablinks.active {
-  background-color: #ccc;
-  color: #fff;
+.tab.active {
+  background-color: #fff;
+  border-bottom: none;
 }
 
-.tabcontent {
+.tab_content {
+  display: flex;
+}
+.tab_pane {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab_pane.active {
   display: flex;
 }
 
-.tabcontent-item {
-  flex: 1;
-  padding: 20px;
-  display: none;
+/* 탭 버튼 클릭시 출력되는 텍스트 이미지 */
+.tab_pane img {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.tabcontent-item.active {
-  display: block;
+/* 탭 버튼 클릭시 출력되는 텍스트 */
+.tab_pane p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
 }
 </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 첫 번째 탭 버튼을 활성화
-  document.querySelector(".tablinks").classList.add("active");
-  // 첫 번째 탭 콘텐츠를 표시
-  document.querySelector(".tabcontent-item").classList.add("active");
-});
-
-function openTab(evt, tabName) {
-  // 모든 탭 콘텐츠를 숨기기
-  var tabcontentItems = document.querySelectorAll(".tabcontent-item");
-  tabcontentItems.forEach(function(item) {
-    item.classList.remove("active");
-  });
-
-  // 모든 탭 버튼에서 active 클래스 제거
-  var tablinks = document.querySelectorAll(".tablinks");
-  tablinks.forEach(function(link) {
-    link.classList.remove("active");
-  });
-
-  // 현재 탭 버튼에 active 클래스 추가
-  evt.currentTarget.classList.add("active");
-
-  // 현재 탭 콘텐츠 표시
-  document.getElementById(tabName).classList.add("active");
-}
-</script>
 
 </head>
 <body>
     <div class="banner_logo"><p>강남대공원</p></div>
     <div class="header_menu"></div>
+
+    <!-- 소개 페이지 인트로 배너 -->
     <div class="intro_banner">
-        <img src="./images/b-flower_cus.jpg"/>
+        <img src="../images/b-flower_cus.jpg"/>
     </div>
 
+    <!-- 소개 페이지 메뉴 -->
     <div class="intro_menu">
-        <div class="tab">
-            <button class="tablinks active" onclick="openTab(event, 'tab1')">탭 1</button>
-            <button class="tablinks" onclick="openTab(event, 'tab2')">탭 2</button>
-            <button class="tablinks" onclick="openTab(event, 'tab3')">탭 3</button>
-            <button class="tablinks" onclick="openTab(event, 'tab4')">탭 4</button>
-          </div>
-          
-          <div class="tabcontent">
-            <div id="tab1" class="tabcontent-item active">
-              <img src="./images/blossom_road.jpg">
-              <p>맑은 공기를 쐬며 산책해 보세요.</p>
-            </div>
-            <div id="tab2" class="tabcontent-item">
-              <img src="./images/graden1.jpg">
-              <p>식물원에서 다양한 체험을 해보세요.</p>
-            </div>
-            <div id="tab3" class="tabcontent-item">
-              <img src="./images/garden2.jpg">
-              <p>식물원에서 다양한 체험과 행사를 경험하세요.</p>
-            </div>
-            <div id="tab4" class="tabcontent-item">
-              <img src="./images/fountain.jpg">
-              <p>이미지 4 설명</p>
-            </div>
-          </div>
-    </div> 
 
+      <!-- 탭 메뉴 -->
+      <div class="tabs">
+        <button class="tab active" data-tab="tab1">벚나무산책길</button>
+        <button class="tab" data-tab="tab2">식물원</button>
+        <button class="tab" data-tab="tab3">중앙광장</button>
+        <button class="tab" data-tab="tab4">생태호수</button>
+      </div>
+      
+      <!-- 탭 버튼 클릭시 출력되는 이미지, 텍스트 -->
+      <div class="tab_content">
+        <div id="tab1" class="tab_pane active">
+          <img src="../images/Test-1.jpg">
+          <p>맑은 공기를 마시며 벚나무 산책길을 걸어 보세요.</p>
+        </div>
+        <div id="tab2" class="tab_pane">
+          <img src="../images/Test-2.jpg">
+          <p>식물원 입니다.</p>
+        </div>
+        <div id="tab3" class="tab_pane">
+          <img src="../images/Test-3.jpg">
+          <p>중앙광장 입니다.</p>
+        </div>
+        <div id="tab4" class="tab_pane">
+          <img src="../images/Test-4.jpg">
+          <p>생태호수 입니다.</p>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <!-- footer 부분 -->
     <div class="footer">
         <ul>
             <li><a>개인정보처리방침</a></li>
@@ -121,5 +126,28 @@ function openTab(evt, tabName) {
         <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
         <p>&copy; copyrights all reserved.</p></div>
     </div>
+
+    <script>
+      // 첫 번째 탭 버튼을 활성화
+      $('.tab').first().addClass('active');
+      
+      // 탭 버튼 클릭 시 탭 내용 변경
+      $('.tab').on('click', function() {
+
+        // 모든 탭 버튼의 active 클래스 제거
+        $('.tab').removeClass('active');
+        
+        // 클릭한 탭 버튼에 active 클래스 추가
+        $(this).addClass('active');
+        
+        // 모든 탭 내용의 active 클래스 제거
+        $('.tab_pane').removeClass('active');
+        
+        // 클릭한 탭 버튼에 해당하는 탭 내용의 active 클래스 추가
+        const tabId = $(this).data('tab');
+        $(`#${tabId}`).addClass('active');
+      });
+      </script>
+
 </body>
 </html>
