@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <title>Document</title>
+    <style>
+        /* 헤더 영역 */
+        .header {
+            width: 100%;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        /* 행사 예약 및 취소 */
+        .event_book_title {
+            text-align: center;
+            height: 70px;
+            margin-top: 80px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* 제목 밑 분리선 */
+        hr {
+            width: 80%;
+        }
+
+        /* 예약번호 조회 */
+        .event_check_search {
+            margin: 118px auto 70px auto;
+            font-weight: bold;
+            font-size: 1.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 760px;
+        }
+
+        /* 예약번호 입력 칸 */
+        #book_num {
+            margin-left: 60px;
+            height: 40px;
+            width: 410px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+
+        /* 예약번호 조회 버튼 */
+        #event_check_btn {
+            height: 46px;
+            width: 110px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(27, 161, 226);
+            margin-left: -100px;
+            cursor: pointer;
+        }
+
+        /* 예약번호 조회 정보 */
+        .event_check_info {
+            height: 520px;
+            width: 800px;
+            padding: 38px 80px 0 80px;
+            margin: auto;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 예약번호 조회 정보 출력 칸 */
+        .event_check_info div {
+            height: 50px;
+            width: 800px;
+            margin: 10px 0;
+            line-height: 50px;
+            border: 1px solid gray;
+        }
+
+        /* 예약취소 버튼 */
+        #event_check_cancel {
+            height: 46px;
+            width: 110px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 영역 -->
+    <header class="header"></header>
+
+    <!-- 행사 예약 및 취소 -->
+    <div class="event_book_title">예약 확인 및 취소</div>
+    <hr>
+
+    <!-- 예약번호 조회 -->
+    <form action="예약번호입력 영역" class="event_check_search">
+        예약번호입력
+
+        <!-- 예약번호 입력 칸 -->
+        <input type="text" name="book_num" id="book_num" required>
+
+        <!-- 예약번호 조회 버튼 -->
+        <button id="event_check_btn">조회</button>
+    </form>
+
+    <!-- 예약번호 조회 정보 -->
+    <div class="event_check_info">
+        행사명
+        <!-- 예약번호 조회 정보 출력 칸 -->
+        <div></div>
+        행사 날짜
+        <div></div>
+        신청자명
+        <div></div>
+        예약날짜
+        <div></div>
+        신청인원
+        <div></div>
+
+        <!-- 예약취소 버튼 -->
+        <button id="event_check_cancel">예약취소</button>
+    </div>
+</body>
+
+</html>
