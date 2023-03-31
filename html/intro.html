@@ -1,155 +1,153 @@
+
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- reset css -->
-    <link href="../css/reset.css" rel="stylesheet"/>
-    <!-- intro css -->
-    <link href="../css/intro.css" rel="stylesheet"/>
-    <title>intro</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- reset css -->
+  <link href="../css/reset.css" rel="stylesheet" />
+  <!-- main css 추가 -->
+  <link href="../css/intro.css" rel="stylesheet" />
+  <!-- 제이쿼리 추가(구글) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-<!-- 소개 페이지(intro) style 시트 -->
-<style>
-/* 탭 메뉴 */
-.tabs {
-  display: inline-block;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  border: 1px solid rgb(192, 180, 180);
-  width: 440px;
-  margin-top: 20px;
-  margin-left: 40%;
-  /* background-color: aqua; */
-  margin-right: 30%;
-}
-
-/* 탭 메뉴의 각 4개 버튼들 */
-.tab {
-  padding: 13px 20px;
-  background-color: #eee;
-  border: none; /* 1px solid #ddd; */
-  cursor: pointer;
-  margin-right: 10px; /* 버튼간 간격 조절 */
-  /* background-color: rgb(98, 219, 61); */
-}
-
-.tab.active {
-  background-color: #fff;
-  border-bottom: none;
-}
-
-.tab_content {
-  display: flex;
-}
-.tab_pane {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tab_pane.active {
-  display: flex;
-}
-
-/* 탭 버튼 클릭시 출력되는 텍스트 이미지 */
-.tab_pane img {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* 탭 버튼 클릭시 출력되는 텍스트 */
-.tab_pane p {
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: center;
-}
-</style>
-
+  <title>강남대공원</title>
 </head>
+
 <body>
-  
-    <div class="banner_logo"><p>강남대공원</p></div>
-    <div class="header_menu"></div>
-
-    <!-- 소개 페이지 인트로 배너 -->
+  <div class="wrap">
+    <div class="banner_logo">
+      <span class="logo">강남대공원</span>
+      <img src="../images/menu_button.svg" class="menu_toggle_btn" alt="toggle_btn svg"></img> <!-- 모바일에서만 사용하는 버튼 -->
+    </div>
+    <div class="header_menu">
+      <div> 
+        <div class="menu_title"> <!-- 메인 메뉴 -->
+          <span>소개</span>
+          <img src="../images/down.svg" alt="down svg"/>
+        </div> 
+        <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+          <ul>
+              <li><a href="">벚나무산책길</a></li>
+              <li><a href="">식물원</a></li>
+              <li><a href="">중앙광장</a></li>
+              <li><a href="">생태호수</a></li>
+          </ul>
+        </div>
+      </div>
+      <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <sapn>행사/예약</sapn>
+            <img src="../images/down.svg" alt="down svg"/>
+          </div> 
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">행사목록</a></li>
+              <li><a href="">예약확인</a></li>
+            </ul>
+          </div>
+        </div><div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <sapn>시설</sapn>
+            <img src="../images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">안내도</a></li>
+              <li><a href="">주차장</a></li>
+            </ul>
+          </div>
+        </div>
+        <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>이용안내</span>
+            <img src="../images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">오시는길</a></li>
+            </ul>
+          </div>
+        </div>
+        <div> 
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>공지사항</span>
+            <img src="../images/down.svg" alt="down svg"/>
+          </div>
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">게시판</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
     <div class="intro_banner">
-        <img src="../images/b-flower_cus.jpg"/>
+      <img src="../images/b-flower_1.jpg" alt="소개페이지 대표이미지" />
     </div>
 
-    <!-- 소개 페이지 메뉴 -->
+    <!-- ======== 소개 페이지 메뉴 ======== -->
     <div class="intro_menu">
-
-      <!-- 탭 메뉴 -->
-      <div class="tabs">
-        <button class="tab active" data-tab="tab1">벚나무산책길</button>
-        <button class="tab" data-tab="tab2">식물원</button>
-        <button class="tab" data-tab="tab3">중앙광장</button>
-        <button class="tab" data-tab="tab4">생태호수</button>
-      </div>
-      
-      <!-- 탭 버튼 클릭시 출력되는 이미지, 텍스트 -->
-      <div class="tab_content">
-        <div id="tab1" class="tab_pane active">
-          <img src="../images/Test-1.jpg">
-          <p>맑은 공기를 마시며 벚나무 산책길을 걸어 보세요.</p>
-        </div>
-        <div id="tab2" class="tab_pane">
-          <img src="../images/Test-2.jpg">
-          <p>식물원 입니다.</p>
-        </div>
-        <div id="tab3" class="tab_pane">
-          <img src="../images/Test-3.jpg">
-          <p>중앙광장 입니다.</p>
-        </div>
-        <div id="tab4" class="tab_pane">
-          <img src="../images/Test-4.jpg">
-          <p>생태호수 입니다.</p>
-        </div>
-      </div>
-  
-    </div>
-
-
-    <!-- footer 부분 -->
-    <div class="footer">
-        <ul>
-            <li><a>개인정보처리방침</a></li>
-            <li><a>이메일무단수집거부</a></li>
-            <li><a>서비스이용약관</a></li>
+    
+      <div class="tab">
+        <ul class="tab_menu">
+          <li class="active"><a href="#tab_1">벚나무산책길</a></li>
+          <li><a href="#tab_2">식물관</a></li>
+          <li><a href="#tab_3">중앙광장</a></li>
+          <li><a href="#tab_4">생태호수</a></li>
         </ul>
-        <div><p>(우편번호)서울시 강남구 ~</p>
-        <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
-        <p>&copy; copyrights all reserved.</p></div>
+        
+        <div class="tab_content">
+          <div id="tab_1" class="tab_pane active">
+            <h1>벚나무산책길</h1>
+            <input type="button" value="지도보기">
+            <img src="../images/blossom_road.jpg" alt="Image 1">
+            <p>국회는 국무총리 또는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+              누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 
+              청구할 권리를 가진다.</p>
+          </div>
+          <div id="tab_2" class="tab_pane">
+            <h1>식물원</h1>
+            <input type="button" value="지도보기">
+            <img src="../images/graden1.jpg" alt="Image 2">
+            <p>국가는 청원에 대하여 심사할 의무를 진다. 선거에 관한 경비는 법률이 정하는 
+              경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다.</p>
+          </div>
+          <div id="tab_3" class="tab_pane">
+            <h1>중앙광장</h1>
+            <input type="button" value="지도보기">
+            <img src="../images/central park.jpg" alt="Image 3">
+            <p>국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 
+              국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 
+              국가는 사회보장·사회복지의 증진에 노력할 의무를 진다.</p>
+          </div>
+          <div id="tab_4" class="tab_pane">
+            <h1>생태호수</h1>
+            <input type="button" value="지도보기">
+            <img src="../images/fountain.jpg" alt="Image 4">
+            <p>누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을 권리가 있음을 
+              고지받지 아니하고는 체포 또는 구속을 당하지 아니한다. 체포 또는 구속을 당한 자의 
+              가족등 법률이 정하는 자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-  
 
-    <script>
-      // 첫 번째 탭 버튼을 활성화
-      $('.tab').first().addClass('active');
-      
-      // 탭 버튼 클릭 시 탭 내용 변경
-      $('.tab').on('click', function() {
+    <div class="footer">Footer</div>
+  </div>
 
-        // 모든 탭 버튼의 active 클래스 제거
-        $('.tab').removeClass('active');
-        
-        // 클릭한 탭 버튼에 active 클래스 추가
-        $(this).addClass('active');
-        
-        // 모든 탭 내용의 active 클래스 제거
-        $('.tab_pane').removeClass('active');
-        
-        // 클릭한 탭 버튼에 해당하는 탭 내용의 active 클래스 추가
-        const tabId = $(this).data('tab');
-        $(`#${tabId}`).addClass('active');
-      });
-      </script>
-
+  <!-- 자바스크립트 추가 -->
+  <!-- 모바일일 경우 -->
+  <script type="text/javascript" src="../js/menu.js" media="(max-width:767px)"></script>
+  <!-- 태블릿일 경우 -->
+  <script type="text/javascript" src="../js/menu_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>
+  <!-- pc일 경우 -->
+  <script type="text/javascript" src="../js/menu_pc.js" media="(min-width:1024px)"></script>
+  <!-- 소개페이지 관련 외부js -->
+  <script tyo="text/javascript" src="../js/intro.js"></script>
 </body>
+
 </html>
