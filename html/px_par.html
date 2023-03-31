@@ -8,136 +8,169 @@
     <link href="../css/JJWresete.css" rel="stylesheet">
     <title>주차장 안내</title>
     <style>
-        header {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+        body>div{
+            margin-bottom: 5%;
         }
-
-        #px_par_map {
-            text-align: center;
-            font-size: 1rem;
-            margin-bottom: 20px;
+        header {/* 로고부분 임시 */
+        text-align: center;
+        font-size: 4.5vw;
+        margin-bottom: 20px;
         }
-
-        img {
+        #px_par {/* 주차장 로고 부분 */
+        text-align: center;
+        font-size: 3vw;
+        }
+        #px_par_map {/* 주차장 이미지 */
             width: 100%;
             height: 10%;
-            margin-bottom: 20px;
         }
 
-        table {
+        table {/* 주차요금 표 */
             border-collapse: collapse;
             /* 2줄을 한줄로 */
             /* 테두리 사이의 간격을 한줄로 바꾼다 */
             width: 100%;
-            margin-bottom: 20px;
         }
-
-        tr {
-            height: 60px;
-            /* 표의 세로 크기 */
+        tr{
+            height: 12vw;/* 표의 세로 크기 */
         }
-
-        td,
+        td,th {
+            font-weight: 3vw;
+            font-size: 5vw;/* 글자크기 */
+            text-align: center;/* 글자 가운데로 */
+            border: 1px solid black;/* 표 아래 선*/
+        }
         th {
-            text-align: center;
-            /* 글자 가운데로 */
-            border: 1px solid black;
-            /* 표 아래 선*/
-        }
-
-        th {
+            width: 33.33333333%;
             background-color: silver;
         }
-        #px_par_s{
-            margin-bottom: 20px;
+        #px_par_s{/* 할인정보 글자크기*/
+            font-size: 3vw;
         }
-        #px_par_pay{
-            margin-bottom: 20px;
+        #px_par_pay{/* 운영시간,결제수단 글자크기 */
+            font-size: 6vw;
         }
-
-        #px_par_s li {
+        #px_par_s li {/* 할인정보 간격 */
             margin: 3% 0%;
             padding: 0.1% 0%;
         }
 
-        footer {
-            width: 100%;
-            background-color: silver;
-        }
+    /*푸터부분 임시*/
+    footer {
+        width: 100%;
+        background-color: silver;
+    }
+    footer>ol>li {
+        font-size: 3.5vw;
+        display: inline-block;
+    }
+    footer>ol {
+        text-align: center;
+    }
+    footer>ul {
+        margin-top: 30px;
+        margin-left: 8%;
+    }
+    footer>ul>li{
+        font-size: 3vw;
+    }
 
-        footer>ol>li {
-            display: inline-block;
+    @media all and (min-width:700px){
+        header {/* 헤더부분 임시 */
+        font-size: 2vw;
+    }
+    #px_par {/* 오시는 길, 대중교통안내*/
+        font-size: 1.5vw;
+    }
+        #px_par_map {/* 맵 지도 부분 */
+            display: block;
+            margin: auto;
+            width: 60%;
+    }
+    #px_par_pay {
+        /* 주소 부분 */
+       font-size: 3vw;
+        margin-left: 10%;
+    }
+    table {/* 주차요금 표 */
+            border-collapse: collapse;
+            /* 2줄을 한줄로 */
+            /* 테두리 사이의 간격을 한줄로 바꾼다 */
+            margin: auto;
+            width: 70%;
         }
+        tr{
+            height: 5vw;/* 표의 세로 크기 */
+        }
+        td,th {
+            font-weight: 2vw;
+            font-size: 2vw;/* 글자크기 */
+            
+        }
+        #px_par_s{/* 할인정보 글자크기*/
+            margin: auto;
+            width: 80%;
+            font-size: 1vw;
+        }
+        #px_par_pay{/* 운영시간,결제수단 글자크기 */
+            font-size: 1.7vw;
+            margin: auto;
+            width: 80%;
+            margin-bottom: 5%;
+        }
+        /* 푸터부분 */
+    footer>ol>li {
+        font-size: 2vw;
+        display: inline-block;
+    }
+    footer>ul>li{
+        font-size: 1vw;
+    }
+    }
 
-        footer>ol {
-            text-align: center;
-        }
-
-        footer>ul {
-            margin-top: 30px;
-            margin-left: 8%;
-        }
     </style>
 </head>
 
 <body>
-    <header>
+    <header><!-- 로고 -->
         <h1>강남 대공원</h1>
     </header>
-    <div id="px_par_map">
+
+    <div id="px_par"><!-- 소제목 -->
         <h1>주차장 안내</h1>
     </div>
 
-    <div><img src="../images/주차장.jpg"></div>
+    <div><!-- 주차장 이미지 -->
+        <img id="px_par_map" src="../images/주차장.jpg"></div>
 
-    <div id="px_par_pay">
+    <div id="px_par_pay"><!-- 운영시간,주차요금 -->
         <ol>
-            <li>
-                <h2>* 운영시간 : 24시간</h2>
-            </li>
-            <li>
-                <h2>* 주차요금 안내(후불)</h2>
-            </li>
+            <li>* 운영시간 : 09:00 ~ 18:00</li>
+            <li>* 주차요금 안내(후불)</li>
         </ol>
     </div>
 
-    <div>
+    <div><!-- 차종,요금,비고 표 -->
         <table>
-            <tr><!-- 행 -->
-                <th>
-                    <h2>차종</h2>
-                </th><!-- 표 제목 -->
-                <th>
-                    <h2>요금</h2>
-                </th><!-- 표 제목 -->
-                <th>
-                    <h2>비고</h2>
-                </th>
+            <tr><!-- 표 제목 -->
+                <th>차종</th>
+                <th>요금</th>
+                <th>비고</th>
             </tr>
-            <tr>
-                <td>
-                    <h2>소형</h2>
-                </td>
-                <td>
-                    <h2>시간당 500원</h2>
-                </td>
+            <tr><!-- 2번쩨 줄 -->
+                <td>소형</td>
+                <td>시간당 500원</td>
                 <td></td>
             </tr>
-            <tr>
-                <td>
-                    <h2>중형</h2>
-                </td>
-                <td>
-                    <h2>시간당 800원</h2>
-                </td>
+            <tr><!-- 3번째 줄 -->
+                <td>중형</td>
+                <td>시간당 800원</td>
                 <td></td>
             </tr>
         </table>
     </div>
 
-    <div id="px_par_s">
+    <div id="px_par_s"><!-- 할인정보 -->
         <ul>
             <li>장애인 및 국가유공자 : 80% 할인 (장애인 자동차표지를 부착하고
                 장애인이 탑승하여 장애인등록증을 제시, 유공자는 카드 및 증서를 제시해야 할인가능)</li>
@@ -146,34 +179,21 @@
         </ul>
     </div>
 
-    <div id="px_par_pay">
+    <div id="px_par_pay"><!-- 결제수단,문의 -->
         <ol>
-            <li>
-                <h2>* 결제 수단 : 신용카드,체크카드,교통카드</h2>
-            </li>
-            <li>
-                <h2>* 문의 : 010 - 1234 - 5678</h2>
-            </li>
+            <li>결제수단:신용카드,체크카드,교통카드</li>
+            <li>.</li>
+            <li> 문의 : 010 - 1234 - 5678</li>
         </ol>
     </div>
 
-    <footer>
+    <footer><!-- 풋터부분 임시-->
         <ol>
-            <li>
-                <h3>개인정보처리방침</h3>
-            </li>
-            <li>
-                <h2>I</h2>
-            </li>
-            <li>
-                <h3>이메일무단수집거부</h3>
-            </li>
-            <li>
-                <h2>I</h2>
-            </li>
-            <li>
-                <h3>시비스이용약관</h3>
-            </li>
+            <li>개인정보처리방침</li>
+            <li>I</li>
+            <li>이메일무단수집거부</li>
+            <li>I</li>
+            <li>시비스이용약관</li>
         </ol>
         <ul>
             <li>(우편번호)서울시 강남구 ~~로</li>
