@@ -6,135 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/event_book.css">
     <title>Document</title>
-    <style>
-        /* 헤더 영역 */
-        .header {
-            width: 100%;
-            height: 200px;
-            background-color: aquamarine;
-        }
-
-        /* 행사 예약 */
-        .event_book_title {
-            text-align: center;
-            height: 70px;
-            margin-top: 80px;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        /* 행사 예약 내용 */
-        .event_book_info {
-            height: 380px;
-            width: 1040px;
-            display: flex;
-            margin: 0 auto;
-            justify-content: space-around;
-            align-items: center;
-            border: 1.5px solid gray;
-            text-align: center;
-        }
-
-        /* 행사 예약 내용 행사이름 */
-        .event_book_info h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* 행사 예약 내용 텍스트 */
-        .event_book_info p {
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        /* 행사 예약 내용 텍스트 영역 */
-        .event_book_info div {
-            width: 40%;
-            margin: 0 auto;
-        }
-
-        /* 행사 예약 내용 분리선 */
-        .info_line {
-            border-right: 1.5px solid gray;
-            height: 80%;
-        }
-
-        /* 행사 예약 달력 */
-        .event_book_date {
-            height: 630px;
-            width: 880px;
-            margin: 40px auto;
-            border: 1px solid black;
-        }
-
-        /* 행사 예약 폼 */
-        .event_book_form {
-            height: 380px;
-            width: 880px;
-            margin: 0 auto;
-            border: 1px solid gray;
-            padding-top: 30px;
-        }
-
-        /* 행사 예약 폼 입력목록 항목 영역 */
-        .event_book_form li {
-            margin: 0px auto;
-            width: 535px;
-            line-height: 56px;
-        }
-
-        /* 행사 예약 폼 입력목록 항목 이름 */
-        .event_book_form label {
-            display: inline-block;
-            width: 150px;
-        }
-
-        /* 행사 예약 폼 입력목록 입력 영역 */
-        .book_input {
-            height: 25px;
-            width: 300px;
-        }
-
-        /* 예약 버튼 */
-        input[type="submit"] {
-            height: 40px;
-            width: 280px;
-            display: block;
-            margin: 30px auto 70px auto;
-            border: none;
-            border-radius: 10px;
-            text-align: center;
-            line-height: 40px;
-            color: white;
-            background-color: rgb(27, 161, 226);
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.0rem;
-        }
-
-        /* 예약 시 주의사항 내용 */
-        .event_book_note {
-            width: 880px;
-            margin: 80px auto;
-            line-height: 23px;
-            font-size: 0.9rem;
-            color: rgb(68,68,68);
-            font-weight: bold;
-        }
-
-        /* 예약 시 주의사항 텍스트 */
-        .event_book_note h1 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: black;
-        }
-    </style>
-
-    <script>
-
-    </script>
 </head>
 
 <body>
@@ -147,7 +20,7 @@
     <!-- 행사 예약 내용 -->
     <div class="event_book_info">
         <div>
-            <h1>2023 메타세콰이어길 걷기</h1>
+            <h1>2023 메타세콰이어 걷기</h1>
         </div>
         <!-- 행사 예약 내용 분리선 -->
         <span class="info_line"></span>
@@ -161,14 +34,16 @@
         </div>
     </div>
 
-    <!-- 행사 예약 달력 -->
-    <div class="event_book_date"></div>
-
     <!-- 행사 예약 폼 -->
-    <form action="행사 예약 폼" name="event_book_form">
-        <div class="event_book_form">
+    <!-- 보안성이 높은 post 사용 -->
+    <form action="행사 예약 폼" class="event_book_form" name="event_book_form" method="post">
+
+        <!-- 행사 예약 달력 -->
+        <div class="event_book_date"></div>
+
+        <!-- 행사 예약 폼 입력목록 영역 -->
+        <div>
             <ul>
-                <!-- 행사 예약 폼 입력목록 영역 -->
                 <li>
                     <!-- 행사 예약 폼 입력목록 항목 이름 -->
                     <label for="event_date">신청날짜</label>
@@ -180,26 +55,27 @@
                     <input class="book_input" type="text" name="event_name" required>
                 </li>
                 <li>
-                    <label for="event_phone">연락처 </label>
-                    <input class="book_input" type="text" name="event_phone" required>
+                    <label>신청인원 </label>
+                    <button>-</button>
+                    <div class="event_count"></div>
+                    <button>+</button>
                 </li>
                 <li>
-                    <label for="event_count">신청인원 </label>
-                    <input class="book_input" type="text" name="event_count" required>
+                    <label for="event_phone">연락처 </label>
+                    <input class="book_input" type="text" name="event_phone" required>
                 </li>
                 <li>
                     <label for="event_accept">개인정보활용동의 </label>
                     <input type="checkbox" name="isChecked" id="isChecked">
                 </li>
+                <!-- 예약버튼 -->
+                <input type="submit" class="event_book_btn" value="예약">
             </ul>
         </div>
-
-        <!-- 예약버튼 -->
-        <input type="submit" class="event_book_btn" value="예약">
     </form>
 
     <!-- 예약 시 유의사항 내용 -->
-    <div class="event_book_note"> 
+    <div class="event_book_note">
         <h1>예약 시 주의사항</h1>
         <p>- 예약은 1인 3매까지 가능합니다.</p>
         <p>- 예매취소 없이 참석하지 않으면 향후 3회간 예매가 불가하오니 부득이 참석이 어려운 경우에는 예매를 취소하여 주시기 바랍니다.</p>

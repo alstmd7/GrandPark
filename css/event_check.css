@@ -1,0 +1,150 @@
+/* 헤더 영역 */
+.header {
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+/* 행사 예약 및 취소 */
+.event_book_title {
+    text-align: center;
+    height: 70px;
+    margin-top: 80px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 제목 밑 분리선 */
+hr {
+    width: 80%;
+}
+
+/* 예약번호 조회 */
+.event_check_search {
+    margin: 118px auto 70px auto;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row column;
+}
+
+/* 예약번호 조회 내부 영역 */
+.event_check_search div {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+/* 예약번호 입력 칸 */
+#book_num {
+    margin-left: 40px;
+    height: 39px;
+    width: 520px;
+    border: 1px solid black;
+    border-radius: 8px;
+    /* 소문자를 입력해도 대문자로 보여줌 -> 값은 소문자로 저장됨 */
+    text-transform: uppercase;
+}
+
+/* 예약번호 조회 버튼 */
+#event_check_btn {
+    height: 45px;
+    width: 110px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(27, 161, 226);
+    margin-left: -110px;
+    cursor: pointer;
+}
+
+/* 예약번호 조회 영역 */
+.event_check_info {
+    padding-top: 38px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 예약번호 조회 정보 출력 이름 */
+.event_check_info p {
+    width: 640px;
+    text-align: left;
+}
+
+/* 예약번호 조회 정보 출력 칸 */
+.event_check_info div {
+    height: 50px;
+    width: 640px;
+    margin: 10px 0;
+    line-height: 50px;
+    border: 1px solid gray;
+}
+
+/* 예약취소 버튼 */
+#event_check_cancel {
+    height: 46px;
+    width: 110px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+/* width 값이 720px 미만일 때 */
+@media all and (max-width:720px) {
+
+    /* 예약번호 입력 영역 */
+    .event_check_search {
+        /* 예약번호 조회부분을 열 방향으로 배치 */
+        flex-direction: column;
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    /* 예약번호 입력 칸 */
+    #book_num {
+        margin: 10px 0; 
+        height: 39px;
+        width: 95vw;
+        max-width: 520px;
+        border: 1px solid black;
+        border-radius: 8px;
+    }
+
+    /* 예약번호 조회 버튼 */
+    #event_check_btn {
+        height: 46px;
+        width: 110px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.0rem;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(27, 161, 226);
+        margin-left: 0;
+        cursor: pointer;
+    }
+
+    /* 예약번호 조회 정보 출력 이름 */
+    .event_check_info p {
+        width: 95%;
+    }
+
+    /* 예약번호 조회 정보 출력 칸 */
+    .event_check_info div {
+        width: 95%;
+    }
+
+}

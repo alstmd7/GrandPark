@@ -1,0 +1,188 @@
+/* 헤더 영역 */
+.header {
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+/* 행사 예약 */
+.event_book_title {
+    text-align: center;
+    height: 70px;
+    margin-top: 80px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 행사 예약 내용 */
+.event_book_info {
+    height: 380px;
+    width: 75%;
+    max-width: 1040px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    border: 1.5px solid gray;
+}
+
+/* 행사 예약 내용 행사이름 */
+.event_book_info h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 행사 예약 내용 텍스트 */
+.event_book_info p {
+    margin: 30px 0;
+    text-align: left;
+}
+
+/* 행사 예약 내용 텍스트 영역 */
+.event_book_info div {
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* 행사 예약 내용 분리선 */
+.info_line {
+    border-right: 1.5px solid gray;
+    height: 80%;
+}
+
+/* 행사 예약 달력 */
+.event_book_date {
+    height: 490px;
+    width: 490px;
+    border: 1px solid black;
+}
+
+/* 행사 예약 폼 */
+.event_book_form {
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 행사 예약 폼 입력 영역 */
+.event_book_form ul {
+    height: 430px;
+    width: 490px;
+    padding-top: 60px;
+    border: 1px solid black;
+}
+
+/* 행사 예약 폼 입력목록 항목 영역 */
+.event_book_form li {
+    line-height: 56px;
+}
+
+/* 행사 예약 폼 입력목록 항목 이름 */
+.event_book_form label {
+    display: inline-block;
+    width: 150px;
+}
+
+/* 행사 예약 폼 입력목록 입력 영역 */
+.book_input {
+    height: 25px;
+    width: 300px;
+}
+
+/* 신청인원 항목 */
+.event_count {
+    display: inline-block;
+}
+
+/* 예약 버튼 */
+input[type="submit"] {
+    height: 40px;
+    width: 270px;
+    display: block;
+    margin: 30px auto 70px auto;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    background-color: rgb(27, 161, 226);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.0rem;
+}
+
+/* 예약 시 주의사항 내용 */
+.event_book_note {
+    width: 95%;
+    max-width: 960px;
+    margin: 80px auto;
+    line-height: 23px;
+    font-size: 0.9rem;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+/* 예약 시 주의사항 텍스트 */
+.event_book_note h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+/* width 값이 962px 미만일 때 */
+@media all and (max-width:962px) {
+
+    /* 행사 예약 내용 */
+    .event_book_info {
+        height: 380px;
+        /* 행사 내용을 열 방향으로 배치 */
+        flex-direction: column;
+        /* 행사 내용을 열 가운데로 정렬 */
+        justify-content: center;
+        /* h1태그 margin : 0, p태그 top-margin : 30px 차이조절 */
+        padding-top: 30px;
+    }
+
+    /* 행사 예약 내용 텍스트 영역 */
+    .event_book_info div {
+        width: 95%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    /* 행사 예약 내용 분리선 */
+    .info_line {
+        /* 분리선 보이지 않게 처리 */
+        display: none;
+    }
+
+    /* 행사 예약 내용 행사이름 */
+    .event_book_info h1 {
+        text-align: left;
+    }
+
+    /* 행사 예약 폼 */
+    .event_book_form {
+        /* height: 50vh;
+        max-height: 300px; */
+        width: 95%;
+        /* max-width: 880px;
+        margin: 0 auto;
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+
+
+    /* 행사 예약 폼 입력목록 입력 영역 */
+    .book_input {
+        /* height: 25px; */
+        width: 95vw;
+        max-width: 300px;
+    }
+}

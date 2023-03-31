@@ -6,96 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/event_detail.css">
     <title>Document</title>
-    <style>
-        /* 헤더 영역 */
-        .header {
-            width: 100%;
-            height: 200px;
-            background-color: aquamarine;
-        }
-
-        /* 행사 이름 영역 */
-        .event_detail_title {
-            text-align: center;
-            height: 70px;
-            margin-top: 80px;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        /* 행사 내용 영역 */
-        .event_detail_info {
-            height: 170px;
-            width: 620px;
-            display: flex;
-            margin: 0 auto;
-            justify-content: space-around;
-            align-items: center;
-            border: 1px solid black;
-        }
-
-        /* 행사 내용 글 */
-        .event_detail_info p{
-            margin: 30px 0;
-        }
-
-        /* 행사 예약 내용 글 영역 */
-        .event_detail_info div {
-            width: 45%;
-            margin: 0 auto;
-        }
-
-        /* 행사 예약 내용 세로줄 */
-        .info_line {
-            border-right: 1.5px solid gray;
-            height: 80%;
-        }
-
-        /* 예약버튼 */
-        .event_detail_btn {
-            height: 40px;
-            width: 280px;
-            margin: 25px auto;
-            border-radius: 10px;
-            text-align: center;
-            line-height: 40px;
-            color: white;
-            background-color: rgb(27,161,226);
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* 행사 포스터 */
-        .event_detail_poster {
-            height: 1080px;
-            width: 960px;
-            margin: 0 auto;
-            background-color: greenyellow;
-        }
-
-        /* 행사 시 유의사항 */
-        .event_detail_note {
-            width: 960px;
-            margin: 80px auto;
-            line-height: 23px;
-            font-size: 0.9rem;
-            color: rgb(68,68,68);
-            font-weight: bold;
-        }
-
-        /* 행사 시 유의사항 텍스트 */
-        .event_detail_note h1 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: black;
-        }
-    </style>
-
-    <script>
-
-    </script>
 </head>
 
 <body>
@@ -103,7 +15,7 @@
     <header class="header"></header>
 
     <!-- 행사 이름 -->
-    <div class="event_detail_title">2023 메타세콰이어길 걷기</div>
+    <div class="event_detail_title">2023 메타세콰이어 걷기</div>
 
     <!-- 행사 내용 -->
     <div class="event_detail_info">
@@ -112,6 +24,7 @@
             <p>접수기간 | 2023.03.31 ~ 2023.04.30</p>
             <p>행사장소 | 식물원 옆 메타세콰이어길</p>
         </div>
+        <!-- 행사 예약 내용 분리선 -->
         <span class="info_line"></span>
         <div>
             <p>행사정원 | 하루 30명</p>
@@ -121,13 +34,15 @@
     </div>
 
     <!-- 예약버튼 -->
-    <a href="event_book.html"><div class="event_detail_btn">예약하기</div></a>
+    <a href="event_book.html">
+        <div class="event_detail_btn">예약하기</div>
+    </a>
 
     <!-- 행사 포스터 -->
     <div class="event_detail_poster"></div>
 
     <!-- 행사 시 유의사항 -->
-    <div class="event_detail_note"> 
+    <div class="event_detail_note">
         <!-- 행사 시 유의사항 텍스트 -->
         <h1>행사 유의사항</h1>
         <p>- 모든 서비스의 이용은 담당 기관의 규정에 따릅니다. 각 시설의 규정 및 허가조건을 반드시 준수하여야 합니다.</p>

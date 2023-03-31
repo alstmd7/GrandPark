@@ -1,0 +1,119 @@
+        /* 헤더 영역 */
+        .header {
+            width: 100%;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        /* 행사 이름 영역 */
+        .event_detail_title {
+            text-align: center;
+            height: 70px;
+            margin-top: 80px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* 행사 내용 영역 */
+        .event_detail_info {
+            height: 170px;
+            width: 75%;
+            max-width: 620px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        /* 행사 예약 내용 글 영역 */
+        .event_detail_info div {
+            height: 100%;
+            width: 45%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        /* 행사 예약 내용 분리선 */
+        .info_line {
+            border-right: 1.5px solid gray;
+            height: 80%;
+        }
+
+        /* 행사 예약 내용 텍스트 */
+        .event_detail_info p {
+            /* margin-top: 30px; */
+            /* text-align: left; */
+        }
+
+        /* 예약버튼 */
+        .event_detail_btn {
+            height: 40px;
+            width: 280px;
+            margin: 25px auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            background-color: rgb(27, 161, 226);
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* 행사 포스터 */
+        .event_detail_poster {
+            height: 1080px;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: greenyellow;
+        }
+
+        /* 행사 시 유의사항 */
+        .event_detail_note {
+            width: 95%;
+            max-width: 960px;
+            margin: 80px auto;
+            line-height: 23px;
+            font-size: 0.9rem;
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            padding-left: 15px;
+        }
+
+        /* 행사 시 유의사항 텍스트 */
+        .event_detail_note h1 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        /* width 값이 790px 미만일 때 */
+        @media all and (max-width:790px) {
+
+            /* 행사 내용 영역 */
+            .event_detail_info {
+                height: 352px;
+                /* 행사 내용을 열 방향으로 배치 */
+                flex-direction: column;
+                /* 행사 내용을 열 가운데로 정렬 */
+                justify-content: center;
+            }
+
+            /* 행사 예약 내용 글 영역 */
+            .event_detail_info div {
+                width: 95%;
+                /* div 2개가 2열로 배치되므로 높이를 절반으로 변경 */
+                height: 50%;
+                max-width: 290px;
+                margin: 0 auto;
+            }
+
+            /* 행사 예약 내용 분리선 */
+            .info_line {
+                /* 분리선 보이지 않게 처리 */
+                display: none;
+            }
+        }

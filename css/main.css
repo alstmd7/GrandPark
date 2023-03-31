@@ -235,7 +235,7 @@ div.main_info>div.main_info_content{
         /* 중앙 정렬 위해 flex 속성 사용*/
         display: flex;
         /* 중앙 정렬 */
-        justify-content: center;
+        justify-content: center; /* 주축정렬 (세로정렬) */
         align-items: center;
         
     }

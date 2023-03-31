@@ -1,0 +1,88 @@
+/* 헤더 영역 */
+.header {
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+/* 타이틀 이미지 영역 */
+.event_list_title {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+/* 타이틀 이미지 가상영역 */
+.event_list_title::after {
+    width: 100%;
+    height: 50vh;
+    content: "";
+    background: url(../images/event1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-position: bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* 행사 목록 이미지 영역 */
+.event_list_img a {
+    height: 40vh;
+    margin-top: 1.5vh;
+    background: url(../images/event1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative;
+}
+
+/* 행사 목록 이미지 */
+.event_list_img img {
+    width: 100%;
+}
+
+/* 행사 목록 이미지 행사이름 */
+.event_list_name {
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 4vh 3vw;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+}
+
+/* 행사 목록 이미지 자세히보기 */
+.event_list_detail {
+    color: white;
+    font-size: 1.2vw;
+    position: absolute;
+    bottom: 3vh;
+    left: 3vw;
+    font-weight: bold;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+}
+
+/* 행사 목록 이미지 행사날짜 */
+.event_list_date {
+    color: white;
+    font-size: 1.5vw;
+    position: absolute;
+    bottom: 3vh;
+    right: 3vw;
+    font-weight: bold;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+}
+
+/* 행사 목록 페이징 */
+.event_list_page {
+    margin: 80px 0;
+    text-align: center;
+}
