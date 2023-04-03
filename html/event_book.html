@@ -7,7 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/event_book.css">
+    <script src="../js/jquery-3.6.4.js"></script>
     <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            //예약 버튼 클릭 시
+            $(".event_book_btn").click(function (){
+                // 체크박스에 체크가 되있지 않으면
+                if ($("#isChecked").is(":checked") == false) {
+                    // 개인정보활용에 동의해주세요. 텍스트 노출
+                    $(".event_accept").text("개인정보활용에 동의해주세요.")
+                    console.log($("#isChecked").is(":checked"))
+                    // 그렇지 않으면 공백으로 노출
+                } else {
+                    $(".event_accept").text("")
+                }
+            })
+
+            // 변수 선언
+            let count_num = 0;
+            const plusBtn = document.querySelector("#count_plus");
+            const minusBtn = document.querySelector("#count_minus");
+            const event_count = document.querySelector(".event_count")
+            
+            // + 버튼 클릭 시 
+            plusBtn.addEventListener("click", function(){
+                // 카운트 숫자가 50보다 작으면
+                if (count_num < 50) {
+                    // 카운트를 1 증가시키고 텍스트 변경
+                    count_num += 1;
+                    event_count.textContent = count_num;
+                }
+            })
+            // - 버튼 클릭 시 
+            minusBtn.addEventListener("click", function(){
+                // 카운트 숫자가 0보다 크면
+                if (count_num > 0) {
+                    // 카운트를 1 감소시키고 텍스트 변경
+                    count_num -= 1;
+                    event_count.textContent = count_num;
+                }
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -28,7 +70,7 @@
             <p>행사일시 | 2023.04.01 ~ 2023.04.30</p>
             <p>접수기간 | 2023.03.31 ~ 2023.04.30</p>
             <p>행사장소 | 식물원 옆 메타세콰이어길</p>
-            <p>행사정원 | 하루 30명</p>
+            <p>행사정원 | 하루 50명</p>
             <p>참가비용 | 무료</p>
             <p>문의전화 | 012-345-6789</p>
         </div>
@@ -47,7 +89,7 @@
                 <li>
                     <!-- 행사 예약 폼 입력목록 항목 이름 -->
                     <label for="event_date">신청날짜</label>
-                    <div id="event_date"></div>
+                    <span id="event_date"></span>
                 </li>
                 <li>
                     <label for="event_name">신청자명</label>
@@ -56,17 +98,18 @@
                 </li>
                 <li>
                     <label>신청인원 </label>
-                    <button>-</button>
-                    <div class="event_count"></div>
-                    <button>+</button>
+                    <button id="count_minus">-</button>
+                    <span class="event_count">0</span>
+                    <button id="count_plus">+</button>
                 </li>
                 <li>
                     <label for="event_phone">연락처 </label>
                     <input class="book_input" type="text" name="event_phone" required>
                 </li>
                 <li>
-                    <label for="event_accept">개인정보활용동의 </label>
+                    <label for="isChecked">개인정보활용동의 </label>
                     <input type="checkbox" name="isChecked" id="isChecked">
+                    <span class="event_accept"></span>
                 </li>
                 <!-- 예약버튼 -->
                 <input type="submit" class="event_book_btn" value="예약">
@@ -77,8 +120,8 @@
     <!-- 예약 시 유의사항 내용 -->
     <div class="event_book_note">
         <h1>예약 시 주의사항</h1>
-        <p>- 예약은 1인 3매까지 가능합니다.</p>
-        <p>- 예매취소 없이 참석하지 않으면 향후 3회간 예매가 불가하오니 부득이 참석이 어려운 경우에는 예매를 취소하여 주시기 바랍니다.</p>
+        <p>- 예약은 1회 50명까지 가능합니다.</p>
+        <p>- 예약취소 없이 참석하지 않으면 향후 3회간 예약이 불가하오니 부득이 참석이 어려운 경우에는 예약를 취소하여 주시기 바랍니다.</p>
         <p>- 입장은 행사 시작 30분 전부터 가능하며, 행사가 시작되면 입장에 제한을 받을 수 있습니다.</p>
         <p>- 행사시작 10분전까지 예약확인을 하지 않으면 예약은 무효처리 됩니다.</p>
     </div>

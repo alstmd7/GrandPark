@@ -19,8 +19,8 @@ function slideMenu() {
 
 }
 
-
 // 윈도우 로드 시 실행
 $(document).ready(function () {
+    // 메인 슬라이드 메뉴
     slideMenu();
 });

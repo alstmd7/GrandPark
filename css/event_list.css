@@ -14,11 +14,12 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    font-size: 3vw;
+    font-size: 2vw;
     font-weight: bold;
+    text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
 }
 
-/* 타이틀 이미지 가상영역 */
+/* 텍스트는 불투명하지 않게 타이틀 이미지 가상영역  */
 .event_list_title::after {
     width: 100%;
     height: 50vh;
@@ -35,10 +36,21 @@
 }
 
 /* 행사 목록 이미지 영역 */
-.event_list_img a {
-    height: 40vh;
+.event_list_img a:first-child {
+    height: 45vh;
     margin-top: 1.5vh;
     background: url(../images/event1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative; 
+}
+
+/* 행사 목록 이미지 영역 */
+.event_list_img a:nth-child(2) {
+    height: 45vh;
+    margin-top: 1.5vh;
+    background: url(../images/b-flower_cus.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -56,7 +68,7 @@
     font-size: 3vw;
     font-weight: bold;
     margin: 4vh 3vw;
-    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
 }
 
 /* 행사 목록 이미지 자세히보기 */

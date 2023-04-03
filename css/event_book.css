@@ -55,53 +55,74 @@
 .event_book_date {
     height: 490px;
     width: 490px;
-    border: 1px solid black;
+    border: 1px solid gray;
 }
 
 /* 행사 예약 폼 */
 .event_book_form {
-    margin: 80px auto;
+    width: 95%;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 행사 예약 폼 각 영역 */
+.event_book_form>div {
+    height: 490px;
+    width: 490px;
+    border: 1px solid gray;
+    margin: 40px;
 }
 
 /* 행사 예약 폼 입력 영역 */
-.event_book_form ul {
-    height: 430px;
-    width: 490px;
-    padding-top: 60px;
-    border: 1px solid black;
+.event_book_form div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* 행사 예약 폼 입력목록 항목 영역 */
 .event_book_form li {
-    line-height: 56px;
+    width: 95%;
+    margin: 10px auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* 행사 예약 폼 입력목록 항목 이름 */
 .event_book_form label {
     display: inline-block;
     width: 150px;
+    margin: 5px 0;
 }
 
 /* 행사 예약 폼 입력목록 입력 영역 */
 .book_input {
     height: 25px;
-    width: 300px;
+    width: 250px;
 }
 
 /* 신청인원 항목 */
 .event_count {
     display: inline-block;
+    margin: 0 10px;
+}
+
+/* 개인정보활용동의 알림 텍스트 */
+.event_accept {
+    color: red;
+    font-size: 0.9rem;
 }
 
 /* 예약 버튼 */
 input[type="submit"] {
     height: 40px;
-    width: 270px;
+    width: 250px;
     display: block;
-    margin: 30px auto 70px auto;
+    margin: 30px auto;
     border: none;
     border-radius: 10px;
     text-align: center;
@@ -145,6 +166,8 @@ input[type="submit"] {
         justify-content: center;
         /* h1태그 margin : 0, p태그 top-margin : 30px 차이조절 */
         padding-top: 30px;
+        width: 95%;
+        max-width: 415px;
     }
 
     /* 행사 예약 내용 텍스트 영역 */
@@ -165,24 +188,16 @@ input[type="submit"] {
         text-align: left;
     }
 
-    /* 행사 예약 폼 */
-    .event_book_form {
-        /* height: 50vh;
-        max-height: 300px; */
-        width: 95%;
-        /* max-width: 880px;
-        margin: 0 auto;
-        border: 1px solid gray;
-        display: flex;
-        justify-content: center;
-        align-items: center; */
+    /* 행사 예약 폼 각 영역 */
+    .event_book_form div {
+        width: 100%;
+        max-width: 490px;
+        margin: 40px 0px;
     }
-
 
     /* 행사 예약 폼 입력목록 입력 영역 */
     .book_input {
-        /* height: 25px; */
-        width: 95vw;
-        max-width: 300px;
+        width: 95%;
+        max-width: 250px;
     }
 }
