@@ -32,12 +32,13 @@
     .px_intro_map_menu {/* 전체보기 창 오른쪽 위로 */
         position: relative;
     }
-    #px_intro_menu {
+    #px_intro_menu {/*전체 매뉴부분 */
         width: 30%;
         position: absolute;
         top: 0;
         right: 0;
         margin-bottom: 300px;
+        margin-right: 2%; 
     }
 
     #main-menu {/*전체보기*/
@@ -52,7 +53,6 @@
     #main-menu>li>a {/* 전체보기 글자부분 */
          height: 100%;  
         display: block;
-        /* padding: 12px 36px; */   /* 여백 없이 */
         text-align: center;/* 글자 가운데 */
         font-size: 5vw;/* 글자 크기 */
         background-color: bisque;/* 배경색 */
@@ -124,6 +124,96 @@
     footer>ul>li{
         font-size: 3vw;
     }
+
+    @media all and (min-width:1200px) {
+            header {
+                /* 헤더부분 임시 */
+                font-size: 2vw;
+            }
+
+            #px_intro {
+                /* 시설안내*/
+                font-size: 1.5vw;
+            }
+
+            #px_intro_map {
+                /* 시설안내 이미지 */
+                width: 60%;
+                height: 15%;
+                margin-left: 10%;
+                margin-bottom: 11%;
+
+            }
+
+            .menubars {
+                display: block;
+                /* 서브메뉴 보이기 */
+            }
+
+            #px_intro_menu {
+                /*전체 매뉴부분 */
+                width: 15%;
+            }
+
+            #main-menu {
+                /*전체보기*/
+                height: 4vw;
+            }
+            #main-menu>li {/* 전체보기 글자부분 */
+            border: 0.4vw solid black;
+             }
+            #main-menu>li>a{
+                font-size: 2vw;
+                /* 글자 크기 */
+            }
+            #sub-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+            #sub-menu a {
+                /* 서브메뉴 글자부분 */
+                font-size: 2vw;
+            }
+            /*서브메뉴 이벤트*/
+            #text h1 {
+                font-size: 2.5vw;
+                text-align: left;
+            }
+
+            #text li {
+                font-size: 1.5vw;
+                text-align: left;
+            }
+
+            #text img {
+                width: 100%;
+                height: 60%;
+                margin: 0;
+            }
+
+            #text {
+                width: 70%;
+                margin: auto;
+                margin-top: 5%;
+                margin-bottom: 35%;
+            }
+
+            #text>div {
+                width: 50%;
+                float: left;
+
+            }
+
+            /* 푸터부분 */
+            footer>ol>li {
+                font-size: 2vw;
+                display: inline-block;
+            }
+
+            footer>ul>li {
+                font-size: 1vw;
+            }
+        }
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -160,7 +250,7 @@
         <div id="px_intro_menu"><!-- 전체보기 메뉴부분 -->
 
             <ul id="main-menu"><!-- 메인메뉴 -->
-                <li><a href="#" >전체보기</a>
+                <li><a href="#" id="menu">전체보기</a>
                     <ul id="sub-menu"><!-- 서브메뉴 -->
 
                         <div class="button">
@@ -221,65 +311,97 @@
             <img id="px_intro_map" src="../images/i - parking_map.jpg">
         </div>
 
-    <div id="px_intro_info"></div>
-
-    <p><!-- 서브메뉴 이벤트 부분 -->
-    <div id="text">
-        <h1>안내데스크</h1>
-        <li>위치 : 정문바로 오른쪽</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 1111 - 1111</li>
-        <img src="../images/px-1.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>화장실</h1>
-        <li>위치 : 각 건물마다 하나씩 위치</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 2222 - 2222</li><img src="../images/px-2.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>야외공연장</h1>
-        <li>위치 : 정문에서 도보로 500m 직진</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 3333 - 3333</li><img src="../images/px-3.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>캠핑장</h1>
-        <li>위치 : 후문에서 도보로 300m 직진</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 4444- 4444</li><img src="../images/px-4.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>상점/편의시절</h1>
-        <li>위치 : 정문에서 오른쪽으로 도보 200m </li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 5555 - 5555</li><img src="../images/px-5.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>어린이놀이터</h1>
-        <li>위치 : 정문에서 왼쪽으로 도보로 100m</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 6666 - 6666</li><img src="../images/px-6.jpg">
-    </div>
-    </p>
-    <p>
-    <div id="text">
-        <h1>주차장</h1>
-        <li>위치 : 정문에서 바로 밖에 위치</li>
-        <li>이용 시간 : 09:00 ~ 18:00</li>
-        <li>문의전화 : 010 - 7777 - 7777</li><img src="../images/px-7.jpg">
-    </div>
-    </p>
+        <p><!-- 서브메뉴 이벤트 부분 -->
+            <div id="text">
+                <div>
+                    <h1>안내데스크</h1>
+                    <li>위치 : 정문바로 오른쪽</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 1111 - 1111</li>
+                </div>
+                <div>
+                    <img src="../images/px-1.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>화장실</h1>
+                    <li>위치 : 각 건물마다 하나씩 위치</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 2222 - 2222</li>
+                </div>
+                <div>
+                    <img src="../images/px-2.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>야외공연장</h1>
+                    <li>위치 : 정문에서 도보로 500m 직진</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 3333 - 3333</li>
+                </div>
+                <div>
+                    <img src="../images/px-3-1.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>캠핑장</h1>
+                    <li>위치 : 후문에서 도보로 300m 직진</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 4444- 4444</li>
+                </div>
+                <div>
+                    <img src="../images/px-4.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>상점/편의시절</h1>
+                    <li>위치 : 정문에서 오른쪽으로 도보 200m </li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 5555 - 5555</li>
+                </div>
+                <div>
+                    <img src="../images/px-5.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>어린이놀이터</h1>
+                    <li>위치 : 정문에서 왼쪽으로 도보로 100m</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 6666 - 6666</li>
+                </div>
+                <div>
+                    <img src="../images/px-6.jpg">
+                </div>
+            </div>
+            </p>
+            <p>
+            <div id="text">
+                <div>
+                    <h1>주차장</h1>
+                    <li>위치 : 정문에서 바로 밖에 위치</li>
+                    <li>이용 시간 : 09:00 ~ 18:00</li>
+                    <li>문의전화 : 010 - 7777 - 7777</li>
+                </div>
+                <div>
+                    <img src="../images/px-7-1.jpg">
+                </div>
+            </div>
+            </p>
     
     <footer><!-- 풋터부분 임시-->
         <ol>

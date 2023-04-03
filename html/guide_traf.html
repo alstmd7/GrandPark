@@ -30,10 +30,13 @@
     }
     #guide_traf_ikon {
         /* 전체 아이콘 부분*/
-        width: 15vw;
-        height: 15vw;
+        margin-top: 4vw;
+        width: 11vw;
+        height: 11vw;
     }
     #guide_traf_info h1{/*대제목 글자*/
+        margin-top: 1vw;
+        margin-bottom: 1vw;
         font-size: 5.5vw;
     }
     #guide_traf_info h2{/*소제목 글자*/
@@ -64,11 +67,12 @@
     .aaa {/* 회색 부분 */
         border-radius: 10px;
         background-color: darkgrey;
-        width: 49vw;
+        width: 47vw;
         height: 9vw;
         padding-top: 3vw;
         margin-bottom: 10px;
         text-align: center;
+        margin-left: 1vw;
     }
     #guide_traf_bus .aa {/* 정문 후문 정류장 이름부분 */
         background-color: rgba(0, 255, 42, 0.836);
@@ -81,7 +85,9 @@
         text-align: center;
         padding-top: 2vw;
         margin-bottom: 10px;
+        margin-left: 1vw;
     }
+    
     #guide_traf_subway #b>h2 {/* 2호선 배경색 */
         background-color: rgb(4, 194, 4);
     }
@@ -120,7 +126,7 @@
 
     @media all and (min-width:1200px){
         header {/* 헤더부분 임시 */
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     #guide_traf {/* 오시는 길, 대중교통안내*/
         font-size: 1vw;
@@ -128,23 +134,27 @@
         #guide_traf_map {/* 맵 지도 부분 */
             display: block;
             margin: auto;
-            width: 80%;
+            width: 70%;
+            height: 30vw;
     }
     #guide_traf_addr {
         /* 주소 부분 */
        font-size: 1vw;
-        margin-left: 10%;
+        margin-left: 20%;
     }
     #guide_traf_ikon {
         /* 전체 아이콘 부분*/
         width: 4vw;
         height: 4vw;
+        margin-top: 0vw;
     }
     #guide_traf_info h1{/*대제목 글자*/
-        font-size: 2.5vw;
+        font-size: 2vw;
+        margin-top: 0vw;
+        margin-bottom: 0vw;
     }
     #guide_traf_info h2{/*소제목 글자*/
-        font-size: 1.5vw;
+        font-size: 1.2vw;
     }
     #guide_traf_info h3{/*내용 글자*/
         font-size: 1vw;
@@ -152,23 +162,30 @@
     .bb{/* 버스,지하철 로고부분 */
         width: 100%;
         border: 0.5vw solid rgb(250, 163, 0);
-        height: 10vw;
+        height: 8vw;
         
     }
     #aa{
         width: 100%;
     }
     .aa{/* 소제목 부분 */
-        width: 100%;
+        width: 110%;
         height: 3vw;
         padding-top: 1.2vw;
         margin-bottom: 5px;
         margin-top: 0.7vw;
+        margin-left: 0vw;
+    }
+    #guide_traf_subway #aa{
+        margin-left: 1vw;
+    }
+    #guide_traf_taxi #aa{
+        margin-left: 1vw;
     }
    
     .aaa{/* 회색부분 */
-        margin: 0.7vw 0vw 0vw 1vw;
-        width: 130%;
+        margin: 0.7vw 0vw 0vw 1.5vw;
+        width: 110%;
         height: 3vw;
         padding-top: 1.5vw;
     }
@@ -183,7 +200,7 @@
         float: left;
     }
     #guide_traf_info{
-        width: 80%;
+        width: 60%;
         height: 200px;
         margin: auto;
         margin-bottom: 15%;
@@ -217,10 +234,10 @@
     <div id="guide_traf_addr"><!-- 주소부분 -->
         <ol>
             <li>
-                <h1>주소 : 강남대공원</h1>
+                <h3>주소 : 강남대공원</h3>
             </li>
             <li>
-                <h2>서울특별시 강남구 테헤란로5길 24 </h2>
+                <h3>서울특별시 강남구 테헤란로5길 24 </h3>
             </li>
         </ol>
     </div>
@@ -241,10 +258,10 @@
             <div id="aa">
                 <div id="a">
                     <li>
-                        <h2 class="aa">정문 정류장</h2>
+                        <h2 class="aa">정문정류장</h2>
                     </li>
                     <li>
-                        <h2 class="aa">후문 정류장</h2>
+                        <h2 class="aa">후문정류장</h2>
                     </li>
                 </div>
 
