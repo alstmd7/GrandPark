@@ -112,7 +112,7 @@ div.menu_sub li{
     background-color: rgb(254, 255, 211);
 }
 div.menu_sub a{
-    /* 기본적으로 a 태그는 inline 레벨 요소이므로 부모(li)의 크기만큼 가지게 하기 위해
+    /* 기본적으로 a 태b그는 inline 레벨 요소이므로 부모(li)의 크기만큼 가지게 하기 위해
     inline-block요소 설정 */
     display: inline-block;
     height: 100%;
@@ -136,7 +136,7 @@ div.intro_banner>img{
     box-sizing: border-box;
   }
   
-  .tab_menu {
+  .inttab_menu {
     width: 100%;
     /* border: 1px solid black; */
     display: table;
@@ -148,7 +148,7 @@ div.intro_banner>img{
     /* background-color: aqua; */
   }
 
-  .tab_menu li {
+  .inttab_menu li {
     border: 1px solid black;
     display: table-cell;
     font-size: 11pt;
@@ -160,31 +160,31 @@ div.intro_banner>img{
   }
   
   /* font-weight: bold; <- 선택된 탭 버튼의 글씨 강조 */
-  .tab_menu li.active a {
+  .inttab_menu li.active a {
     font-weight: bold;
     color: mediumspringgreen;
   }
+
+  .intro_title {
+    overflow: hidden;
+  }
   
   /* display: none; <- 화면에서 이미지를 숨김 */
-  .tab_pane {
+  .intro_img {
     display: none;
   }
 
-  .tab_pane>img{
+  .intro_img>img{
     width: 100%;
   }
   
   /* display: block; <- 블록 레벨 요소로 지정하여 선택된 이미지를 보이게 함 */
-  .tab_pane.active {
+  .intro_img.active {
     display: block;
   }
 
-   .tab_content {
-   overflow: hidden;
-   }
-   
    /* 장소 이름 텍스트 */
-  .tab_content .tab_pane>h1 {
+  .intro_title .intro_img>h1 {
    float: left;
    width: 80%;
    font-size: 1.5rem;
@@ -192,21 +192,25 @@ div.intro_banner>img{
    padding: 7px 10px;
   }
 
+  /* 탭 버튼 선택시 인트로 배너 이미지를 교체하기 위한 숨겨진 이미지 저장 요소 */
+  .inthide_menu{
+    display: none;
+  }
+
   /* 지도보기 버튼 */
-  .tab_content .tab_pane>input {
+  .intro_title .intro_img>input {
     background-color: bisque;
     margin-top: 5px;
     margin-bottom: 5px;
   }
 
-  .tab_content .tab_pane>p {
+  .intro_title .intro_img>p {
     font-size: 1.2rem;
     padding: 5px 0px 10px;
     border-bottom: 1px solid black;
   }
 
  
-
 /* ================================== */
 
 
@@ -272,7 +276,7 @@ div.intro_banner>img{
         box-sizing: border-box;
       }
       
-      .tab_menu {
+      .inttab_menu {
         width: 100%;
         border: 1px solid black;
         display: table;
@@ -284,7 +288,7 @@ div.intro_banner>img{
         /* background-color: aqua; */
       }
     
-      .tab_menu li {
+      .inttab_menu li {
         border: 0px solid black;
         display: table-cell;
         font-size: 11pt;
@@ -296,18 +300,18 @@ div.intro_banner>img{
       }
   
     /* font-weight: bold; <- 선택된 탭 버튼의 글씨 강조 */
-    .tab_menu li.active a {
+    .inttab_menu li.active a {
       background-color: salmon;
       color: rgb(255, 255, 255);
     }
 
 
-    .tab_pane>img{
+    .intro_img>img{
     width: 53.71093% /* 550pt */;
     height: 57.61718% /* 590pt */;
    }
 
-  .tab_menu li {
+  .inttab_menu li {
     /* border: 1px solid black; */
     font-size: 40pt;
     display: inline-block; 
@@ -382,7 +386,7 @@ div.intro_banner>img{
     border-collapse: collapse;
   }
   
-  .tab_menu {
+  .inttab_menu {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid black;
@@ -394,7 +398,7 @@ div.intro_banner>img{
     /* background-color: aqua; */
   }
 
-  .tab_menu li {
+  .inttab_menu li {
     border: 0px solid black;
     display: table-cell;
     font-size: 30pt;
@@ -405,7 +409,7 @@ div.intro_banner>img{
     /* background-color: cornflowerblue; */
   }
 
-  .tab_content {
+  .intro_title {
     display: table-cell;
     border: 1px solid black;
     padding: 10pt 30pt;
@@ -414,14 +418,14 @@ div.intro_banner>img{
 }
 
 /* 탭 메뉴 이미지에 float 적용하여 좌측배치 */
-.tab_content .tab_pane>img {
+.intro_title .intro_img>img {
     float: left;
     width: 53.71093% /* 550pt */;
     height: 57.61718% /* 590pt */;
 }
 
    /* 장소 이름 텍스트 */
-   .tab_content .tab_pane>h1 {
+   .intro_title .intro_img>h1 {
     float: left;
     margin-bottom: 10pt;
     width: 90%;
@@ -430,7 +434,7 @@ div.intro_banner>img{
     padding: 7px 10px;
    }
 
-.tab_content .tab_pane>p {
+.intro_title .intro_img>p {
     margin-top: 15px;
     font-size: 1.2rem;
     padding: 5px 0px 5px;

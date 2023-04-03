@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- reset css -->
   <link href="../css/reset.css" rel="stylesheet" />
-  <!-- main css 추가 -->
+  <!-- 소개페이지 css 추가 -->
   <link href="../css/intro.css" rel="stylesheet" />
   <!-- 제이쿼리 추가(구글) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -83,57 +83,74 @@
           </div>
         </div>
     </div>
+
+    <!-- ======== 소개 페이지 인트로 배너 ======== -->
     <div class="intro_banner">
       <img src="../images/b-flower_1.jpg" alt="소개페이지 대표이미지" />
     </div>
 
-    <!-- ======== 소개 페이지 메뉴 ======== -->
+    <!-- ======== 소개 페이지 부분 ======== -->
     <div class="intro_menu">
-    
-      <div class="tab">
-        <ul class="tab_menu">
-          <li class="active"><a href="#tab_1">벚나무산책길</a></li>
-          <li><a href="#tab_2">식물관</a></li>
-          <li><a href="#tab_3">중앙광장</a></li>
-          <li><a href="#tab_4">생태호수</a></li>
-        </ul>
-        
-        <div class="tab_content">
-          <div id="tab_1" class="tab_pane active">
-            <h1>벚나무산책길</h1>
-            <input type="button" value="지도보기">
-            <img src="../images/blossom_road.jpg" alt="Image 1">
-            <p>국회는 국무총리 또는 국무위원의 해임을 대통령에게 건의할 수 있다. 
-              누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 
-              청구할 권리를 가진다.</p>
-          </div>
-          <div id="tab_2" class="tab_pane">
-            <h1>식물원</h1>
-            <input type="button" value="지도보기">
-            <img src="../images/graden1.jpg" alt="Image 2">
-            <p>국가는 청원에 대하여 심사할 의무를 진다. 선거에 관한 경비는 법률이 정하는 
-              경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다.</p>
-          </div>
-          <div id="tab_3" class="tab_pane">
-            <h1>중앙광장</h1>
-            <input type="button" value="지도보기">
-            <img src="../images/central park.jpg" alt="Image 3">
-            <p>국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 
-              국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 
-              국가는 사회보장·사회복지의 증진에 노력할 의무를 진다.</p>
-          </div>
-          <div id="tab_4" class="tab_pane">
-            <h1>생태호수</h1>
-            <input type="button" value="지도보기">
-            <img src="../images/fountain.jpg" alt="Image 4">
-            <p>누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을 권리가 있음을 
-              고지받지 아니하고는 체포 또는 구속을 당하지 아니한다. 체포 또는 구속을 당한 자의 
-              가족등 법률이 정하는 자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.</p>
-          </div>
 
+      <!-- 탭 메뉴를 선택하면 인트로 배너 이미지를 바꿔줄 임의의 이미지 (화면에는 보이지 않음) -->
+      <div class="inthide_menu">
+         <div id="inthide_img1">
+           <img src="../images/banner.gif" alt="벚나무산책길">
+         </div>
+        <div id="inthide_img2">
+             <img src="../images/garden2.jpg" alt="식물관">
+        </div>
+        <div id="inthide_img3">
+             <img src="../images/grass.jpg" alt="중앙광장">
+        </div>
+        <div id="inthide_img4">
+             <img src="../images/lake picture.jpg" alt="생태호수">
         </div>
       </div>
 
+      <!-- 탭 메뉴 -->
+      <div class="intro_tab">
+        <ul class="inttab_menu">
+          <li class="active"><a href="#intro_img_1">벚나무산책길</a></li>
+          <li><a href="#intro_img_2">식물관</a></li>
+          <li><a href="#intro_img_3">중앙광장</a></li>
+          <li><a href="#intro_img_4">생태호수</a></li>
+        </ul>
+
+        <div class="intro_title">
+          <div id="intro_img_1" class="intro_img active">
+            <h1>벚나무산책길</h1>
+            <input type="button" class="intro_btn" value="지도보기">
+            <img src="../images/blossom_road.jpg" alt="Image 1">
+            <span class="intro_text"><p>국회는 국무총리 또는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+              누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 
+              청구할 권리를 가진다.</p></span>
+          </div>
+          <div id="intro_img_2" class="intro_img">
+            <h1>식물원</h1>
+            <input type="button" class="intro_btn" value="지도보기">
+            <img src="../images/graden1.jpg" alt="Image 2">
+            <span class="intro_text"><p>국가는 청원에 대하여 심사할 의무를 진다. 선거에 관한 경비는 법률이 정하는 
+              경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다.</p></span>
+          </div>
+          <div id="intro_img_3" class="intro_img">
+            <h1>중앙광장</h1>
+            <input type="button" class="intro_btn" value="지도보기">
+            <img src="../images/central park.jpg" alt="Image 3">
+            <span class="intro_text"><p>국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 
+              국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 
+              국가는 사회보장·사회복지의 증진에 노력할 의무를 진다.</p></span>
+          </div>
+          <div id="intro_img_4" class="intro_img">
+            <h1>생태호수</h1>
+            <input type="button" class="intro_btn" value="지도보기">
+            <img src="../images/fountain.jpg" alt="Image 4">
+            <span class="intro_text"><p>누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을 권리가 있음을 
+              고지받지 아니하고는 체포 또는 구속을 당하지 아니한다. 체포 또는 구속을 당한 자의 
+              가족등 법률이 정하는 자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.</p>
+          </div></span>
+        </div>
+      </div>
     </div>
 
     <div class="footer">Footer</div>
@@ -147,7 +164,8 @@
   <!-- pc일 경우 -->
   <script type="text/javascript" src="../js/menu_pc.js" media="(min-width:1024px)"></script>
   <!-- 소개페이지 관련 외부js -->
-  <script tyo="text/javascript" src="../js/intro.js"></script>
+  <script type="text/javascript" src="../js/intro.js"></script>
+  <script type="text/javascript" src="../js/intro_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>
 </body>
 
 </html>
