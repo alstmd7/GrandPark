@@ -16,6 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
   <title>강남대공원</title>
+
 </head>
 
 <body>
@@ -107,36 +108,66 @@
         </ul>
         <img id="slider_next" class="slider_btn" src="./images/icon/right_arrow.png" alt="오른쪽 페이지 버튼"></img>
     </div>
-      <div class="main_info_content">내용</div>
+      <div class="main_info_content">
+        <p>관광지 소개 내용입니다. 추후에 각 슬라이드 페이지마다 내용 다르게 js로 바꿔야 함</p></div>
     </div>
 
     <!-- 메인 행사 추천 -->
     <div class="main_event">
       <div class="main_event_title">행사/공연</div>
-      <img src="./images/event1.jpg" alt="행사1"/>
-      <div class="main_event_date">03.12~03.24</div>
-      <img src="./images/event1.jpg" alt="행사2"/>
-      <div class="main_event_date">03.12~03.24</div>
+      <div class="main_event_content">
+        <img src="./images/event1.jpg" alt="행사1"/>
+        <div class="main_event_content_name">행사이름1</div>
+        <div class="main_event_btn">자세히보기&gt;</div>
+        <div class="main_event_date">03.12~03.24</div>
+      </div>
+      <div class="main_event_content">
+        <img src="./images/event1.jpg" alt="행사2"/>
+        <div class="main_event_content_name">행사이름2</div>
+        <div class="main_event_btn">자세히보기&gt;</div>
+        <div class="main_event_date">03.12~03.24</div>
+      </div>
     </div>
 
     <!-- 메인 중요 공지 -->
     <div class="main_notice">
       <div class="main_notice_title">공지사항</div>
-      <div>휴관안내</div>
-      <div>휴관안내</div>
+      <div class="main_notice_content">
+        <a href="#">
+          <p>휴관안내</p>
+          <p>내부 공사로 인해 식물원을 일시적으로 휴관합니다.</p>
+        </a>
+      </div>
+      <div class="main_notice_content">
+        <a href="#">
+          <p>행사안내</p>
+          <p>우천으로 인하여 3.15 외부 행사가 전면 취소됩니다.</p>
+        </a>
+      </div>
     </div>
 
     <!-- 메인 푸터 -->
-    <div class="footer">Footer</div>
+    <div class="footer">
+      <ul>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">서비스이용약관</a></li>
+      </ul>
+      <div><p>(우편번호)서울시 강남구 ~</p>
+      <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+      <p>&copy; copyrights all reserved.</p></div>
+  </div>
   </div>
 
   <!-- 자바스크립트 추가 -->
   <!-- 모바일일 경우 -->
   <script type="text/javascript" src="./js/menu.js" media="(max-width:767px)"></script>
+  <script type="text/javascript" src="./js/main.js" media="(max-width:767px)"></script>
   <!-- 태블릿일 경우 -->
-  <!--<script type="text/javascript" src="./js/menu_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>-->
+  <!--<script type="text/javascript" src="./js/main_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>-->
   <!-- pc일 경우 -->
-  <!--<script type="text/javascript" src="./js/menu_pc.js" media="(min-width:1024px)"></script>-->
+  <!--<script type="text/javascript" src="./js/main_pc.js" media="(min-width:1024px)"></script>-->
+
 </body>
 
 </html>
