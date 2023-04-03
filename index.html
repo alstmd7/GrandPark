@@ -12,21 +12,25 @@
   <link href="./css/main.css" rel="stylesheet" />
   <!-- 제이쿼리 추가(구글) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
+  <!-- bxslider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
   <title>강남대공원</title>
 </head>
 
 <body>
   <div class="wrap">
+
+    <!-- 헤더 -->
     <div class="banner_logo">
       <span class="logo">강남대공원</span>
-      <img src="./images/menu_button.svg" class="menu_toggle_btn" alt="toggle_btn svg"></img> <!-- 모바일에서만 사용하는 버튼 -->
+      <img src="./images/icon/down.svg" class="menu_toggle_btn" alt="toggle_btn svg"></img> <!-- 모바일에서만 사용하는 버튼 -->
     </div>
     <div class="header_menu">
       <div> 
         <div class="menu_title"> <!-- 메인 메뉴 -->
           <span>소개</span>
-          <img src="./images/down.svg" alt="down svg"/>
+          <img src="./images/icon/down.svg" alt="down svg"/>
         </div> 
         <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
           <ul>
@@ -37,10 +41,12 @@
           </ul>
         </div>
       </div>
+
+      <!-- 메인 메뉴 리스트 -->
       <div> 
           <div class="menu_title"> <!-- 메인 메뉴 -->
             <sapn>행사/예약</sapn>
-            <img src="./images/down.svg" alt="down svg"/>
+            <img src="./images/icon/down.svg" alt="down svg"/>
           </div> 
           <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
@@ -51,7 +57,7 @@
         </div><div> 
           <div class="menu_title"> <!-- 메인 메뉴 -->
             <sapn>시설</sapn>
-            <img src="./images/down.svg" alt="down svg"/>
+            <img src="./images/icon/down.svg" alt="down svg"/>
           </div>
           <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
@@ -63,7 +69,7 @@
         <div> 
           <div class="menu_title"> <!-- 메인 메뉴 -->
             <span>이용안내</span>
-            <img src="./images/down.svg" alt="down svg"/>
+            <img src="./images/icon/down.svg" alt="down svg"/>
           </div>
           <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
@@ -74,7 +80,7 @@
         <div> 
           <div class="menu_title"> <!-- 메인 메뉴 -->
             <span>공지사항</span>
-            <img src="./images/down.svg" alt="down svg"/>
+            <img src="./images/icon/down.svg" alt="down svg"/>
           </div>
           <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
@@ -83,16 +89,28 @@
           </div>
         </div>
     </div>
+
+    <!-- 메인 베너 이미지 -->
     <div class="banner_img">
       <img src="./images/banner.gif" alt="배너영상" />
     </div>
 
+    <!-- 메인 관광지 소개 -->
     <div class="main_info">
       <div class="main_info_title">제목</div>
-      <img src="./images/blossom_road.jpg" alt="소개" />
+      <div class="slider_wrap">
+        <img id="slider_prev" class="slider_btn" src="./images/icon/left_arrow.png" alt="왼쪽 페이지 버튼"></img>
+        <ul class="bxslider">
+            <li><img src="./images/central park.jpg"/></li>
+            <li><img src="./images/graden1.jpg"/></li>
+            <li><img src="./images/garden2.jpg"/></li>
+        </ul>
+        <img id="slider_next" class="slider_btn" src="./images/icon/right_arrow.png" alt="오른쪽 페이지 버튼"></img>
+    </div>
       <div class="main_info_content">내용</div>
     </div>
-    
+
+    <!-- 메인 행사 추천 -->
     <div class="main_event">
       <div class="main_event_title">행사/공연</div>
       <img src="./images/event1.jpg" alt="행사1"/>
@@ -100,11 +118,15 @@
       <img src="./images/event1.jpg" alt="행사2"/>
       <div class="main_event_date">03.12~03.24</div>
     </div>
+
+    <!-- 메인 중요 공지 -->
     <div class="main_notice">
       <div class="main_notice_title">공지사항</div>
       <div>휴관안내</div>
       <div>휴관안내</div>
     </div>
+
+    <!-- 메인 푸터 -->
     <div class="footer">Footer</div>
   </div>
 
@@ -112,9 +134,9 @@
   <!-- 모바일일 경우 -->
   <script type="text/javascript" src="./js/menu.js" media="(max-width:767px)"></script>
   <!-- 태블릿일 경우 -->
-  <script type="text/javascript" src="./js/menu_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>
+  <!--<script type="text/javascript" src="./js/menu_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>-->
   <!-- pc일 경우 -->
-  <script type="text/javascript" src="./js/menu_pc.js" media="(min-width:1024px)"></script>
+  <!--<script type="text/javascript" src="./js/menu_pc.js" media="(min-width:1024px)"></script>-->
 </body>
 
 </html>

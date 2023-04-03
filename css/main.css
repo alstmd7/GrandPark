@@ -127,40 +127,51 @@ div.menu_sub a{
 div.banner_img>img{
     /* 이미지의 최대 높이는 화면의 20%, 태블릿과 PC 버전 변경 필요 */
     max-height: 20vh;
+    max-width: 100%;
 }
 
 /*==== 추천 관광지 소개 ====*/
 div.main_info{
-    /* 자식 요소들의 배치를 위해 flex 속성 설정 */
+    /* 모바일과 pc/tablet 배치를 다르게 하기 위해 flex 설정 */
     display: flex;
-    /* 세로 정렬(flex의 기본 설정이 가로 정렬이기 때문에 다시 세로 정렬 설정해줘야 함) */
-    flex-direction: column;
-    /* 가운데 정렬 */
-    align-items: center;
-    /* 윗부분 마진 */
-    margin-top: 3%;
-}
-/* 제목 */
-div.main_info>div.main_info_title{
-    /* 글자 크기 1.6배 */
-    font-size: 1.6rem;
-    /* 글자 두껍게 */
-    font-weight: bold;
-}
-/* 이미지 */
-div.main_info>img{
-    /* 이미지 크기의 높이는 화면의 50%보다 커지지 않음 */
-    max-height: 50vh;
-    /* 이미지의 위,아래 마진 설정 */
-    margin: 2% 0;
-}
-/* 내용 */
-div.main_info>div.main_info_content{
-    /* 내용이 들어가는 박스(div)의 크기 또한 가로 전체로 설정 */
+    /* 세로 정렬, 줄바꿈O */
+    flex-flow: column wrap;
     width: 100%;
-    /* 왼쪽 패딩 */
-    padding-left: 3%;
 }
+/* 슬라이더 버튼과 이미지를 감싸고 있는 박스 */
+div.slider_wrap{
+    /* 버튼과 이미지 배치를 위해 포지션 사용 */
+    position: relative;
+}
+/* 슬라이더 버튼 이미지 */
+div.slider_wrap>img.slider_btn{
+    /* 배치를 위해 position 설정 */
+    position: absolute;
+    /* 위치 설정, 슬라이더 이미지 세로 가운데 위치 */
+    top: 50%;
+    transform: translateY(-50%);
+    /* 크기 조절 */
+    width: 30px;
+    height: 30px;
+    /* 슬라이더보다 더 위에 위치해야 하기 때문에 z-index 설정 */
+    z-index: 9999;
+}
+/* 왼쪽 슬라이더 버튼 */
+#slider_prev{
+    /* 왼쪽에 붙이기 */
+    left: 0;
+}
+/* 오른쪽 슬라이더 버튼 */
+#slider_next{
+    /* 오른쪽에 붙이기 */
+    right: 0;
+}
+/* 슬라이드 이미지 크기 */
+div.slider_wrap li > img {
+    height: 50vh;
+    max-width: 100%;
+}
+
 
 /*==== 추천 행사 ====*/
 
