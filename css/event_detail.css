@@ -100,6 +100,8 @@
                 flex-direction: column;
                 /* 행사 내용을 열 가운데로 정렬 */
                 justify-content: center;
+                width: 95%;
+                max-width: 415px;
             }
 
             /* 행사 예약 내용 글 영역 */
