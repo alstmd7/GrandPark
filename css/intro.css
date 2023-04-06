@@ -122,206 +122,176 @@ div.menu_sub a{
     font-size: 1.2rem;
 }
 
-/*==== 배너 이미지 ====*/
-div.intro_banner>img{
-    width: 100%;
+
+     /* ================================== */
+/* @#@#==== [소개 페이지] 부분, 모바일 ====#@#@ */
+
+   /* 소개 페이지 배너 이미지 */
+   /* (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+  div.intro_banner>img { 
+  width: 100%;
+  /* 이미지의 최대 높이는 화면의 20%, 태블릿과 PC 버전 변경 필요 */
+  max-height: 20vh;
 }
 
-
-/* ================================== */
-/* @#@#==== 소개 페이지 부분, 모바일 ====#@#@ */
-
 .intro_menu {
-    /* display: flex; */
+    display: flex;
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
   }
   
-  .inttab_menu {
-    width: 100%;
-    /* border: 1px solid black; */
-    display: table;
-    border-collapse: collapse; /* 탭메뉴간 border를 중복없이 겹침 */
-    /* border-bottom: none; */
-    list-style: none;
-    /* margin-left: 6%; */
-    /* padding: 20px 20%; */
-    /* background-color: aqua; */
+  /* 탭 버튼 선택시 인트로 배너 이미지를 교체하기 위한 숨겨진 이미지 저장 요소 */
+  .inthide_menu{
+    display: none;
   }
 
+  /* 소개 페이지 감싸는 부분 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+ .intro_tab {
+  width: 100%;
+  margin-top: 10pt;
+  margin-bottom: 20pt;
+}
+
+  /* 탭 메뉴 부분 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+  .inttab_menu {
+    width: 99.8%;
+    display: table;
+    border-collapse: collapse; /* 탭메뉴간 border를 중복없이 겹침 */
+    /* list-style: none; */
+  }
+
+  /* 탭 메뉴 버튼 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
   .inttab_menu li {
     border: 1px solid black;
     display: table-cell;
-    font-size: 11pt;
+    font-size: 9pt;
     text-align: center;
     /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
     /* margin-right: 10px; */
     padding: 10px 20px;
     /* background-color: cornflowerblue; */
   }
-  
+
+  .inttab_menu li:hover{
+    background-color: rgb(252, 130, 85);
+    color: rgb(255, 255, 255);
+  }
+
   /* font-weight: bold; <- 선택된 탭 버튼의 글씨 강조 */
+  /* (미디어쿼리 pc도 지정되어 있음) */
   .inttab_menu li.active a {
     font-weight: bold;
-    color: mediumspringgreen;
+    color: rgb(255, 255, 255);
   }
 
-  .intro_title {
-    overflow: hidden;
+  /* 마우스 선택된 border 전체에 배경색 지정 */
+  .inttab_menu li.active {
+    font-weight: bold;
+    background-color: rgb(252, 130, 85);
   }
   
-  /* display: none; <- 화면에서 이미지를 숨김 */
-  .intro_img {
-    display: none;
-  }
-
-  .intro_img>img{
+  /* 탭 버튼 클릭시 소개 이미지, 텍스트 감싸는 부분 */
+  /* (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+  .intro_title {
+    overflow: hidden;
     width: 100%;
   }
   
+  /* 탭 버튼 클릭시 출력될 이미지 묶음을 저장 */
+  /* 숨김 처리를 안하면 탭 버튼 작동 안함 */
+  .intro_img {
+    display: none; /* display: none; <- 화면에서 이미지를 숨김 */
+    /* 스크롤시 페이드 효과 관련 */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
   /* display: block; <- 블록 레벨 요소로 지정하여 선택된 이미지를 보이게 함 */
   .intro_img.active {
     display: block;
   }
 
-   /* 장소 이름 텍스트 */
+   /* 장소 이름 텍스트 <h1> (미디어쿼리 pc, 태블릿도 지정되어 있음) */
   .intro_title .intro_img>h1 {
    float: left;
-   width: 80%;
    font-size: 1.5rem;
    font-weight: 600;
    padding: 7px 10px;
   }
 
-  /* 탭 버튼 선택시 인트로 배너 이미지를 교체하기 위한 숨겨진 이미지 저장 요소 */
-  .inthide_menu{
-    display: none;
-  }
-
-  /* 지도보기 버튼 */
+  /* 지도보기 버튼 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
   .intro_title .intro_img>input {
+    float: right;
     background-color: bisque;
+    margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
   }
 
-  .intro_title .intro_img>p {
-    font-size: 1.2rem;
-    padding: 5px 0px 10px;
-    border-bottom: 1px solid black;
+  /* 탭 버튼 클릭시 출력되는 소개 장소 이미지 */
+  /* (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+  img.jangso{
+    width: 100%;
   }
 
- 
-/* ================================== */
+  /* 탭 버튼 클릭시 소개 텍스트 <p> */
+  /* (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+  .intro_text {
+    font-size: 1.4rem;
+    line-height: 170%;
+    text-align: center;
+    padding: 5px 0px 10px;
+    border-bottom: 1px solid black;
+    margin-top: 10pt;
+    /* 스크롤시 페이드 효과 관련 */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    word-break: break-all;
+    width: 100%;
+    /* background-color: blueviolet; */
+  }
 
-
-/* 미디어쿼리, PC */
-@media screen and (min-width:1024px) {
-    html {
-        /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
-        font-size: 18px;
-    }
-
-    /*==== 로고 부분 ====*/
-    div.banner_logo{
-        /* 포지션 해제(디폴트 값:static) */
-        position: static;
-        /* 중앙 정렬 위해 flex 속성 사용*/
-        display: flex;
-        /* 중앙 정렬 */
-        justify-content: center;
-        align-items: center;
-        
-    }
-    div.banner_logo>span.logo{
-        /* 포지션 해제 */
-        position: static;
-        /* top 값을 초기화 */
-        top: auto; 
-        /* left 값을 초기화 */
-        left: auto; 
-        /* transform 값을 초기화 */
-        transform: none; 
-    }
-    div.banner_logo>img.menu_toggle_btn{
-        /* 토글 버튼 없애주기 */
-        display: none;
-    }
-
-    /*==== 메뉴 부분 ====*/
-    div.header_menu, div.header_menu div {
-        /* 보이지 않게 설정되어 있던 요소들을 보이도록 설정, 
-        속성을 inline-block(줄바꿈X, 너비/높이 가짐) */
-        display: inline-block;
-    }
-
-    div.menu_title>img{
-        /* 드롭다운 표현하던 아이콘(이미지) 보이지 않게 하기 */
-        display: none;
-    }
-
-
-
-/* <<<<==== 소개 페이지 탭메뉴 이미지, 미디어쿼리 PC ====>>>> */
-
- /* 소개 페이지 배너 이미지 */
- div.intro_banner>img{
-     width: 100%;
-     /* 이미지의 최대 높이는 화면의 70% */
-     /* max-height: 70vh; */
-     height: 280pt;
-     }
-
-     .intro_menu {
-        /* display: flex; */
-        box-sizing: border-box;
-      }
-      
-      .inttab_menu {
-        width: 100%;
-        border: 1px solid black;
-        display: table;
-        border-collapse: collapse;  /* 탭메뉴간 border를 중복없이 겹침 */
-        /* border-bottom: none; */
-        list-style: none;
-        /* margin-left: 6%; */
-        /* padding: 20px 20%; */
-        /* background-color: aqua; */
-      }
-    
-      .inttab_menu li {
-        border: 0px solid black;
-        display: table-cell;
-        font-size: 11pt;
-        text-align: center;
-        /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
-        /* margin-right: 10px; */
-        padding: 10px 20px;
-        /* background-color: cornflowerblue; */
-      }
-  
-    /* font-weight: bold; <- 선택된 탭 버튼의 글씨 강조 */
-    .inttab_menu li.active a {
-      background-color: salmon;
-      color: rgb(255, 255, 255);
-    }
-
-
-    .intro_img>img{
-    width: 53.71093% /* 550pt */;
-    height: 57.61718% /* 590pt */;
+  /* 소개 텍스트 span (미디어쿼리 pc, 태블릿도 지정되어 있음) */
+  .intro_text span {
+   display: block;
    }
 
-  .inttab_menu li {
-    /* border: 1px solid black; */
-    font-size: 40pt;
-    display: inline-block; 
-    margin-right: 10px;
-    padding: 10px 20px;
-   }
-  
+/* @#@#===== 푸터 =====#@#@ */
+div.footer{
+  background-color: gray;
+  margin-bottom: 0;
+  font-size: 0.5rem;
+  color: white;
+}
+div.footer>ul{
+  text-align: center;
+  padding: 2%;
+}
+div.footer>ul>li{
+  /* 각 리스트 inline-block(줄바꿈하지 않고, 각 크기(너비,높이)는 가지게 함) */
+  display: inline-block;
+  padding: 0 2%;
+}
+div.footer>ul>li:nth-child(2){
+  /* 리스트 양 옆에 테두리로 | 표시 주기 */
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+div.footer>div{
+  /* 마진, 패딩 조정 */
+  margin: 0;
+  padding: 0 0 2% 2%;
+}
+div.footer p{
+  font-size: 0.5rem;
+  padding-top: 2%;
+}
+div.footer a{
+  color: white;
 }
 
-
+/* =================모바일 단 끝================= */
 
 /* 미디어쿼리, 태블릿 */
 @media screen and (min-width:768px) {
@@ -338,9 +308,9 @@ div.intro_banner>img{
         display: flex;
         /* 중앙 정렬 */
         justify-content: center;
-        align-items: center;
-        
+        align-items: center;  
     }
+
     div.banner_logo>span.logo{
         /* 포지션 해제 */
         position: static;
@@ -351,6 +321,7 @@ div.intro_banner>img{
         /* transform 값을 초기화 */
         transform: none; 
     }
+
     div.banner_logo>img.menu_toggle_btn{
         /* 토글 버튼 없애주기 */
         display: none;
@@ -367,79 +338,305 @@ div.intro_banner>img{
     }
 
 
-
-/* <<<<==== 소개 페이지 탭메뉴 이미지, 미디어쿼리 태블릿 ====>>>> */
+/* <<<<==== <<미디어쿼리 태블릿>> [소개 페이지] 탭메뉴 이미지 ====>>>> */
 
  /* 소개 페이지 배너 이미지 */
+ /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
  div.intro_banner>img{
      width: 100%;
-     /* 이미지의 최대 높이는 화면의 70% */
-     /* max-height: 70vh; */
-     height: 200pt;
+      /* max-width: 100%; */
+     max-height: 50vh;
+     /* height: 200pt; */
  }
-
+ 
+ /* 소개 페이지 감싸는 부분 (미디어쿼리 pc, 모바일도 지정되어 있음) */
  .intro_menu {
-    /* display: flex; */
+    display: flex;
     box-sizing: border-box;
     overflow: hidden;
     display: table;
     border-collapse: collapse;
+    position: relative;
   }
   
+  /* 탭 메뉴 부분 (미디어쿼리 pc, 모바일도 지정되어 있음) */
   .inttab_menu {
-    width: 100%;
-    border-collapse: collapse;
+    width: 99.9%;
     border: 1px solid black;
-    /* border-radius: 20px; */
-    border-bottom: none;
-    list-style: none;
-    /* margin-left: 6%; */
-    /* padding: 20px 20%; */
+    display: table;
+    border-collapse: collapse;  /* 탭메뉴간 border를 중복없이 겹침 */
+    margin-bottom: 30pt;
     /* background-color: aqua; */
   }
-
+  
+   /* 탭 메뉴 버튼 리스트<li> (미디어쿼리 pc, 모바일도 지정되어 있음) 
+   탭 메뉴 버튼 텍스트 */
   .inttab_menu li {
     border: 0px solid black;
     display: table-cell;
-    font-size: 30pt;
+    font-size: 25pt;
     text-align: center;
     /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
-    /* margin-right: 10px; */
+    margin-right: 10px;
     padding: 10px 20px;
     /* background-color: cornflowerblue; */
   }
 
+  /* 탭 버튼 클릭시 소개 이미지, 텍스트 감싸는 부분 */
+  /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
   .intro_title {
+    overflow: hidden;
     display: table-cell;
     border: 1px solid black;
     padding: 10pt 30pt;
     margin-left: 1pt;
     width: 100%;
+    height: 50%;
 }
 
-/* 탭 메뉴 이미지에 float 적용하여 좌측배치 */
-.intro_title .intro_img>img {
-    float: left;
-    width: 53.71093% /* 550pt */;
-    height: 57.61718% /* 590pt */;
+/* 탭 버튼 클릭시 출력되는 소개 장소 이미지 */
+/* (미디어쿼리 pc, 모바일도 지정되어 있음) */
+    .intro_title .intro_img>img {
+    /* float: left; 탭 메뉴 이미지에 float 적용하여 좌측배치 */
+   /* width: 53.71093%; /* 550pt */
+   /* height: 57.61718%; /* 590pt */
 }
 
-   /* 장소 이름 텍스트 */
+   /* 장소 이름 텍스트 <h1> (미디어쿼리 pc, 모바일도 지정되어 있음) */
    .intro_title .intro_img>h1 {
-    float: left;
+    /* float: left; */
     margin-bottom: 10pt;
-    width: 90%;
+    /* width: 90%; */
     font-size: 1.5rem;
     font-weight: 600;
     padding: 7px 10px;
    }
-
-.intro_title .intro_img>p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    padding: 5px 0px 5px;
-    border-bottom: 0px solid black;
+   
+   /* 지도보기 버튼 (모바일 PC도 같이 지정되어 있음) */
+   .intro_title .intro_img>input {
+   /* float: right; */
+   /* position: absolute; */
+   /* background-color: bisque; */
+   /* padding: 5px 10px; */
+   /* margin-right: 0px;
+   margin-top: 0%; */
   }
+  
+  /* 모바일 화면 출력용 추가 소개 이미지: PC와 태블릿은 화면 제외 
+   (미디어 쿼리 pc와 같이 지정되어 있음, 모바일은 제외) */
+   img.hide_img {
+    display: none;
+  }
+
+   /* 탭 버튼 클릭시 소개 텍스트 <p> */
+   /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
+   .intro_text {
+    position: absolute;
+    text-align: left;
+    width: 40%;
+    height: 60%;
+    right: 3%;
+    bottom: 6%; /* 텍스트단 위치 상,하 조정 */
+    font-size: 1.0rem;
+    line-height: 170%; /* 글자줄간 상, 하 간격 조정 */
+    border: 0px solid black;
+    /* background-color: aqua; */
+  }
+
+  .intro_text span {
+    display: block;
+   }
+
+   /* .footer {
+    margin-top: 5%
+  } */
 
 }
 
+/* =========>>>>> 태블릿 미디어쿼리 끝 <<<<<========= */
+
+/* 미디어쿼리, PC */
+@media screen and (min-width:1024px) {
+  html {
+      /* 폰트 크기 조절을 rem으로 했으므로 루트(html)의 폰트 사이즈를 조정 */
+      font-size: 18px;
+  }
+
+  /*==== 로고 부분 ====*/
+  div.banner_logo{
+      /* 포지션 해제(디폴트 값:static) */
+      position: static;
+      /* 중앙 정렬 위해 flex 속성 사용*/
+      display: flex;
+      /* 중앙 정렬 */
+      justify-content: center;
+      align-items: center;
+      
+  }
+  div.banner_logo>span.logo{
+      /* 포지션 해제 */
+      position: static;
+      /* top 값을 초기화 */
+      top: auto; 
+      /* left 값을 초기화 */
+      left: auto; 
+      /* transform 값을 초기화 */
+      transform: none; 
+  }
+  div.banner_logo>img.menu_toggle_btn{
+      /* 토글 버튼 없애주기 */
+      display: none;
+  }
+
+  /*==== 메뉴 부분 ====*/
+  div.header_menu, div.header_menu div {
+      /* 보이지 않게 설정되어 있던 요소들을 보이도록 설정, 
+      속성을 inline-block(줄바꿈X, 너비/높이 가짐) */
+      display: inline-block;
+  }
+
+  div.menu_title>img{
+      /* 드롭다운 표현하던 아이콘(이미지) 보이지 않게 하기 */
+      display: none;
+  }
+
+  /* <<<<==== <<미디어쿼리 PC>> [소개 페이지] 탭메뉴 이미지 ====>>>> */
+
+   /* 소개 페이지 배너 이미지 */
+   /* (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+   div.intro_banner>img { 
+   width: 100%;
+   /* max-width: 100%; */
+   max-height: 50vh;
+   /* height: 280pt; */
+   }
+   
+    /* 소개페이지 단 전체 묶음 */
+    .intro_menu {
+     display: flex;
+     box-sizing: border-box;
+     overflow: hidden;
+     position: relative;
+     }
+
+     /* 탭 메뉴, 이미지, 텍스트 묶음 (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+    .intro_tab{
+     width: 100%;
+     height: 100%;
+     margin-top: 20pt;
+     margin-bottom: 40pt;
+     }
+  
+     /* 탭 메뉴 부분 (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+    .inttab_menu {
+     width: 99.9%;
+     line-height: 400%; /* 탭 메뉴의 border 칸 높이값 설정 */
+     height: 100%;
+     border: 1px solid black;
+     display: table;
+     border-collapse: collapse;  /* 탭메뉴간 border를 중복없이 겹침 */
+     margin-bottom: 30pt;
+     /* background-color: aqua; */
+     }
+    
+     /* 탭 메뉴 버튼 리스트<li> (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+    .inttab_menu li {
+      /* line-height: 200%; */
+      border: 0px solid black;
+      display: table-cell;
+      /* font-size: 2.7rem; */
+      font-size: 5.362vh;
+      text-align: center;
+      /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
+      margin-right: 10px;
+      padding: 10px 20px;
+      /* background-color: cornflowerblue; */
+      }
+  
+      /* 탭 버튼 하위 소개 이미지, 텍스트 묶음 */
+      /* (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+      .intro_title {
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+       display: table-cell;
+       border: 1px solid black;
+       padding: 10pt 30pt;
+       margin-left: 1pt;
+      }
+      
+      /* 장소 이름 텍스트 <h1> (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
+      .intro_title .intro_img>h1 {
+      float: left;
+      width: 50%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 7px 10px;
+      margin-top: 1pt;
+      transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭" 이미지가 인 아웃되는 속도 */
+      /* background-color: aqua; */
+      }
+      
+      /* 지도보기 버튼 (모바일, 태블릿이 같이 지정되어 있음) */
+      .intro_title .intro_img>input {
+      float: right;
+      margin-right: -20px;
+      background-color: bisque;
+      padding: 5px 10px;
+      transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭" 이미지가 인 아웃되는 속도 */
+      }
+
+      .intro_img {
+      /* 스크롤시 페이드 효과 관련 */
+      opacity: 0; /* 이미지 투명(0), 불투명(1) 조절 */
+      transition: opacity 0.5s ease-in-out; /* "스크롤 했을 때" 이미지가 인 아웃되는 속도 */
+      }
+
+      /* 탭 버튼 클릭시 출력되는 소개 장소 이미지 */
+      img.jangso{
+      width: 53.71093% ; /* 550pt */
+      height: 57.61718% ; /* 590pt */
+      padding: 2% 0%;
+      margin-top: -2.4%;
+      /* opacity: 0; <- 이미지 투명(0), 불투명(1) 조절, .intro_img에서 적용되어 있으므로 따로 적용 필요없음 */
+      transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
+      /* margin-bottom: 1%; */
+      }
+      
+      /* 식물원 소개 이미지 */
+      #jangso2{
+        margin-bottom: 6%;
+      }
+
+      /* 모바일 화면 출력용 추가 소개 이미지: PC와 태블릿은 화면 제외 
+      (미디어 쿼리 태블릿과 같이 지정, 모바일은 제외) */
+      img.hide_img {
+       display: none;
+       transition: opacity 1s ease-in-out;
+      }
+
+      /* 탭 버튼 클릭시 출력되는 소개 텍스트 */
+      .intro_text {
+       word-break: break-all;
+       width: 40%;
+       /* opacity: 0; <- 이미지 투명(0), 불투명(1) 조절, 부모단인 .intro_img에서 적용되어 있으므로 따로 적용 필요없음 */
+       transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
+      }
+
+      /* 식물관 소개 텍스트 */
+      #intro_text2{
+       margin-bottom: 1%;
+      }
+      
+      /* 중앙광장 소개 텍스트 */
+      #intro_text3{
+       margin-bottom: -5%;
+      }
+      
+      /* 생태호수 소개 텍스트 */
+      #intro_text4{
+       margin-bottom: -5%;
+      }
+    }
+
+      /* ========== pc 미디어 쿼리 끝 ========== */

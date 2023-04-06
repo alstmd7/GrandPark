@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.tab-menu {
+  display: flex;
+  border-bottom: 1px solid black; /* 탭 바 아래에 1px의 검은색 선을 그립니다. */
+}
+
+.tab {
+  background-color: lightgray;
+  border: none; /* 버튼의 테두리를 없앱니다. */
+  border-bottom: 2px solid transparent; /* 선택된 탭의 아래 테두리를 없앱니다. */
+  color: black;
+  cursor: pointer;
+  flex: 1; /* 탭 버튼이 같은 크기가 되도록 설정합니다. */
+  font-size: 16px;
+  outline: none; /* 선택되었을 때 버튼 주변에 나타나는 파란색 테두리를 없앱니다. */
+  padding: 10px 20px; /* 여백을 없애기 위해 padding 대신 border를 사용합니다. */
+  text-align: center;
+  transition: border-bottom 0.5s; /* 선택된 탭의 아래 테두리가 부드럽게 변하도록 transition을 설정합니다. */
+}
+
+.tab.active {
+  border-bottom: 2px solid black; /* 선택된 탭의 아래 테두리를 검은색으로 설정합니다. */
+}
+
+</style>
+
+
+</head>
+<body>
+    <div class="tab-menu">
+        <button class="tab active">Tab 1</button>
+        <button class="tab">Tab 2</button>
+        <button class="tab">Tab 3</button>
+      </div>
+      
+</body>
+</html>

@@ -315,8 +315,6 @@ div.footer a{
 }
 
 
-
-
 /* 미디어쿼리, PC */
 @media screen and (min-width:1024px) {
     html {
@@ -368,8 +366,6 @@ div.footer a{
     /* 이미지의 최대 높이는 화면의 30% */
     max-height: 30vh;
     }
-
-
 }
 
 /* 미디어쿼리, 태블릿 */
