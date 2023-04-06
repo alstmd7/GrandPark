@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/event_check.css">
     <script src="../js/jquery-3.6.4.js"></script>
+    <title>예약 확인</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
             // 예약조회 버튼 클릭 시
             $("#event_check_btn").click(function () {
-
                 // check_num에 입력한 값을 대문자로 저장
                 const check_num = document.querySelector('#book_num').value.toUpperCase();
-                
+
                 // check_num이 올바른 번호라면
-                if (check_num == "Q") {
+                if (check_num == "QWEASD") {
                     // 예약조회 정보영역의 display를 flex로 변경
                     $(".event_check_info").css("display", "flex");
                     // 예약 번호가 입력되지 않으면
@@ -28,44 +29,57 @@
                     alert("예약번호가 올바르지 않습니다.");
                 }
             })
+
+            // 예약취소 버튼 클릭 시
+            $('#event_check_cancel').click(function () {
+                // 예약취소 재확인
+                reponse = confirm("예약을 취소하시겠습니까?");
+                // 확인 선택 시 예약취소 완료 알림창 노출 후 예약정보 창 숨기기
+                if (reponse === true) {
+                    alert("예약취소가 완료되었습니다.")
+                    $(".event_check_info").css("display", "none");
+                    document.querySelector('#book_num').value = ""
+                }
+            })
         })
         window.onload = function () { };
     </script>
-    <title>Document</title>
 </head>
 
 <body>
-    <!-- 헤더 영역 -->
-    <header class="header"></header>
-    <!-- 행사 예약 및 취소 -->
-    <div class="event_book_title">예약 확인 및 취소</div>
-    <hr>
-    <!-- 예약번호 조회 -->
-    <!-- 보안성이 높은 post 사용 -->
-    <div class="event_check_search">
-        <div>예약번호입력</div>
-        <div>
-            <!-- 예약번호 입력 칸 -->
-            <input type="text" name="book_num" id="book_num">
+    <div class="wrap">
+        <!-- 헤더 영역 -->
+        <header class="header"></header>
+        <!-- 행사 예약 및 취소 -->
+        <div class="event_book_title">예약 확인 및 취소</div>
+        <hr>
+        <!-- 예약번호 조회 -->
+        <!-- 보안성이 높은 post 사용 -->
+        <div class="event_check_search">
+            <div>예약번호입력</div>
+            <div>
+                <!-- 예약번호 입력 칸 -->
+                <input type="text" name="book_num" id="book_num">
+            </div>
+            <!-- 예약번호 조회 버튼 -->
+            <button id="event_check_btn">조회</button>
         </div>
-        <!-- 예약번호 조회 버튼 -->
-        <button id="event_check_btn">조회</button>
-    </div>
-    <!-- 예약번호 조회 정보 -->
-    <div class="event_check_info">
-        <p>행사명</p>
-        <!-- 예약번호 조회 정보 출력 칸 -->
-        <div></div>
-        <p>행사 날짜</p>
-        <div></div>
-        <p>신청자명</p>
-        <div></div>
-        <p>예약날짜</p>
-        <div></div>
-        <p>신청인원</p>
-        <div></div>
-        <!-- 예약취소 버튼 -->
-        <button id="event_check_cancel">예약취소</button>
+        <!-- 예약번호 조회 정보 -->
+        <div class="event_check_info">
+            <p>행사명</p>
+            <!-- 예약번호 조회 정보 출력 칸 -->
+            <div>메타세콰이어 걷기</div>
+            <p>행사 날짜</p>
+            <div>2023-04-10</div>
+            <p>신청자명</p>
+            <div>홍길동</div>
+            <p>예약날짜</p>
+            <div>2023-04-07</div>
+            <p>신청인원</p>
+            <div>2명</div>
+            <!-- 예약취소 버튼 -->
+            <button id="event_check_cancel">예약취소</button>
+        </div>
     </div>
 </body>
 

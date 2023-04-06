@@ -10,7 +10,7 @@
     text-align: center;
     height: 70px;
     margin-top: 80px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -23,7 +23,7 @@ hr {
 .event_check_search {
     margin: 118px auto 70px auto;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +41,12 @@ hr {
 #book_num {
     margin-left: 40px;
     height: 39px;
-    width: 520px;
+    width: 500px;
     border: 1px solid black;
     border-radius: 8px;
     /* 소문자를 입력해도 대문자로 보여줌 -> 값은 소문자로 저장됨 */
     text-transform: uppercase;
+    padding-left: 10px;
 }
 
 /* 예약번호 조회 버튼 */
@@ -66,25 +67,34 @@ hr {
 .event_check_info {
     padding-top: 38px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: none;
     flex-direction: column;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* 예약번호 조회 정보 출력 이름 */
 .event_check_info p {
-    width: 640px;
+    width: 100%;
+    max-width: 640px;
     text-align: left;
+    color: gray;
+    font-weight: 400;
 }
 
 /* 예약번호 조회 정보 출력 칸 */
 .event_check_info div {
     height: 50px;
-    width: 640px;
-    margin: 10px 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 10px 0 25px 0;
     line-height: 50px;
     border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-weight: 400;
 }
 
 /* 예약취소 버튼 */
@@ -98,7 +108,7 @@ hr {
     color: white;
     background-color: red;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 30px auto;
     display: block;
 }
 
@@ -116,9 +126,9 @@ hr {
     /* 예약번호 입력 칸 */
     #book_num {
         margin: 10px 0; 
-        height: 39px;
-        width: 95vw;
-        max-width: 520px;
+        height: 35px;
+        width: 80vw;
+        max-width: 500px;
         border: 1px solid black;
         border-radius: 8px;
     }
@@ -136,15 +146,4 @@ hr {
         margin-left: 0;
         cursor: pointer;
     }
-
-    /* 예약번호 조회 정보 출력 이름 */
-    .event_check_info p {
-        width: 95%;
-    }
-
-    /* 예약번호 조회 정보 출력 칸 */
-    .event_check_info div {
-        width: 95%;
-    }
-
 }
