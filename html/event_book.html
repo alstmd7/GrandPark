@@ -8,39 +8,104 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/event_book.css">
     <script src="../js/jquery-3.6.4.js"></script>
-    <title>Document</title>
+    <title>행사 예약</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            //예약 버튼 클릭 시
-            $(".event_book_btn").click(function (){
-                // 체크박스에 체크가 되있지 않으면
-                if ($("#isChecked").is(":checked") == false) {
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // 예약 버튼 클릭 시
+            $(".event_book_btn").click(function (event) {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
+                // 달력에서 날짜를 선택하지 않으면
+                if (document.querySelector("#event_date").textContent == "달력에서 날짜를 선택해주세요.") {
+                    alert("달력에서 예약날짜를 선택해주세요.");
+                    // 이름이 공백이거나 올바르지않을 경우 함수 실행
+                } else if (username.value == "" || !pattern_name.test(username.value)) {
+                    errorName();
+                    // 신청인원이 0명이면
+                } else if (count_num == 0) {
+                    alert("신청인원을 1명 이상 선택해주세요.");
+                    // 번호가 공백이면 올바르지않을 경우 함수 실행
+                } else if (userphone.value == "" || !pattern_num.test(userphone.value)) {
+                    errorPhone();
+                    // 체크박스에 체크가 되있지 않으면
+                } else if ($("#isChecked").is(":checked") == false) {
                     // 개인정보활용에 동의해주세요. 텍스트 노출
-                    $(".event_accept").text("개인정보활용에 동의해주세요.")
-                    console.log($("#isChecked").is(":checked"))
+                    $(".checkbox_error").text("개인정보활용에 동의해주세요.");
                     // 그렇지 않으면 공백으로 노출
                 } else {
-                    $(".event_accept").text("")
+                    alert("예약이 완료되었습니다.");
+                    window.location.href="../index.html";
                 }
             })
+            
+            // 체크박스를 클릭하여 체크가 되어있으면 에러메세지 제거
+            document.querySelector("#isChecked").addEventListener('click', function(){
+                if ($("#isChecked").is(":checked") == true) {
+                    // 체크박스에 체크되어있으면 에러메세지 제거
+                    $(".checkbox_error").text("");
+                } 
+            })
+                
+            // 이름 입력 칸에서 포커스가 벗어났을때
+            document.querySelector("#event_name").addEventListener('blur', errorName);
+            // 이름 칸에 입력받은 값을 username에 저장
+            var username = document.querySelector("#event_name");
+            // 이름이 한글이나 영문자로 쓰였는지 확인하는 정규표현식
+            var pattern_name = /^[가-힣a-zA-Z]+$/;
+
+            function errorName() {
+                // 이름이 공백일 경우
+                if (username.value === "") {
+                    // 이름을 입력해달라는 에러 메세지 출력
+                    document.querySelector(".name_error").textContent = "이름을 입력해주세요."
+                    // 이름이 한글이나 영문이외에 문자가 포함된 경우
+                } else if (!pattern_name.test(username.value)) {
+                    document.querySelector(".name_error").textContent = "한글이나 영문만 입력해주세요.(공백, 특수기호 제외)"
+                    // 위의 조건문에 걸리지 않으면 에러문 제거
+                } else {
+                    document.querySelector(".name_error").textContent = ""
+                }
+            }
+            // 번호 칸에 입력받은 값을 userphone에 저장
+            var userphone = document.querySelector("#event_phone");
+            // 번호가 숫자인지 확인하는 정규표현식
+            var pattern_num = /^[0-9]*$/;
+
+            // 번호 입력 칸에서 포커스가 벗어났을때
+            document.querySelector("#event_phone").addEventListener('blur', errorPhone);
+            function errorPhone() {    
+                // 번호가 공백일 경우
+                if (userphone.value === "") {
+                    document.querySelector(".phone_error").textContent = "번호를 입력해주세요."
+                    // 번호에 숫자를 제외한 문자가 포함된 경우
+                } else if (!pattern_num.test(userphone.value)) {
+                    document.querySelector(".phone_error").textContent = "숫자만 입력해주세요.(공백, 특수기호 제외)"
+                    // 위의 조건문에 걸리지 않으면 에러문 제거
+                } else {
+                    document.querySelector(".phone_error").textContent = ""
+                }
+            }
 
             // 변수 선언
             let count_num = 0;
-            const plusBtn = document.querySelector("#count_plus");
-            const minusBtn = document.querySelector("#count_minus");
-            const event_count = document.querySelector(".event_count")
-            
+            const event_count = document.querySelector(".event_count_num")
+
             // + 버튼 클릭 시 
-            plusBtn.addEventListener("click", function(){
+            document.querySelector("#count_plus").addEventListener("click", function () {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
                 // 카운트 숫자가 50보다 작으면
-                if (count_num < 50) {
+                if (count_num < 10) {
                     // 카운트를 1 증가시키고 텍스트 변경
                     count_num += 1;
                     event_count.textContent = count_num;
                 }
             })
             // - 버튼 클릭 시 
-            minusBtn.addEventListener("click", function(){
+            document.querySelector("#count_minus").addEventListener("click", function () {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
                 // 카운트 숫자가 0보다 크면
                 if (count_num > 0) {
                     // 카운트를 1 감소시키고 텍스트 변경
@@ -48,82 +113,257 @@
                     event_count.textContent = count_num;
                 }
             })
+
+            var year, month, calendar;
+
+            // 달력에서 날짜 선택 시 날짜 텍스트 출력
+            function displayDate(date) {
+                event_date.textContent = date;
+            }
+
+            function createCalendar(year, month) {
+                var firstDay = new Date(year, month - 1, 1).getDay(); // 첫 번째 날의 요일
+                var lastDate = new Date(year, month, 0).getDate(); // 마지막 날의 날짜
+                var date = 1; // 날짜
+                var table = document.createElement("table");
+
+                // 첫 번째 행에 요일 추가
+                var tr = document.createElement("tr");
+                var days = ["일", "월", "화", "수", "목", "금", "토"];
+                for (var i = 0; i < 7; i++) {
+                    var th = document.createElement("th");
+                    th.innerHTML = days[i];
+                    if (i === 0) {
+                        // 일요일 글자색을 빨간색으로 변경
+                        th.style.color = 'red';
+                    } else if (i === 6) {
+                        // 토요일 글자색을 파란색으로 변경
+                        th.style.color = 'blue';
+                    }
+                    th.innerHTML = days[i];
+                    tr.appendChild(th);
+                }
+                table.appendChild(tr);
+
+                for (var i = 0; i < 6; i++) {
+                    var tr = document.createElement("tr");
+
+                    for (var j = 0; j < 7; j++) {
+                        var td = document.createElement("td");
+
+                        if (i === 0 && j < firstDay) {
+                            // 첫 번째 주에서 첫 번째 날짜 이전의 빈 셀
+                            td.innerHTML = "&nbsp;";
+                        } else if (date > lastDate) {
+                            // 마지막 날짜 이후의 빈 셀
+                            td.innerHTML = "&nbsp;";
+                        } else {
+                            // 유효한 날짜
+                            td.innerHTML = date;
+
+                            if (j === 0) {
+                                // 달력의 일요일 글자색을 빨간색으로 변경
+                                td.style.color = 'red';
+                            } else if (j === 6) {
+                                // 달력의 토요일 글자색을 파란색으로 변경
+                                td.style.color = 'blue';
+                            }
+
+                            // 선택한 날짜 배경색 변경
+                            var selectedDate = null;
+                            function setSelectedDate(td) {
+                                if (selectedDate != null) {
+                                    // 이전에 선택한 날짜의 배경색을 원래대로 돌립니다.
+                                    selectedDate.style.backgroundColor = '';
+                                }
+                                // 선택한 날짜의 배경색을 변경합니다.
+                                td.style.backgroundColor = 'rgb(144, 238, 144)';
+                                selectedDate = td;
+                            }
+
+                            td.onclick = function () {
+                                displayDate(year + "-" + month + "-" + this.innerHTML);
+                                setSelectedDate(this);
+                            };
+                            date++;
+                        }
+
+                        tr.appendChild(td);
+                    }
+
+                    table.appendChild(tr);
+                }
+
+                return table;
+            }
+
+            function showCalendar() {
+                calendar = createCalendar(year, month);
+                document.getElementById("calendar").innerHTML = "";
+                document.getElementById("calendar").appendChild(calendar);
+                document.getElementById("currentMonth").innerHTML = year + "년 " + month + "월";
+            }
+
+            // 달력 왼쪽 버튼 클릭 시 다음달로 이동
+            document.querySelector('#previousMonth').addEventListener('click', function () {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
+                month--;
+                if (month < 1) {
+                    year--;
+                    month = 12;
+                }
+                showCalendar();
+            })
+
+            // 달력 오른쪽 버튼 클릭 시 다음달로 이동
+            document.querySelector('#nextMonth').addEventListener('click', function () {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
+                month++;
+                if (month > 12) {
+                    year++;
+                    month = 1;
+                }
+                showCalendar();
+            })
+
+            year = new Date().getFullYear();
+            month = new Date().getMonth() + 1;
+            showCalendar();
         })
+
+
     </script>
 </head>
 
 <body>
-    <!-- 헤더 영역 -->
-    <header class="header"></header>
+    <div class="wrap">
+        <!-- 헤더 영역 -->
+        <header class="header"></header>
 
-    <!-- 행사 예약 -->
-    <div class="event_book_title">행사 예약</div>
+        <!-- 행사 예약 -->
+        <div class="event_book_title">행사 예약</div>
 
-    <!-- 행사 예약 내용 -->
-    <div class="event_book_info">
-        <div>
-            <h1>2023 메타세콰이어 걷기</h1>
+        <!-- 행사 예약 내용 -->
+        <div class="event_book_info">
+            <div>
+                <h1>메타세콰이어 걷기</h1>
+            </div>
+            <!-- 행사 예약 내용 분리선 -->
+            <span class="info_line"></span>
+            <div>
+                <p>행사일시 | 2023.04.01 ~ 2023.04.30</p>
+                <p>접수기간 | 2023.03.31 ~ 2023.04.30</p>
+                <p>행사장소 | 식물원 옆 메타세콰이어</p>
+                <p>행사정원 | 하루 50명</p>
+                <p>참가비용 | 무료</p>
+                <p>문의전화 | 012-345-6789</p>
+            </div>
         </div>
-        <!-- 행사 예약 내용 분리선 -->
-        <span class="info_line"></span>
-        <div>
-            <p>행사일시 | 2023.04.01 ~ 2023.04.30</p>
-            <p>접수기간 | 2023.03.31 ~ 2023.04.30</p>
-            <p>행사장소 | 식물원 옆 메타세콰이어길</p>
-            <p>행사정원 | 하루 50명</p>
-            <p>참가비용 | 무료</p>
-            <p>문의전화 | 012-345-6789</p>
+
+        <!-- 행사 예약 폼 -->
+        <!-- 보안성이 높은 post 사용 -->
+        <form action="행사 예약 폼" class="event_book_form" name="event_book_form" method="post">
+
+            <!-- 행사 예약 달력 -->
+            <div class="event_book_date">
+                <div class="event_month">
+                    <div><button id="previousMonth">&lt;&lt;</button></div>
+                    <div>
+                        <h1 id="currentMonth"></h1>
+                    </div>
+                    <div><button id="nextMonth">&gt;&gt;</button></div>
+                </div>
+                <div id="calendar"></div>
+            </div>
+
+            <!-- 행사 예약 폼 입력목록 영역 -->
+            <div>
+                <ul>
+                    <li>
+                        <!-- 행사 예약 폼 입력목록 항목 이름 -->
+                        <label for="event_date">신청날짜</label>
+                        <span id="event_date"><div class="event_date_text">달력에서 날짜를 선택해주세요.</div></span>
+                    </li>
+                    <li>
+                        <label for="event_name">신청자명</label>
+                        <!-- 행사 예약 폼 입력목록 입력 영역 -->
+                        <input class="book_input" type="text" name="event_name" id="event_name" required>
+                    </li>
+                    <span class="name_error form_error"></span>
+                    <li>
+                        <label>신청인원 </label>
+                        <span class="event_count">
+                            <button id="count_minus" class="count_button">-</button>
+                            <span class="event_count_num">0</span>
+                            <button id="count_plus" class="count_button">+</button>
+                        </span>
+                    </li>
+                    <li>
+                        <label for="event_phone">연락처 </label>
+                        <input class="book_input" type="text" name="event_phone" id="event_phone" required
+                            placeholder=" - 제외 전화번호 입력">
+                    </li>
+                    <span class="phone_error form_error"></span>
+                    <li>
+                        <label for="isChecked">개인정보활용동의 <input type="checkbox" name="isChecked" id="isChecked"></label>
+                        <span class="checkbox_error form_error"></span>
+                    </li>
+                    <!-- 예약버튼 -->
+                    <input type="submit" class="event_book_btn" value="예약">
+                </ul>
+            </div>
+        </form>
+
+        <!-- 예약 시 유의사항 내용 -->
+        <div class="event_book_note">
+            <h1>예약 시 주의사항</h1>
+            <p>- 예약은 1회 10명까지 가능합니다.</p>
+            <p>- 예약취소 없이 참석하지 않으면 향후 3회간 예약이 불가하오니 부득이 참석이 어려운 경우에는 예약를 취소하여 주시기 바랍니다.</p>
+            <p>- 입장은 행사 시작 30분 전부터 가능하며, 행사가 시작되면 입장에 제한을 받을 수 있습니다.</p>
+            <p>- 행사시작 10분전까지 예약확인을 하지 않으면 예약은 무효처리 됩니다.</p>
+
+            <h1>개인정보 수집 및 이용 동의 <span class="text_red">(필수)</span></h1>
+            <p>개인정보보호법에 따라 강남대공원에서 예약하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+                사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.</p>
+            <br />
+            <p>1. 수집하는 개인정보</p>
+            <p>이용자가 행사참여를 위해 예약 할 경우, 강남대공원은 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.</p>
+            <p>예약하는 시점에 강남대공원이 이용자로부터 수집하는 개인정보는 아래와 같습니다.</p>
+            <p>- 행사 예약 시 필수항목으로 이름, 휴대전화번호를 수집합니다.</p>
+            <p>서비스 이용 과정에서 IP 주소, 쿠키, 서비스 이용 기록, 기기정보, 위치정보가 생성되어 수집될 수 있습니다.</p>
+            <p>구체적으로 1) 서비스 이용 과정에서 이용자에 관한 정보를 자동화된 방법으로 생성하여 이를 저장(수집)하거나,
+                2) 이용자 기기의 고유한 정보를 원래의 값을 확인하지 못 하도록 안전하게 변환하여 수집합니다. 서비스 이용 과정에서 위치정보가 수집될 수 있으며,
+                네이버에서 제공하는 위치기반 서비스에 대해서는 '네이버 위치기반서비스 이용약관'에서 자세하게 규정하고 있습니다.</p>
+            <p>이와 같이 수집된 정보는 개인정보와의 연계 여부 등에 따라 개인정보에 해당할 수 있고, 개인정보에 해당하지 않을 수도 있습니다.</p>
+            <br />
+            <p>2. 수집한 개인정보의 이용</p>
+            <p>강남대공원 관련 예약 서비스 제공 등 아래의 목적으로만 개인정보를 이용합니다.</p>
+            <p>- 콘텐츠 등 기존 서비스 제공(광고 포함)에 더하여, 인구통계학적 분석, 서비스 방문 및 이용기록의 분석, 개인정보 및 관심에 기반한 이용자간 관계의 형성, 지인 및 관심사 등에 기반한
+                맞춤형 서비스 제공 등 신규 서비스 요소의 발굴 및 기존 서비스 개선 등을 위하여 개인정보를 이용합니다.</p>
+            <p>- 법령 및 강남대공원 이용약관을 위반하는 회원에 대한 이용 제한 조치, 부정 이용 행위를 포함하여 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 계정도용 및 부정거래
+                방지, 약관 개정 등의 고지사항 전달, 분쟁조정을 위한 기록 보존, 민원처리 등 이용자 보호 및 서비스 운영을 위하여 개인정보를 이용합니다.</p>
+            <p>- 유료 서비스 제공에 따르는 본인인증, 구매 및 요금 결제를 위하여 개인정보를 이용합니다.</p>
+            <p>- 이벤트 정보 및 참여기회 제공, 광고성 정보 제공 등 마케팅 및 프로모션 목적으로 개인정보를 이용합니다.</p>
+            <p>- 보안, 프라이버시, 안전 측면에서 이용자가 안심하고 이용할 수 있는 서비스 이용환경 구축을 위해 개인정보를 이용합니다.</p>
+            <br />
+            <p>3. 개인정보의 보관기간</p>
+            <p>전자상거래 등에서의 소비자 보호에 관한 법률, 전자문서 및 전자거래 기본법, 통신비밀보호법 등 법령에서 일정기간 정보의 보관을 규정하는 경우는 아래와 같습니다. 강남대공원은 이 기간 동안
+                법령의 규정에 따라 개인정보를 보관하며, 본 정보를 다른 목적으로는 절대 이용하지 않습니다.</p>
+            <p>- 전자상거래 등에서 소비자 보호에 관한 법률</p>
+            <p>계약 또는 청약철회 등에 관한 기록: 5년 보관</p>
+            <p>대금결제 및 재화 등의 공급에 관한 기록: 5년 보관</p>
+            <p>소비자의 불만 또는 분쟁처리에 관한 기록: 3년 보관</p>
+            <p>- 전자문서 및 전자거래 기본법</p>
+            <p>공인전자주소를 통한 전자문서 유통에 관한 기록 : 10년 보관</p>
+            <p>- 전자서명 인증 업무</p>
+            <p>인증서와 인증 업무에 관한 기록: 인증서 효력 상실일로부터 10년 보관</p>
+            <br />
+            <p>4. 개인정보 수집 및 이용 동의를 거부할 권리</p>
+            <p>이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있습니다. 예약 시 수집하는 최소한의 개인정보, 즉, 필수 항목에 대한 수집 및 이용 동의를 거부하실 경우, 예약이 어려울 수
+                있습니다.</p>
         </div>
-    </div>
-
-    <!-- 행사 예약 폼 -->
-    <!-- 보안성이 높은 post 사용 -->
-    <form action="행사 예약 폼" class="event_book_form" name="event_book_form" method="post">
-
-        <!-- 행사 예약 달력 -->
-        <div class="event_book_date"></div>
-
-        <!-- 행사 예약 폼 입력목록 영역 -->
-        <div>
-            <ul>
-                <li>
-                    <!-- 행사 예약 폼 입력목록 항목 이름 -->
-                    <label for="event_date">신청날짜</label>
-                    <span id="event_date"></span>
-                </li>
-                <li>
-                    <label for="event_name">신청자명</label>
-                    <!-- 행사 예약 폼 입력목록 입력 영역 -->
-                    <input class="book_input" type="text" name="event_name" required>
-                </li>
-                <li>
-                    <label>신청인원 </label>
-                    <button id="count_minus">-</button>
-                    <span class="event_count">0</span>
-                    <button id="count_plus">+</button>
-                </li>
-                <li>
-                    <label for="event_phone">연락처 </label>
-                    <input class="book_input" type="text" name="event_phone" required>
-                </li>
-                <li>
-                    <label for="isChecked">개인정보활용동의 </label>
-                    <input type="checkbox" name="isChecked" id="isChecked">
-                    <span class="event_accept"></span>
-                </li>
-                <!-- 예약버튼 -->
-                <input type="submit" class="event_book_btn" value="예약">
-            </ul>
-        </div>
-    </form>
-
-    <!-- 예약 시 유의사항 내용 -->
-    <div class="event_book_note">
-        <h1>예약 시 주의사항</h1>
-        <p>- 예약은 1회 50명까지 가능합니다.</p>
-        <p>- 예약취소 없이 참석하지 않으면 향후 3회간 예약이 불가하오니 부득이 참석이 어려운 경우에는 예약를 취소하여 주시기 바랍니다.</p>
-        <p>- 입장은 행사 시작 30분 전부터 가능하며, 행사가 시작되면 입장에 제한을 받을 수 있습니다.</p>
-        <p>- 행사시작 10분전까지 예약확인을 하지 않으면 예약은 무효처리 됩니다.</p>
     </div>
 </body>
 
