@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- reset css -->
     <link href="../css/reset.css" rel="stylesheet" />
+    <!-- 헤더, 푸터 css -->
+    <link href="../css/header_footer.css" rel="stylesheet" />
     <!-- notice css -->
     <link href="../css/notice.css" rel="stylesheet" />
     <!-- 제이쿼리 추가(구글) -->
@@ -90,27 +92,121 @@
 
         <!-- 공지 배너 및 타이틀 -->
         <div class="notice_title">
-
+            <img src="../images/grass.jpg" />
+            <strong>공지사항</strong>
         </div>
 
-        <!-- 드랍다운 메뉴(전체,제목,내용) -->
-        <div class="notice_drop">
-
-        </div>
-
-        <!-- 검색 -->
-        <div class="notcie_search">
-
+        <!-- 드랍다운과 검색 -->
+        <div class="notice_search_wrap">
+            <!-- 드롭다운(전체,제목,내용) -->
+            <div class="notice_drop">
+                <select name="search" id="search">
+                    <option value="all">전체</option>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                </select>
+            </div>
+            <!-- 검색 -->
+            <div class="notice_search">
+               <form action="#" method="post">
+                    <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <button type="submit">
+                            <img src="../images/icon/search.svg" alt="검색"/>
+                        </button>
+                </form>
+            </div>
         </div>
 
         <!-- 게시판 리스트 -->
         <div class="notice_list">
-
+            <!-- 공지사항 목록을 감싸고 있는 박스 -->
+            <div class="board_list_wrap">
+                <!-- 공지사항 목록 -->
+                <div class="board_list">
+                    <div class="top">
+                        <div class="num">번호</div>
+                        <div class="title">제목</div>
+                        <div class="write">글쓴이</div>
+                        <div class="date">작성일</div>
+                        <div class="count">조회</div>
+                    </div>
+                    <div>
+                        <div class="num">5</div>
+                        <div class="title">
+                            <a href="notice_view.html">공지사항 글 제목5</a>
+                        </div>
+                        <div class="write">홍길동</div>
+                        <div class="date">2023.04.04</div>
+                        <div class="count">31</div>
+                    </div>
+                    <div>
+                        <div class="num">4</div>
+                        <div class="title">
+                            <a href="notice_view.html">공지사항 글 제목4</a>
+                        </div>
+                        <div class="write">홍길동</div>
+                        <div class="date">2023.04.04</div>
+                        <div class="count">31</div>
+                    </div>
+                    <div>
+                        <div class="num">3</div>
+                        <div class="title">
+                            <a href="notice_view.html">공지사항 글 제목3</a>
+                        </div>
+                        <div class="write">홍길동</div>
+                        <div class="date">2023.04.04</div>
+                        <div class="count">31</div>
+                    </div>
+                    <div>
+                        <div class="num">2</div>
+                        <div class="title">
+                            <a href="notice_view.html">공지사항 글 제목2</a>
+                        </div>
+                        <div class="write">홍길동</div>
+                        <div class="date">2023.04.04</div>
+                        <div class="count">31</div>
+                    </div>
+                    <div>
+                        <div class="num">1</div>
+                        <div class="title">
+                            <a href="notice_view.html">공지사항 글 제목1</a>
+                        </div>
+                        <div class="write">홍길동</div>
+                        <div class="date">2023.04.04</div>
+                        <div class="count">31</div>
+                    </div>
+                </div>
+                <!-- 페이징 -->
+                <div class="board_page">
+                    <a href="#" class="bt first">&lt;&lt;</a>
+                    <a href="#" class="bt prev">&lt;</a>
+                    <a href="#" class="num on">1</a>
+                    <a href="#" class="num">2</a>
+                    <a href="#" class="num">3</a>
+                    <a href="#" class="num">4</a>
+                    <a href="#" class="num">5</a>
+                    <a href="#" class="bt next">&gt;</a>
+                    <a href="#" class="bt last">&gt;&gt;</a>
+                </div>
+            </div>
         </div>
 
         <!-- 문의 -->
         <div class="notice_help">
-            
+            문의 : 010 - 1234 - 1234
+        </div>
+
+        <!-- 푸터 -->
+        <div class="footer">
+            <ul>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">이메일무단수집거부</a></li>
+                <li><a href="#">서비스이용약관</a></li>
+            </ul>
+            <div><p>(우편번호)서울시 강남구 ~</p>
+            <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+            <p>&copy; copyrights all reserved.</p></div>
+        </div>
         </div>
 
     </div>

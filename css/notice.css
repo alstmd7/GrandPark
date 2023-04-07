@@ -1,10 +1,5 @@
-html {
-    /* 기준이 되는 루트 요소(html)의 폰트 사이즈 설정 */
-    font-size: 12px;
-}
-
 /* 이미지 가로는 모두 가로에 꽉 차게 설정 */
-img{
+img {
     width: 100%;
 }
 
@@ -23,13 +18,14 @@ div.wrap>div {
 }
 
 /*==== 로고 부분 ====*/
-div.banner_logo{
+div.banner_logo {
     /* 높이 설정, 전체 화면 높이의 6% 차지 */
     height: 6vh;
     /* 로고(텍스트)와 메뉴 버튼의 위치를 잡기 위해 position 속성 사용, 기준이 되는 부모에 relative 설정
      중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요*/
     position: relative;
 }
+
 div.banner_logo>span.logo {
     /* 로고 텍스트의 글자를 부모 크기의 1.8배로 설정 */
     font-size: 1.8rem;
@@ -44,8 +40,9 @@ div.banner_logo>span.logo {
     /* span크기만큼 가로 -50%, 세로 -50% 이동하여 span 요소 자체가 부모(div) 가운데로 위치시키기 위해 사용 */
     transform: translate(-50%, -50%);
 }
+
 /* 메뉴 토글 버튼 이미지 */
-div.banner_logo>img.menu_toggle_btn{
+div.banner_logo>img.menu_toggle_btn {
     /* 크기 조정 */
     width: 25px;
     height: 25px;
@@ -53,14 +50,14 @@ div.banner_logo>img.menu_toggle_btn{
      중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요 */
     position: absolute;
     /* 세로정렬, 오른쪽에서 3% */
-    top:50%;
-    right:3%;
+    top: 50%;
+    right: 3%;
     /* 이미지 크기만큼 세로 -50% 하여 가운데로 이동 */
     transform: translateY(-50%);
 }
 
 /*==== 메뉴 부분 ====*/
-div.header_menu{
+div.header_menu {
     /* 기본적으로 화면에 보이지 않도록 처리 */
     display: none;
 }
@@ -86,13 +83,15 @@ div.menu_title {
     /* 글과 아이콘 서로 양 쪽 끝으로 위치하게 정렬 */
     justify-content: space-between;
 }
+
 /* 메인메뉴가 눌릴 경우 */
-div.menu_title:active{
+div.menu_title:active {
     /* 배경 색 변경 */
     background-color: rgb(240, 142, 22);
 }
+
 /* 메인 메뉴 드롭다운 표시 아이콘 */
-div.menu_title>img{
+div.menu_title>img {
     width: 15px;
     height: 15px;
 }
@@ -102,8 +101,9 @@ div.menu_sub {
     /* 기본적으로 화면에서 보이지 않음 */
     display: none;
 }
+
 /* 서브 메뉴 각 li */
-div.menu_sub li{
+div.menu_sub li {
     /* 높이 설정 */
     height: 5vh;
     /* line-hight를 높이와 같게 하여 세로 가운데 정렬 */
@@ -111,7 +111,8 @@ div.menu_sub li{
     /* 배경 색 */
     background-color: rgb(254, 255, 211);
 }
-div.menu_sub a{
+
+div.menu_sub a {
     /* 기본적으로 a 태그는 inline 레벨 요소이므로 부모(li)의 크기만큼 가지게 하기 위해
     inline-block요소 설정 */
     display: inline-block;
@@ -120,4 +121,266 @@ div.menu_sub a{
     /* 왼쪽 패딩 추가 */
     padding-left: 3%;
     font-size: 1.2rem;
+}
+
+/*==== 공지 배너 및 타이틀 ====*/
+div.notice_title {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+}
+
+div.notice_title>strong {
+    position: absolute;
+    /* 중앙위치 */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    /* 그림보다 위에 있어야 하므로 z-index 높게 설정 */
+    z-index: 9999;
+    /* 폰트 설정 */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+div.notice_title>img {
+    height: 100%;
+    /* 이미지 필터 , 대비 블러 */
+    filter: contrast(50%) blur(1px);
+}
+
+
+/*==== 드롭다운 및 검색 ====*/
+div.notice_search_wrap{
+    margin: 3% 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 8vh;
+    font-size: 0;
+}
+#search{
+    height: 30px;
+    width: 60px;
+}
+
+/* 검색 */
+div.notice_search>form{
+    display: flex;
+    align-items: center;
+}
+div.notice_search input[type="text"]{
+    height: 30px;
+    width: 300px;
+    padding: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 0 3%;
+}
+div.notice_search button{
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #999;
+    border-radius: 3px;
+}
+div.notice_search button>img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*==== 게시판 리스트 ====*/
+div.notice_list {
+    width: 100%;
+}
+
+/* 목록 */
+div.board_list {
+    /* 부모의 100% */
+    width: 100%;
+    border-top: 2px solid black;
+}
+
+div.board_list>div {
+    border-bottom: 1px solid #ddd;
+    /* 원할한 정렬을 위해 font-size:0 설정, 자식 요소들 각각 font-size 설정 필요 */
+    font-size: 0;
+    padding-top: 1%;
+}
+
+div.board_list>div.top {
+    border-bottom: 1px solid #999;
+}
+
+div.board_list>div:last-child {
+    border-bottom: 1px solid black;
+}
+
+div.board_list>div>div {
+    display: inline-block;
+    /* 요소 수직 가운데 정렬 */
+    vertical-align: middle;
+    /* 가로 가운데 정렬 */
+    text-align: center;
+    /* 부모 요소에서 정렬을 위해 font-size를 0으로 설정하였으므로 재설정 필요 */
+    font-size: 1rem;
+    /* 여백 설정 */
+    padding: 3% 0;
+}
+
+/* 번호 */
+div.board_list div.num {
+    display: none;
+}
+
+/* 제목 */
+div.board_list div.title {
+    width: 60%;
+}
+
+div.board_list>.top>div {
+    font-weight: 600;
+}
+
+/* 글쓴이 */
+div.board_list div.write {
+    display: none;
+}
+
+/* 작성일 */
+div.board_list div.date {
+    width: 40%;
+}
+
+/* 조회 */
+div.board_list div.count {
+    display: none;
+}
+
+/* 페이징 */
+div.board_page {
+    margin: 5% 0;
+    text-align: center;
+    /* div 사이 간격 없앰 */
+    font-size: 0;
+}
+
+div.board_page>a {
+    /* a 태그는 기본적으로 inline */
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-left: none;
+    /* 수직 가운데 정렬 */
+    vertical-align: middle;
+    /* 패딩으로 가운데 정렬 잡기위해 */
+    line-height: 100%;
+}
+
+div.board_page>a.bt {
+    font-size: 1.2rem;
+    padding-top: 10px;
+    /* 꺽쇠끼리 멀어서 살짝 서로 가까이 붙게 하려고 씀 */
+    letter-spacing: -1px;
+}
+
+div.board_page>a:first-child {
+    border-left: 1px solid #ddd;
+}
+
+div.board_page>a.num {
+    font-size: 1.4rem;
+    padding-top: 9px;
+}
+
+div.board_page>a.num.on {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+/*==== 문의 ====*/
+div.notice_help{
+    padding-left: 3%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+
+/*==== 미디어쿼리 태블릿 ====*/
+@media (min-width:768px) and (max-width:1023px) {
+
+    /* 번호 */
+    div.board_list div.num {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 제목 */
+    div.board_list div.title {
+        display: inline-block;
+        width: 60%;
+        text-align: left;
+    }
+
+    /* 글쓴이 */
+    div.board_list div.write {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 작성일 */
+    div.board_list div.date {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 조회 */
+    div.board_list div.count {
+        display: inline-block;
+        width: 10%;
+    }
+}
+
+/*==== 미디어쿼리 PC ====*/
+@media (min-width:1024px) {
+
+    /* 번호 */
+    div.board_list div.num {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 제목 */
+    div.board_list div.title {
+        display: inline-block;
+        width: 60%;
+        text-align: left;
+    }
+
+    /* 글쓴이 */
+    div.board_list div.write {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 작성일 */
+    div.board_list div.date {
+        display: inline-block;
+        width: 10%;
+    }
+
+    /* 조회 */
+    div.board_list div.count {
+        display: inline-block;
+        width: 10%;
+    }
 }

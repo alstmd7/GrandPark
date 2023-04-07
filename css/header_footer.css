@@ -1,0 +1,394 @@
+/* 폰트 */
+@font-face { /* 로고 */
+    font-family: 'MYYeongnamnu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* 기본 */
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html {
+    /* 기준이 되는 루트 요소(html)의 폰트 사이즈 설정 */
+    font-size: 18px;
+
+    /* 기본 폰트 */
+    font-family: "LeferiPoint-WhiteObliqueA";
+}
+
+/*==== 로고 부분 ====*/
+div.banner_logo{
+    /* 가로는 화면의 전체 */
+    width: 100%;
+    /* 높이 설정, 전체 화면 높이의 10% 차지 */
+    height: 10vh;
+    /* 로고(텍스트)와 메뉴 버튼의 위치를 잡기 위해 position 속성 사용, 기준이 되는 부모에 relative 설정
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요*/
+    position: relative;
+}
+div.banner_logo>span.logo {
+    /* 폰트 설정 */
+    font-family: "MYYeongnamnu";
+    /* 로고 텍스트의 글자를 부모 크기의 1.8배로 설정 */
+    font-size: 2.5rem;
+    /* 로고 텍스트의 글자 두께를 두껍게 설정 */
+    font-weight: bold;
+    /* 배치를 위해 position 설정 
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요 */
+    position: absolute;
+    /* 중앙에 위치 */
+    top: 50%;
+    left: 50%;
+    /* span크기만큼 가로 -50%, 세로 -50% 이동하여 span 요소 자체가 부모(div) 가운데로 위치시키기 위해 사용 */
+    transform: translate(-50%, -50%);
+}
+/* 메뉴 토글 버튼 */
+div.menu_toggle_btn{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    /* 배치를 위해 position 설정
+     중요! 토글 메뉴는 모바일에서만 사용하므로 설정한 position 속성은 나머지 태블릿 및 PC에서는 해제(position: static;) 필요 */
+    position: absolute;
+    /* 세로정렬, 오른쪽에서 3% */
+    top:50%;
+    right:3%;
+    /* 이미지 크기만큼 세로 -50% 하여 가운데로 이동 */
+    transform: translateY(-50%);
+}
+.menu_btn1, .menu_btn2, .menu_btn3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+/* 각 애니메이션 효과 */
+.change .menu_btn1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+.change .menu_btn2 {
+    /* 완전히 투명하게 */
+    opacity: 0;
+}
+
+.change .menu_btn3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/*==== 메뉴 부분 ====*/
+div.header_menu{
+    /* 가로는 화면의 전체 */
+    width: 100%;
+    /* 기본적으로 화면에 보이지 않도록 처리 */
+    display: none;
+}
+
+/* 메인 메뉴 */
+div.menu_title {
+    /* 마우스 커서 모양 바꾸기 */
+    cursor: pointer;
+    /* 메인 메뉴 부분 글자 두껍게 */
+    font-weight: bold;
+    /* 글자 크기 1.4배 */
+    font-size: 1.4rem;
+    /* 높이 설정 */
+    height: 5vh;
+    /* 가로 설정 */
+    width: 100%;
+    /* 배경 색 설정 */
+    background-color: rgb(255, 210, 148);
+    /* 양쪽 패딩 설정 */
+    padding: 0 3%;
+    /* flex 속성 설정 */
+    display: flex;
+    /* 세로 가운데 정렬 */
+    align-items: center;
+    /* 글과 아이콘 서로 양 쪽 끝으로 위치하게 정렬 */
+    justify-content: space-between;
+}
+/* 메인메뉴가 눌릴 경우 */
+div.menu_title:active{
+    /* 배경 색 변경 */
+    background-color: rgb(240, 142, 22);
+}
+/* 메인 메뉴 드롭다운 표시 아이콘 */
+div.menu_title>img{
+    width: 15px;
+    height: 15px;
+}
+
+/* 서브 메뉴 */
+div.menu_sub {
+    /* 기본적으로 화면에서 보이지 않음 */
+    display: none;
+}
+/* 서브 메뉴 각 li */
+div.menu_sub li{
+    /* 높이 설정 */
+    height: 5vh;
+    /* line-hight를 높이와 같게 하여 세로 가운데 정렬 */
+    line-height: 5vh;
+    /* 배경 색 */
+    background-color: rgb(254, 255, 211);
+}
+div.menu_sub a{
+    /* 기본적으로 a 태그는 inline 레벨 요소이므로 부모(li)의 크기만큼 가지게 하기 위해
+    inline-block요소 설정 */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* 왼쪽 패딩 추가 */
+    padding-left: 3%;
+    font-size: 1.2rem;
+}
+
+
+/*==== 푸터 ====*/
+div.footer{
+    background-color: gray;
+    margin-bottom: 0;
+    font-size: 0.5rem;
+    color: white;
+}
+div.footer>ul{
+    text-align: center;
+    padding: 2%;
+}
+div.footer>ul>li{
+    /* 각 리스트 inline-block(줄바꿈하지 않고, 각 크기(너비,높이)는 가지게 함) */
+    display: inline-block;
+    padding: 0 2%;
+}
+div.footer>ul>li:nth-child(2){
+    /* 리스트 양 옆에 테두리로 | 표시 주기 */
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+div.footer>div{
+    /* 마진, 패딩 조정 */
+    margin: 0;
+    padding: 0 0 2% 2%;
+}
+div.footer p{
+    font-size: 0.5rem;
+    padding-top: 2%;
+}
+div.footer a{
+    color: white;
+}
+
+
+
+
+
+/*==== 미디어쿼리 ====*/
+
+
+/* 미디어쿼리, 태블릿 */
+@media screen and (min-width:768px) and (max-width:1023px) {
+
+    /*==== 로고 부분 ====*/
+    div.banner_logo{
+        /* 포지션 해제(디폴트 값:static) */
+        position: static;
+        /* 중앙 정렬 위해 flex 속성 사용*/
+        display: flex;
+        /* 중앙 정렬 */
+        justify-content: center; /* 주축정렬 (세로정렬) */
+        align-items: center;
+        
+    }
+    div.banner_logo>span.logo{
+        /* 포지션 해제 */
+        position: static;
+        /* top 값을 초기화 */
+        top: auto; 
+        /* left 값을 초기화 */
+        left: auto; 
+        /* transform 값을 초기화 */
+        transform: none; 
+    }
+    div.menu_toggle_btn{
+        /* 포지션 해제 */
+        position: static;
+        top: auto;
+        right: auto;
+        transform: none;
+        /* 토글 버튼 없애주기 */
+        display: none;
+    }
+    
+    /*==== 메뉴 부분 ====*/
+    div.header_menu{
+        display: inline-block;
+        display: flex;
+        justify-content:center;
+
+        background-color: white;
+
+        /* 포지션 설정 */
+        position: absolute;
+        top: 10%;
+    }
+    div.header_menu>div{
+        display: inline-block;
+        /* 768px 기준 130px -> (130/768)*100, 약 17% */
+        width: 17%;
+    }
+    /* 메인메뉴 */
+    div.menu_title{
+        /* 배경 색 없애기 */
+        background-color: white;
+        /* 정렬 바꾸기 */
+        justify-content: center;
+        padding: 0;
+        /* 부모의 너비와 같게 */
+        width: 100%;
+        /* 높이 변경 5vh->6vh */
+        height: 6vh;
+    }
+    div.menu_title>span{
+        width: 100%;
+        text-align: center;
+    }
+    div.menu_title>img{
+        /* 드롭다운 표현하던 이미지 보이지 않게 하기 */
+        display: none;
+    }
+
+    /* 서브 메뉴 */
+    div.menu_sub{
+        /* display: inline-block; */
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    div.menu_sub li{
+        background-color: white;
+        /* 마진 추가 */
+        margin-bottom: 1%;
+    }
+    div.menu_sub a{
+        /* 왼쪽 패딩 삭제 */
+        padding: 0;
+        /* 글자 크기 변경 */
+        font-size: 1.1rem;
+    }
+
+    /* 마우스 오버 시 서브메뉴 글자 색 변화 */
+    .header_menu li:hover a {
+        color: pink;
+    } 
+
+
+}
+
+/* 미디어쿼리, PC */
+@media screen and (min-width:1024px) {
+
+    /*==== 로고 부분 ====*/
+    div.banner_logo{
+        /* 포지션 해제(디폴트 값:static) */
+        position: static;
+        /* 중앙 정렬 위해 flex 속성 사용*/
+        display: flex;
+        /* 중앙 정렬 */
+        justify-content: center; /* 주축정렬 (세로정렬) */
+        align-items: center;
+        
+    }
+    div.banner_logo>span.logo{
+        /* 포지션 해제 */
+        position: static;
+        /* top 값을 초기화 */
+        top: auto; 
+        /* left 값을 초기화 */
+        left: auto; 
+        /* transform 값을 초기화 */
+        transform: none; 
+    }
+    div.menu_toggle_btn{
+        /* 포지션 해제 */
+        position: static;
+        top: auto;
+        right: auto;
+        transform: none;
+        /* 토글 버튼 없애주기 */
+        display: none;
+    }
+    
+    /*==== 메뉴 부분 ====*/
+    div.header_menu{
+        display: inline-block;
+        display: flex;
+        justify-content:center;
+
+        background-color: white;
+
+        /* 포지션 설정 */
+        position: absolute;
+        overflow: hidden;
+        top: 10%;
+    }
+    div.header_menu>div{
+        display: inline-block;
+        /* 768px 기준 130px -> (130/768)*100, 약 17% */
+        width: 17%;
+    }
+    /* 메인메뉴 */
+    div.menu_title{
+        /* 배경 색 없애기 */
+        background-color: white;
+        /* 정렬 바꾸기 */
+        justify-content: center;
+        padding: 0;
+        /* 부모의 너비와 같게 */
+        width: 100%;
+        /* 높이 변경 5vh->6vh */
+        height: 6vh;
+    }
+    div.menu_title>span{
+        width: 100%;
+        text-align: center;
+    }
+    div.menu_title>img{
+        /* 드롭다운 표현하던 이미지 보이지 않게 하기 */
+        display: none;
+    }
+
+    /* 서브 메뉴 */
+    div.menu_sub{
+        /* display: inline-block; */
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    div.menu_sub li{
+        background-color: white;
+        /* 마진 추가 */
+        margin-bottom: 1%;
+    }
+    div.menu_sub a{
+        /* 왼쪽 패딩 삭제 */
+        padding: 0;
+        /* 글자 크기 변경 */
+        font-size: 1.1rem;
+    }
+
+    /* 마우스 오버 시 서브메뉴 글자 색 변화 */
+    .header_menu li:hover a {
+        color: pink;
+    } 
+
+}
