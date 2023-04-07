@@ -39,11 +39,19 @@
 }
 
 /* 행사 목록 이미지 영역 전부 */
-.event_list_img a {
+.event_list_img li {
     width: 70%;
     margin: 0 auto;
     margin-top: 2.5vh;
     height: 35vh;
+    display: flex;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* 행사 목록 이미지 영역 배경 */
+.event_list_img a {
+    width: 100%;
 }
 
 /* 행사 목록 이미지 영역 전부 */
@@ -52,36 +60,25 @@
 }
 
 /* 행사 목록 이미지 영역1 */
-.event_list_img a:first-child {
+.event_list_img li:first-child a {
     background: url(../images/event1.jpg);
     background-size: cover;
-    background-position: center;
-    background-position: bottom;
-    display: flex;
-    position: relative;
+    background-position: center bottom;
+    
 }
 
 /* 행사 목록 이미지 영역2 */
-.event_list_img a:nth-child(2) {
+.event_list_img li:nth-child(2) a {
     background: url(../images/event2.jpg);
     background-size: cover;
     background-position: center;
-    display: flex;
-    position: relative;
 }
 
 /* 행사 목록 이미지 영역3 */
-.event_list_img a:nth-child(3) {
+.event_list_img li:nth-child(3) a {
     background: url(../images/event3.jpg);
     background-size: cover;
     background-position: center;
-    display: flex;
-    position: relative;
-}
-
-/* 행사 목록 이미지 */
-.event_list_img img {
-    width: 100%;
 }
 
 /* 행사 목록 이미지 행사이름 */
@@ -119,7 +116,7 @@
 @media screen and (max-width:1024px) {
 
     /* 행사 목록 이미지 영역 전부 */
-    .event_list_img a {
+    .event_list_img li {
         width: 100%;
     }
 

@@ -41,12 +41,6 @@
             height: 80%;
         }
 
-        /* 행사 예약 내용 텍스트 */
-        .event_detail_info p {
-            /* margin-top: 30px; */
-            /* text-align: left; */
-        }
-
         /* 예약버튼 */
         .event_detail_btn {
             height: 40px;
@@ -70,7 +64,6 @@
 
         .event_detail_poster img {
             width: 100%;
-            height: auto;
         }
 
         /* 행사 시 유의사항 */
