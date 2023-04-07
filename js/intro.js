@@ -19,33 +19,41 @@ $(document).ready(function() {
 });
 
 
-/* 탭 메뉴 선택 시 배너 이미지가 관련 이미지로 교체 */
+// /* 인트로 배너를 페이드 슬라이드 형식으로 이미지 교체 */
 $(document).ready(function() {
   // 탭 메뉴의 버튼을 클릭했을 때
   $(".inttab_menu a").click(function(e) {
-    // 기본 동작을 중지하여 a 태그의 링크 이동을 막습니다.
+    // 기본 동작을 중지하여 a 태그의 링크 이동 방지
     e.preventDefault();
     
     // 선택된 버튼에 active 클래스를 추가하고, 나머지 버튼에서는 active 클래스를 제거
     $(this).parent().addClass("active").siblings().removeClass("active");
     
-    // 선택된 버튼에 해당하는 이미지를 inthide_menu에서 찾아서 intro_banner에 출력
+    // 선택된 버튼에 해당하는 이미지를 inthide_menu에서 찾아서 intro_banner에 슬라이드로 출력
     var index = $(this).parent().index();
-    $(".intro_banner img").attr("src", $(".inthide_menu div").eq(index).find("img").attr("src"));
+    var slide = $(".intro_banner .slide").eq(index);
+    if (!slide.is(":visible")) {
+      $(".intro_banner .slide").fadeOut(400);
+      slide.fadeIn(400);
+    }
   });
 });
 
 
-/* 마우스 스크롤 시 탭 메뉴 하위 요소 페이드 인 아웃 출력 */
-    /* 데스크탑 크기 이상에서만 작동되는 조건문 (전체를 감싸야 함) */
+    /* 마우스 스크롤 시 탭 메뉴 하위 요소 페이드 인 아웃 출력 */
     $(window).scroll(function() {
     var windowHeight = $(window).height();
     var scrollPos = $(window).scrollTop();
 
     // 첫 번째 a href에 대한 동작 적용
     var link1Offset = $('#tabimg_1').offset().top;
-    if (scrollPos > link1Offset - windowHeight + 400) { /* 스크롤 높이에 따른 요소 출력 여부 조정 */
-      $('.intro_img').css('opacity', '1');
+
+    /* 400: 스크롤 높이값, 해당 수치 조절에 따라 
+    요소의 투명, 불투명 여부가 결정*/
+    if (scrollPos > link1Offset - windowHeight + 400) {
+
+    /* opacity: 투명도, 0은 투명, 1은 불투명 */
+      $('.intro_img').css('opacity', '1'); 
     } else {
       $('.intro_img').css('opacity', '0');
     }
@@ -122,7 +130,4 @@ $('.inttab_menu li a').on('click', function(event) {
     }, 1500);
   }
 });
-
-
-
 

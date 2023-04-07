@@ -128,11 +128,24 @@ div.menu_sub a{
 
    /* 소개 페이지 배너 이미지 */
    /* (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
-  div.intro_banner>img { 
-  width: 100%;
-  /* 이미지의 최대 높이는 화면의 20%, 태블릿과 PC 버전 변경 필요 */
-  max-height: 20vh;
-}
+  .intro_banner{ 
+   width: 100%;
+   max-height: 20vh;
+   overflow: hidden;
+   position: relative;
+   }
+  
+   .intro_banner .slide {
+   width: 100%;
+   /* height: 20vh; */
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+  
+  .intro_banner .slide:not(:first-child) {
+    display: none;
+  }
 
 .intro_menu {
     display: flex;
@@ -141,11 +154,6 @@ div.menu_sub a{
     position: relative;
   }
   
-  /* 탭 버튼 선택시 인트로 배너 이미지를 교체하기 위한 숨겨진 이미지 저장 요소 */
-  .inthide_menu{
-    display: none;
-  }
-
   /* 소개 페이지 감싸는 부분 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
  .intro_tab {
   width: 100%;
@@ -173,6 +181,7 @@ div.menu_sub a{
     /* background-color: cornflowerblue; */
   }
 
+  /* 탭 메뉴 호버 */
   .inttab_menu li:hover{
     background-color: rgb(252, 130, 85);
     color: rgb(255, 255, 255);
@@ -342,30 +351,53 @@ div.footer a{
 
  /* 소개 페이지 배너 이미지 */
  /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
- div.intro_banner>img{
-     width: 100%;
-      /* max-width: 100%; */
-     max-height: 50vh;
-     /* height: 200pt; */
- }
+ .intro_banner{ 
+  width: 100%;
+  max-height: 40vh;
+  overflow: hidden;
+  position: relative;
+  }
  
- /* 소개 페이지 감싸는 부분 (미디어쿼리 pc, 모바일도 지정되어 있음) */
+  .intro_banner .slide {
+  width: 100%;
+  /* max-height: 50vh; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  }
+
+  .intro_banner .slide:not(:first-child) {
+  display: none;
+  }
+
+ /* 소개페이지 단 전체 묶음 */
  .intro_menu {
-    display: flex;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: table;
-    border-collapse: collapse;
-    position: relative;
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  display: table;
+  border-collapse: collapse;
   }
   
+ .intro_tab{
+  width: 100%;
+  height: 100%;
+  margin-top: 20pt;
+  margin-bottom: 40pt;
+  }
+
+
+
   /* 탭 메뉴 부분 (미디어쿼리 pc, 모바일도 지정되어 있음) */
   .inttab_menu {
     width: 99.9%;
+    line-height: 300%;
+    height: 100%;
     border: 1px solid black;
     display: table;
     border-collapse: collapse;  /* 탭메뉴간 border를 중복없이 겹침 */
-    margin-bottom: 30pt;
+    margin-bottom: 40pt;
     /* background-color: aqua; */
   }
   
@@ -374,56 +406,71 @@ div.footer a{
   .inttab_menu li {
     border: 0px solid black;
     display: table-cell;
-    font-size: 25pt;
+    font-size: 3.745vh;
     text-align: center;
     /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
-    margin-right: 10px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     /* background-color: cornflowerblue; */
   }
 
   /* 탭 버튼 클릭시 소개 이미지, 텍스트 감싸는 부분 */
   /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
   .intro_title {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: table-cell;
     border: 1px solid black;
     padding: 10pt 30pt;
     margin-left: 1pt;
-    width: 100%;
-    height: 50%;
-}
-
-/* 탭 버튼 클릭시 출력되는 소개 장소 이미지 */
-/* (미디어쿼리 pc, 모바일도 지정되어 있음) */
-    .intro_title .intro_img>img {
-    /* float: left; 탭 메뉴 이미지에 float 적용하여 좌측배치 */
-   /* width: 53.71093%; /* 550pt */
-   /* height: 57.61718%; /* 590pt */
 }
 
    /* 장소 이름 텍스트 <h1> (미디어쿼리 pc, 모바일도 지정되어 있음) */
    .intro_title .intro_img>h1 {
-    /* float: left; */
-    margin-bottom: 10pt;
-    /* width: 90%; */
+    float: left;
+    width: 50%;
     font-size: 1.5rem;
     font-weight: 600;
     padding: 7px 10px;
-   }
+    margin-top: 1pt;
+    margin-bottom: 2%;
+    transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭" 이미지가 인 아웃되는 속도 */
+    /* background-color: aqua; */
+    }
    
-   /* 지도보기 버튼 (모바일 PC도 같이 지정되어 있음) */
+   /* 지도보기 버튼 (모바일, 태블릿이 같이 지정되어 있음) */
    .intro_title .intro_img>input {
-   /* float: right; */
-   /* position: absolute; */
-   /* background-color: bisque; */
-   /* padding: 5px 10px; */
-   /* margin-right: 0px;
-   margin-top: 0%; */
-  }
+    float: right;
+    margin-right: -20px;
+    background-color: bisque;
+    padding: 5px 10px;
+    transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭" 이미지가 인 아웃되는 속도 */
+    }
+  
+  .intro_img {
+    /* 스크롤시 페이드 효과 관련 */
+    opacity: 0; /* 이미지 투명(0), 불투명(1) 조절 */
+    transition: opacity 0.5s ease-in-out; /* "스크롤 했을 때" 이미지가 인 아웃되는 속도 */
+    }
+
+    /* 탭 버튼 클릭시 출력되는 소개 장소 이미지 */
+    img.jangso{
+    width: 53.71093% ; /* 550pt */
+    height: 57.61718% ; /* 590pt */
+    padding: 2% 0%;
+    margin-top: -2.4%;
+    /* opacity: 0; <- 이미지 투명(0), 불투명(1) 조절, .intro_img에서 적용되어 있으므로 따로 적용 필요없음 */
+    transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
+    /* margin-bottom: 1%; */
+    }
+      
+    /* 식물관 소개 이미지 */
+    #jangso2{
+    margin-bottom: 8%;
+    }
   
   /* 모바일 화면 출력용 추가 소개 이미지: PC와 태블릿은 화면 제외 
-   (미디어 쿼리 pc와 같이 지정되어 있음, 모바일은 제외) */
+   (미디어 쿼리 pc와 같이 지정되어 있음, 모바일 쿼리는 제외) */
    img.hide_img {
     display: none;
   }
@@ -431,6 +478,8 @@ div.footer a{
    /* 탭 버튼 클릭시 소개 텍스트 <p> */
    /* (미디어쿼리 pc, 모바일도 지정되어 있음) */
    .intro_text {
+    word-break: break-all;
+    width: 40%;
     position: absolute;
     text-align: left;
     width: 40%;
@@ -442,15 +491,21 @@ div.footer a{
     border: 0px solid black;
     /* background-color: aqua; */
   }
-
-  .intro_text span {
-    display: block;
-   }
-
-   /* .footer {
-    margin-top: 5%
-  } */
-
+  
+    /* 식물관 소개 텍스트 */
+    #intro_text2{
+    margin-bottom: -1%;
+    }
+   
+    /* 중앙광장 소개 텍스트 */
+    #intro_text3{
+    margin-bottom: -5%;
+    }
+   
+    /* 생태호수 소개 텍스트 */
+    #intro_text4{
+    margin-bottom: -6%;
+    }
 }
 
 /* =========>>>>> 태블릿 미디어쿼리 끝 <<<<<========= */
@@ -499,17 +554,29 @@ div.footer a{
       /* 드롭다운 표현하던 아이콘(이미지) 보이지 않게 하기 */
       display: none;
   }
-
+                /* ================================== */
   /* <<<<==== <<미디어쿼리 PC>> [소개 페이지] 탭메뉴 이미지 ====>>>> */
 
    /* 소개 페이지 배너 이미지 */
    /* (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
-   div.intro_banner>img { 
-   width: 100%;
-   /* max-width: 100%; */
-   max-height: 50vh;
-   /* height: 280pt; */
-   }
+     .intro_banner{ 
+     width: 100%;
+     max-height: 60vh;
+     overflow: hidden;
+     position: relative;
+     }
+    
+     .intro_banner .slide {
+     width: 100%;
+     /* max-height: 50vh; */
+     position: absolute;
+     top: 0;
+     left: 0;
+    }
+    
+    .intro_banner .slide:not(:first-child) {
+      display: none;
+    }
    
     /* 소개페이지 단 전체 묶음 */
     .intro_menu {
@@ -517,6 +584,8 @@ div.footer a{
      box-sizing: border-box;
      overflow: hidden;
      position: relative;
+     display: table;
+     border-collapse: collapse;
      }
 
      /* 탭 메뉴, 이미지, 텍스트 묶음 (미디어쿼리 모바일, 태블릿도 지정되어 있음) */
@@ -535,7 +604,7 @@ div.footer a{
      border: 1px solid black;
      display: table;
      border-collapse: collapse;  /* 탭메뉴간 border를 중복없이 겹침 */
-     margin-bottom: 30pt;
+     margin-bottom: 50pt;
      /* background-color: aqua; */
      }
     
@@ -548,7 +617,6 @@ div.footer a{
       font-size: 5.362vh;
       text-align: center;
       /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
-      margin-right: 10px;
       padding: 10px 20px;
       /* background-color: cornflowerblue; */
       }
@@ -603,7 +671,7 @@ div.footer a{
       /* margin-bottom: 1%; */
       }
       
-      /* 식물원 소개 이미지 */
+      /* 식물관 소개 이미지 */
       #jangso2{
         margin-bottom: 6%;
       }
@@ -619,6 +687,15 @@ div.footer a{
       .intro_text {
        word-break: break-all;
        width: 40%;
+       position: absolute;
+       text-align: left;
+       width: 40%;
+       height: 60%;
+       right: 3%;
+       bottom: 6%; /* 텍스트단 위치 상,하 조정 */
+       font-size: 1.0rem;
+       line-height: 170%; /* 글자줄간 상, 하 간격 조정 */
+       border: 0px solid black;
        /* opacity: 0; <- 이미지 투명(0), 불투명(1) 조절, 부모단인 .intro_img에서 적용되어 있으므로 따로 적용 필요없음 */
        transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
       }
