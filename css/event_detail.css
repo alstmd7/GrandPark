@@ -22,7 +22,7 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            border: 1px solid black;
+            border: 1px solid gray;
         }
 
         /* 행사 예약 내용 글 영역 */
@@ -32,7 +32,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-evenly;
         }
 
         /* 행사 예약 내용 분리선 */
@@ -63,23 +63,25 @@
 
         /* 행사 포스터 */
         .event_detail_poster {
-            height: 1080px;
-            width: 100%;
+            width: 90%;
             max-width: 960px;
             margin: 0 auto;
-            background-color: greenyellow;
+        }
+
+        .event_detail_poster img {
+            width: 100%;
+            height: auto;
         }
 
         /* 행사 시 유의사항 */
         .event_detail_note {
-            width: 95%;
+            width: 90%;
             max-width: 960px;
             margin: 80px auto;
-            line-height: 23px;
+            line-height: 30px;
             font-size: 0.9rem;
             color: rgb(68, 68, 68);
             font-weight: bold;
-            padding-left: 15px;
         }
 
         /* 행사 시 유의사항 텍스트 */
@@ -100,6 +102,8 @@
                 flex-direction: column;
                 /* 행사 내용을 열 가운데로 정렬 */
                 justify-content: center;
+                width: 95%;
+                max-width: 415px;
             }
 
             /* 행사 예약 내용 글 영역 */
@@ -109,6 +113,7 @@
                 height: 50%;
                 max-width: 290px;
                 margin: 0 auto;
+                justify-content: space-around;
             }
 
             /* 행사 예약 내용 분리선 */
