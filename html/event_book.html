@@ -209,7 +209,7 @@
             // + 버튼 클릭 시 
             document.querySelector("#count_plus").addEventListener("click", function () {
                 // 폼 전송 이벤트 취소
-                // event.preventDefault();
+                event.preventDefault();
                 // 카운트 숫자가 50보다 작으면
                 if (count_num < 10) {
                     // 카운트를 1 증가시키고 텍스트 변경
