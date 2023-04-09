@@ -136,7 +136,7 @@ div.wrap>div {
    /* 장소 이름 텍스트 <h1> (미디어쿼리 pc, 태블릿도 지정되어 있음) */
   .intro_title .intro_img>h1 {
    float: left;
-   font-size: 1.5rem;
+   font-size: 1.2rem;
    font-weight: 600;
    padding: 7px 10px;
   }
@@ -159,7 +159,7 @@ div.wrap>div {
   /* 탭 버튼 클릭시 소개 텍스트 <p> */
   /* (미디어쿼리 pc, 태블릿도 지정되어 있음) */
   .intro_text {
-    font-size: 1.4rem;
+    font-size: 18px;
     line-height: 170%;
     text-align: center;
     padding: 5px 0px 10px;
@@ -318,7 +318,7 @@ div.footer a{
   .inttab_menu li {
     border: 0px solid black;
     display: table-cell;
-    font-size: 3.745vh;
+    font-size: 28px;
     text-align: center;
     /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
     padding: 10px 10px;
@@ -526,7 +526,7 @@ div.footer a{
       border: 0px solid black;
       display: table-cell;
       /* font-size: 2.7rem; */
-      font-size: 1.7rem;
+      font-size: 28px;
       text-align: center;
       /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
       padding: 10px 20px;
