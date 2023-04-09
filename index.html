@@ -20,95 +20,99 @@
 
   <style>
     @font-face {
-    font-family: 'LeferiPoint-WhiteObliqueA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+      font-family: 'LeferiPoint-WhiteObliqueA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
     }
 
-  *, html{
-    font-family:"LeferiPoint-WhiteObliqueA";
-    font-size: 18px;
-  }
+    *,
+    html {
+      font-family: "LeferiPoint-WhiteObliqueA";
+      font-size: 18px;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
-    <!-- 헤더 -->
-    <div class="banner_logo">
-      <span class="logo">강남대공원</span>
-      <!-- 로고 버튼, 모바일에서만 사용 -->
-      <div class="menu_toggle_btn" onclick="menuButton(this)">
-        <div class="menu_btn1"></div>
-        <div class="menu_btn2"></div>
-        <div class="menu_btn3"></div>
+    <header>
+      <!-- 메뉴 버튼 -->
+      <div class="menu">
+        <span class="menu-circle"></span>
+        <a href="#" class="menu-link">
+          <span class="menu-icon">
+            <span class="menu-line menu-line-1"></span>
+            <span class="menu-line menu-line-2"></span>
+            <span class="menu-line menu-line-3"></span>
+          </span>
+        </a>
       </div>
-    </div>
-    <!-- 메뉴 -->
-    <div class="header_menu">
-      <div>
-        <div class="menu_title" id="menu_title1"> <!-- 메인 메뉴 -->
-          <span>소개</span>
-          <img class="menu_sub_img" src="./images/icon/down.svg" alt="down svg" />
-        </div>
-        <div class="menu_sub" id="menu_sub1"> <!-- 서브 메뉴 항목 -->
-          <ul>
-            <li><a href="./html/intro.html">벚나무산책길</a></li>
-            <li><a href="./html/intro.html">식물원</a></li>
-            <li><a href="./html/intro.html">중앙광장</a></li>
-            <li><a href="./html/intro.html">생태호수</a></li>
-          </ul>
-        </div>
+      <!-- 로고 -->
+      <div class="logo">
+        <a><h1>강남대공원</h1></a>
       </div>
-      <div>
-        <div class="menu_title" id="menu_title2"> <!-- 메인 메뉴 -->
-          <sapn>행사/예약</sapn>
-          <img class="menu_sub_img" src="./images/icon/down.svg" alt="down svg" />
+      <!-- 메뉴 클릭 시 내용 -->
+      <div class="menu-overlay">
+        <div>
+          <div class="menu_title" id="menu_title1"> <!-- 메인 메뉴 -->
+            <span>소개</span>
+          </div>
+          <div class="menu_sub" id="menu_sub1"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="./html/intro.html">벚나무산책길</a></li>
+              <li><a href="./html/intro.html">식물원</a></li>
+              <li><a href="./html/intro.html">중앙광장</a></li>
+              <li><a href="./html/intro.html">생태호수</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="menu_sub" id="menu_sub2"> <!-- 서브 메뉴 항목 -->
-          <ul>
-            <li><a href="">행사목록</a></li>
-            <li><a href="">예약확인</a></li>
-          </ul>
+        <div>
+          <div class="menu_title" id="menu_title2"> <!-- 메인 메뉴 -->
+            <sapn>행사/예약</sapn>
+          </div>
+          <div class="menu_sub" id="menu_sub2"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">행사목록</a></li>
+              <li><a href="">예약확인</a></li>
+            </ul>
+          </div>
         </div>
+        <div>
+          <div class="menu_title" id="menu_title3"> <!-- 메인 메뉴 -->
+            <sapn>시설</sapn>
+          </div>
+          <div class="menu_sub" id="menu_sub3"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">안내도</a></li>
+              <li><a href="">주차장</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="menu_title" id="menu_title4"> <!-- 메인 메뉴 -->
+            <span>이용안내</span>
+          </div>
+          <div class="menu_sub" id="menu_sub4"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="">오시는길</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="menu_title" id="menu_title5"> <!-- 메인 메뉴 -->
+            <span>공지사항</span>
+          </div>
+          <div class="menu_sub" id="menu_sub5"> <!-- 서브 메뉴 항목 -->
+            <ul>
+              <li><a href="./html/notice.html">게시판</a></li>
+            </ul>
+          </div>
+        </div>
+  
       </div>
-      <div>
-        <div class="menu_title" id="menu_title3"> <!-- 메인 메뉴 -->
-          <sapn>시설</sapn>
-          <img class="menu_sub_img" src="./images/icon/down.svg" alt="down svg" />
-        </div>
-        <div class="menu_sub" id="menu_sub3"> <!-- 서브 메뉴 항목 -->
-          <ul>
-            <li><a href="">안내도</a></li>
-            <li><a href="">주차장</a></li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="menu_title" id="menu_title4"> <!-- 메인 메뉴 -->
-          <span>이용안내</span>
-          <img class="menu_sub_img" src="./images/icon/down.svg" alt="down svg" />
-        </div>
-        <div class="menu_sub" id="menu_sub4"> <!-- 서브 메뉴 항목 -->
-          <ul>
-            <li><a href="">오시는길</a></li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="menu_title" id="menu_title5"> <!-- 메인 메뉴 -->
-          <span>공지사항</span>
-          <img class="menu_sub_img" src="./images/icon/down.svg" alt="down svg" />
-        </div>
-        <div class="menu_sub" id="menu_sub5"> <!-- 서브 메뉴 항목 -->
-          <ul>
-            <li><a href="./html/notice.html">게시판</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </header>
 
     <!-- 메인 베너 이미지 -->
     <div class="banner_img">
@@ -117,14 +121,13 @@
 
     <!-- 메인 관광지 소개 -->
     <div class="main_info">
-      <div class="main_info_title" style="font-weight: 500px;">제목</div>
       <div class="slider_wrap">
         <img id="slider_prev" class="slider_btn" src="./images/icon/left_arrow.png" alt="왼쪽 페이지 버튼"></img>
         <ul class="bxslider">
           <li>
             <div class="main_info_title">벚나무산책길</div>
             <a href="./html/intro.html">
-            <img src="./images/blossom_road.jpg" /></a>
+              <img src="./images/blossom_road.jpg" /></a>
             <div class="main_info_content">
               만개한 벚나무로 둘러쌓인 길을 걸어보세요.
             </div>
@@ -132,7 +135,7 @@
           <li>
             <div class="main_info_title">식물관</div>
             <a href="./html/intro.html">
-            <img src="./images/graden1.jpg" /></a>
+              <img src="./images/garden_1.jpg" /></a>
             <div class="main_info_content">
               온실에서 다양한 식물을 관찰하고, 여러 체험 또한 하실 수 있습니다.
             </div>
@@ -141,23 +144,23 @@
             <div class="main_info_title">중앙광장</div>
             <a href="./html/intro.html">
               <img src="./images/fountain.jpg" /></a>
-              <div class="main_info_content">
-                거대한 분수대가 있는 중앙광장에서 휴식을 취해보세요.
-              </div>
+            <div class="main_info_content">
+              거대한 분수대가 있는 중앙광장에서 휴식을 취해보세요.
+            </div>
           </li>
           <li>
             <div class="main_info_title">생태호수</div>
             <a href="./html/intro.html">
-              <img src="./images/lake.jpg" /></a>
-              <div class="main_info_content">
-                생태호수에서는 다양한 동식물들을 관찰하실 수 있습니다.
-              </div>
-            </li>
+              <img src="./images/lake_1.jpg" /></a>
+            <div class="main_info_content">
+              생태호수에서는 다양한 동식물들을 관찰하실 수 있습니다.
+            </div>
+          </li>
         </ul>
         <img id="slider_next" class="slider_btn" src="./images/icon/right_arrow.png" alt="오른쪽 페이지 버튼"></img>
       </div>
       <div class="main_info_content">
-        
+
       </div>
     </div>
 
@@ -213,17 +216,8 @@
   </div>
 
   <!-- 자바스크립트 추가 -->
-  <!-- 모바일일 경우 -->
   <script type="text/javascript" src="./js/main.js"></script>
   <script type="text/javascript" src="./js/menu.js"></script>
-  <!-- 태블릿일 경우 -->
-  <!--<script type="text/javascript" src="./js/main_tablet.js" media="(min-width:768px) and (max-width:1023px)"></script>-->
-  <!-- pc일 경우 -->
-  <!--<script type="text/javascript" src="./js/main_pc.js" media="(min-width:1024px)"></script>-->
-  <script>
-  
-  
-  </script>
 </body>
 
 </html>

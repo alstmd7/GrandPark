@@ -71,7 +71,7 @@ div.slider_wrap>img.slider_btn{
     width: 50px;
     height: 50px;
     /* 슬라이더보다 더 위에 위치해야 하기 때문에 z-index 설정 */
-    z-index: 9999;
+    z-index: 999;
 }
 /* 왼쪽 슬라이더 버튼 */
 #slider_prev{
@@ -116,6 +116,9 @@ div.main_event_content{
     width: 100%;
     height: 100%;
 }
+div.main_event img{
+    height: 30vh;
+}
 /* 행사 이름 */
 div.main_event_content_name{
     /* 이미지 위에 배치하기 위해 포지션 설정*/
@@ -124,7 +127,7 @@ div.main_event_content_name{
     top: 10%;
     left: 3%;
     /* 이미지보다 위에 있어야 하므로 z-index 설정 */
-    z-index: 9999;
+    z-index: 999;
     /* 글자 색 */
     color: white;
 }
@@ -133,7 +136,7 @@ div.main_event_btn{
     /* 이미지 위에 배치하기 위해 포지션 설정 */
     position: absolute;
     /* 이미지보다 위에 있어야 하므로 z-index 설정 */
-    z-index: 9999;
+    z-index: 999;
     /* 위치 조정 */
     top: 10%;
     right: 3%;
