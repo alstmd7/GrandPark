@@ -11,114 +11,13 @@
     <title>행사 예약</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
-            // 예약 버튼 클릭 시
-            $(".event_book_btn").click(function (event) {
-                // 폼 전송 이벤트 취소
-                event.preventDefault();
-                // 달력에서 날짜를 선택하지 않으면
-                if (document.querySelector("#event_date").textContent == "달력에서 날짜를 선택해주세요.") {
-                    alert("달력에서 예약날짜를 선택해주세요.");
-                    // 이름이 공백이거나 올바르지않을 경우 함수 실행
-                } else if (username.value == "" || !pattern_name.test(username.value)) {
-                    errorName();
-                    // 신청인원이 0명이면
-                } else if (count_num == 0) {
-                    alert("신청인원을 1명 이상 선택해주세요.");
-                    // 번호가 공백이면 올바르지않을 경우 함수 실행
-                } else if (userphone.value == "" || !pattern_num.test(userphone.value)) {
-                    errorPhone();
-                    // 체크박스에 체크가 되있지 않으면
-                } else if ($("#isChecked").is(":checked") == false) {
-                    // 개인정보활용에 동의해주세요. 텍스트 노출
-                    $(".checkbox_error").text("개인정보활용에 동의해주세요.");
-                    // 그렇지 않으면 공백으로 노출
-                } else {
-                    alert("예약이 완료되었습니다.");
-                    window.location.href = "../index.html";
-                }
-            })
-
-            // 체크박스를 클릭하여 체크가 되어있으면 에러메세지 제거
-            document.querySelector("#isChecked").addEventListener('click', function () {
-                if ($("#isChecked").is(":checked") == true) {
-                    // 체크박스에 체크되어있으면 에러메세지 제거
-                    $(".checkbox_error").text("");
-                }
-            })
-
-            // 이름 입력 칸에서 포커스가 벗어났을때 errorName함수 호출
-            document.querySelector("#event_name").addEventListener('blur', errorName);
-            // 이름 칸에 입력받은 값을 username에 저장
-            var username = document.querySelector("#event_name");
-            // 이름이 한글이나 영문자로 쓰였는지 확인하는 정규표현식
-            var pattern_name = /^[가-힣a-zA-Z]+$/;
-            // errorName 함수
-            function errorName() {
-                // 이름이 공백일 경우
-                if (username.value === "") {
-                    // 이름을 입력해달라는 에러 메세지 출력
-                    document.querySelector(".name_error").textContent = "이름을 입력해주세요."
-                    // 이름이 한글이나 영문이외에 문자가 포함된 경우
-                } else if (!pattern_name.test(username.value)) {
-                    document.querySelector(".name_error").textContent = "한글이나 영문만 입력해주세요.(공백, 특수기호 제외)"
-                    // 위의 조건문에 걸리지 않으면 에러문 제거
-                } else {
-                    document.querySelector(".name_error").textContent = ""
-                }
-            }
-
-            // 번호 입력 칸에서 포커스가 벗어났을때 errorphone함수 호출
-            document.querySelector("#event_phone").addEventListener('blur', errorPhone);
-            // 번호 칸에 입력받은 값을 userphone에 저장
-            var userphone = document.querySelector("#event_phone");
-            // 번호가 숫자인지 확인하는 정규표현식
-            var pattern_num = /^[0-9]*$/;
-            // errorPhone 함수
-            function errorPhone() {
-                // 번호가 공백일 경우
-                if (userphone.value === "") {
-                    document.querySelector(".phone_error").textContent = "번호를 입력해주세요."
-                    // 번호에 숫자를 제외한 문자가 포함된 경우
-                } else if (!pattern_num.test(userphone.value)) {
-                    document.querySelector(".phone_error").textContent = "숫자만 입력해주세요.(공백, 특수기호 제외)"
-                    // 위의 조건문에 걸리지 않으면 에러문 제거
-                } else {
-                    document.querySelector(".phone_error").textContent = ""
-                }
-            }
-
-            // 변수 선언
-            let count_num = 0;
-            const event_count = document.querySelector(".event_count_num")
-            // + 버튼 클릭 시 
-            document.querySelector("#count_plus").addEventListener("click", function () {
-                // 폼 전송 이벤트 취소
-                event.preventDefault();
-                // 카운트 숫자가 50보다 작으면
-                if (count_num < 10) {
-                    // 카운트를 1 증가시키고 텍스트 변경
-                    count_num += 1;
-                    event_count.textContent = count_num;
-                }
-            })
-            // - 버튼 클릭 시 
-            document.querySelector("#count_minus").addEventListener("click", function () {
-                // 폼 전송 이벤트 취소
-                event.preventDefault();
-                // 카운트 숫자가 0보다 크면
-                if (count_num > 0) {
-                    // 카운트를 1 감소시키고 텍스트 변경
-                    count_num -= 1;
-                    event_count.textContent = count_num;
-                }
-            })
+            var date_select = document.querySelector("#event_date_text").textContent;
 
             // 변수 선언
             var year, month, calendar;
             // 달력에서 날짜 선택 시 날짜 텍스트 출력
             function displayDate(date) {
-                event_date.textContent = date;
+                event_date_text.textContent = date;
             }
             // 달력 생성 함수
             function createCalendar(year, month) {
@@ -227,6 +126,109 @@
             year = new Date().getFullYear();
             month = new Date().getMonth() + 1;
             showCalendar();
+
+            // 예약 버튼 클릭 시
+            $(".event_book_btn").click(function (event) {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
+                // 달력에서 날짜를 선택하지 않으면
+                if (document.querySelector("#event_date_text").textContent == "달력에서 날짜를 선택해주세요.") {
+                    alert("달력에서 예약날짜를 선택해주세요.");
+                    // 이름이 공백이거나 올바르지않을 경우 함수 실행
+                } else if (username.value == "" || !pattern_name.test(username.value)) {
+                    errorName();
+                    // 신청인원이 0명이면
+                } else if (count_num == 0) {
+                    alert("신청인원을 1명 이상 선택해주세요.");
+                    // 번호가 공백이면 올바르지않을 경우 함수 실행
+                } else if (userphone.value == "" || !pattern_num.test(userphone.value)) {
+                    errorPhone();
+                    // 체크박스에 체크가 되있지 않으면
+                } else if ($("#isChecked").is(":checked") == false) {
+                    // 개인정보활용에 동의해주세요. 텍스트 노출
+                    $(".checkbox_error").text("개인정보활용에 동의해주세요.");
+                    // 그렇지 않으면 공백으로 노출
+                } else {
+                    alert("예약이 완료되었습니다.");
+                    window.location.href = "../index.html";
+                }
+            })
+
+            // 체크박스를 클릭하여 체크가 되어있으면 에러메세지 제거
+            document.querySelector("#isChecked").addEventListener('click', function () {
+                if ($("#isChecked").is(":checked") == true) {
+                    // 체크박스에 체크되어있으면 에러메세지 제거
+                    $(".checkbox_error").text("");
+                }
+            })
+
+            // 이름 입력 칸에서 포커스가 벗어났을때 errorName함수 호출
+            document.querySelector("#event_name").addEventListener('blur', errorName);
+            // 이름 칸에 입력받은 값을 username에 저장
+            var username = document.querySelector("#event_name");
+            // 이름이 한글이나 영문자로 쓰였는지 확인하는 정규표현식
+            var pattern_name = /^[가-힣a-zA-Z]+$/;
+            // errorName 함수
+            function errorName() {
+                // 이름이 공백일 경우
+                if (username.value === "") {
+                    // 이름을 입력해달라는 에러 메세지 출력
+                    document.querySelector(".name_error").textContent = "이름을 입력해주세요."
+                    // 이름이 한글이나 영문이외에 문자가 포함된 경우
+                } else if (!pattern_name.test(username.value)) {
+                    document.querySelector(".name_error").textContent = "한글이나 영문만 입력해주세요.(공백, 특수기호 제외)"
+                    // 위의 조건문에 걸리지 않으면 에러문 제거
+                } else {
+                    document.querySelector(".name_error").textContent = ""
+                }
+            }
+
+            // 번호 입력 칸에서 포커스가 벗어났을때 errorphone함수 호출
+            document.querySelector("#event_phone").addEventListener('blur', errorPhone);
+            // 번호 칸에 입력받은 값을 userphone에 저장
+            var userphone = document.querySelector("#event_phone");
+            // 번호가 숫자인지 확인하는 정규표현식
+            var pattern_num = /^[0-9]*$/;
+            // errorPhone 함수
+            function errorPhone() {
+                // 번호가 공백일 경우
+                if (userphone.value === "") {
+                    document.querySelector(".phone_error").textContent = "번호를 입력해주세요."
+                    // 번호에 숫자를 제외한 문자가 포함된 경우
+                } else if (!pattern_num.test(userphone.value)) {
+                    document.querySelector(".phone_error").textContent = "숫자만 입력해주세요.(공백, 특수기호 제외)"
+                    // 위의 조건문에 걸리지 않으면 에러문 제거
+                } else {
+                    document.querySelector(".phone_error").textContent = ""
+                }
+            }
+
+            // 변수 선언
+            let count_num = 0;
+            const event_count = document.querySelector(".event_count_num")
+            // + 버튼 클릭 시 
+            document.querySelector("#count_plus").addEventListener("click", function () {
+                // 폼 전송 이벤트 취소
+                // event.preventDefault();
+                // 카운트 숫자가 50보다 작으면
+                if (count_num < 10) {
+                    // 카운트를 1 증가시키고 텍스트 변경
+                    count_num += 1;
+                    event_count.textContent = count_num;
+                }
+            })
+            // - 버튼 클릭 시 
+            document.querySelector("#count_minus").addEventListener("click", function () {
+                // 폼 전송 이벤트 취소
+                event.preventDefault();
+                // 카운트 숫자가 0보다 크면
+                if (count_num > 0) {
+                    // 카운트를 1 감소시키고 텍스트 변경
+                    count_num -= 1;
+                    event_count.textContent = count_num;
+                }
+            })
+
         })
     </script>
 </head>
@@ -279,7 +281,7 @@
                         <!-- 행사 예약 폼 입력목록 항목 이름 -->
                         <label for="event_date">신청날짜</label>
                         <span id="event_date">
-                            <div class="event_date_text">달력에서 날짜를 선택해주세요.</div>
+                            <div id="event_date_text">달력에서 날짜를 선택해주세요.</div>
                         </span>
                     </li>
                     <li>
