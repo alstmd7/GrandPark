@@ -142,9 +142,10 @@ div.wrap>div {
   }
 
   /* 지도보기 버튼 (미디어쿼리 pc, 태블릿도 지정되어 있음) */
-  .intro_title .intro_img>input {
+  .intro_title .intro_img>input,
+  .intro_title a{
     float: right;
-    background-color: bisque;
+    color: coral;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
