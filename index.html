@@ -12,9 +12,8 @@
   <link href="./css/header_footer.css" rel="stylesheet" />
   <!-- main css -->
   <link href="./css/main.css" rel="stylesheet" />
-  <!-- 제이쿼리 추가(구글) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <!-- bxslider -->
+  <!-- 제이쿼리 -->
+  <script src="./js/jquery-3.6.4.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
   <title>강남대공원</title>
@@ -52,15 +51,15 @@
       </div>
       <!-- 로고 -->
       <div class="logo">
-        <a><h1>강남대공원</h1></a>
+        <a href="index.html"><h1>강남대공원</h1></a>
       </div>
       <!-- 메뉴 클릭 시 내용 -->
       <div class="menu-overlay">
         <div>
-          <div class="menu_title" id="menu_title1"> <!-- 메인 메뉴 -->
+          <div class="menu_title"> <!-- 메인 메뉴 -->
             <span>소개</span>
           </div>
-          <div class="menu_sub" id="menu_sub1"> <!-- 서브 메뉴 항목 -->
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
               <li><a href="./html/intro.html">벚나무산책길</a></li>
               <li><a href="./html/intro.html">식물원</a></li>
@@ -70,42 +69,42 @@
           </div>
         </div>
         <div>
-          <div class="menu_title" id="menu_title2"> <!-- 메인 메뉴 -->
-            <sapn>행사/예약</sapn>
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>행사/예약</span>
           </div>
-          <div class="menu_sub" id="menu_sub2"> <!-- 서브 메뉴 항목 -->
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
-              <li><a href="">행사목록</a></li>
-              <li><a href="">예약확인</a></li>
+              <li><a href="./html/event_list.html">행사목록</a></li>
+              <li><a href="./html/event_check.html">예약확인</a></li>
             </ul>
           </div>
         </div>
         <div>
-          <div class="menu_title" id="menu_title3"> <!-- 메인 메뉴 -->
-            <sapn>시설</sapn>
+          <div class="menu_title"> <!-- 메인 메뉴 -->
+            <span>시설</span>
           </div>
-          <div class="menu_sub" id="menu_sub3"> <!-- 서브 메뉴 항목 -->
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
-              <li><a href="">안내도</a></li>
-              <li><a href="">주차장</a></li>
+              <li><a href="./html/px_intro.html">안내도</a></li>
+              <li><a href="./html/px_par.html">주차장</a></li>
             </ul>
           </div>
         </div>
         <div>
-          <div class="menu_title" id="menu_title4"> <!-- 메인 메뉴 -->
+          <div class="menu_title"> <!-- 메인 메뉴 -->
             <span>이용안내</span>
           </div>
-          <div class="menu_sub" id="menu_sub4"> <!-- 서브 메뉴 항목 -->
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
-              <li><a href="">오시는길</a></li>
+              <li><a href="./html/guide_traf.html">오시는길</a></li>
             </ul>
           </div>
         </div>
         <div>
-          <div class="menu_title" id="menu_title5"> <!-- 메인 메뉴 -->
+          <div class="menu_title"> <!-- 메인 메뉴 -->
             <span>공지사항</span>
           </div>
-          <div class="menu_sub" id="menu_sub5"> <!-- 서브 메뉴 항목 -->
+          <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
             <ul>
               <li><a href="./html/notice.html">게시판</a></li>
             </ul>
@@ -114,6 +113,8 @@
   
       </div>
     </header>
+
+
 
     <!-- 메인 베너 이미지 -->
     <div class="banner_img">

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/JJWresete.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header_footer.css"/>
+    <script src="../js/jquery-3.6.4.js"></script>
     <title>주차장 안내</title>
     <link rel="icon" href="../images/icon국립-공원.png"/>
     <style>
@@ -24,9 +26,7 @@
         font-weight: normal;
         font-style: normal;
         }
-        header{
-            font-family:"WandohopeR";  
-        }
+        
         
 
         /* @font-face { 두꺼운 폰트
@@ -116,17 +116,7 @@
         body>div{
             margin-bottom: 5%;/* 밑에 간격 */
         }
-        header {/* 헤더부분 임시 */
-        text-align: center;/* 글자 가운데 */
-        font-size: 4.5vw;/* 글자 크기 */
-
-        position: fixed;/* 위치를 고정하는 포지션 */
-        top: 0;/* 위쪽에 고정 */
-        z-index: 1; /*다른 요소들보다 앞에 보여짐 */
-        width: 100%;/* 가로 */
-        /* background-color: #c2c0c0; */
-        background-image: linear-gradient(-225deg, #05c42e 30%, #09b86f 69%)/* 배경색 */   
-        }
+        
         #px_par {/* 주차장 안내 부분 */
         margin-top: 20vw;     
         text-align: center;/* 글자 가운데 */
@@ -168,34 +158,9 @@
             padding: 0.1% 0%;/* 위아래 간격 */
         }
 
-        /* 풋터 전체 부분 */
-        footer {
-            width: 100%;/* 가로 */
-            background-color: silver;/* 배경색 */
-        }
-
-        footer>ol>li {/* 글자 부분 */
-            font-size: 3.5vw; /* 글자크기 */
-            display: inline-block; /* 글자 옆으로 */
-        }
-
-        footer>ol {/* 윗부분 글자 */
-            text-align: center; /* 글자 가운데로 */
-        }
-
-        footer>ul {/* 밑부분 글자 */
-            margin-top: 30px; /* 위로간격 */
-            margin-left: 8%;/* 왼쪽 간격 */
-        }
-
-        footer>ul>li {/* 글자 부분 */
-            font-size: 3vw;/* 글자 크기 */
-        }
-
+        
         @media all and (min-width:768px){
-        header {/* 헤더부분 임시 */
-            font-size: 2vw;/* 글자크기 */
-        }
+        
         #px_par {/* 주차장 안내 부분*/
             margin-top: 7vw;   
             font-size: 1.7vw;/* 글자크기 */
@@ -228,13 +193,7 @@
             font-size: 1.8vw;/* 글자크기 */
             margin-left: 10%;/* 왼쪽간격 */
         }
-        /* 푸터부분 */
-        footer>ol>li {
-        font-size: 2vw;/* 글자크기 */
-        }
-        footer>ul>li{
-        font-size: 1vw;/* 글자크기 */
-        }
+        
         /* 화살표 크기 */
         .triangle-up {
         border-left: 2vw solid transparent;/* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
@@ -249,9 +208,7 @@
         body>div{
             margin-bottom: 1.5%;/* 밑에 간격 */
         }
-        header {/* 헤더부분 임시 */
-            font-size: 1.5vw;/* 글자크기 */
-        }
+        
         #px_par {/* 주차장 안내 부분*/
             font-size: 1.2vw;/* 글자크기 */
         }
@@ -272,17 +229,14 @@
         td,th {
             font-size: 1.3vw;/* 글자크기 */  
         } 
-        table .t{
-           /*  display: none; */ /* 비고 부분 없애기 */
-        }
+        /* table .t{
+            display: none; 비고 부분 없애기
+        } */
         #px_par_s{/* 할인정보 글자크기*/
             font-size: 1vw;/* 글자크기 */
             margin-left: 20%;/* 왼쪽간격 */
         }
-        /* 푸터부분 */
-        footer>ol>li {
-        font-size: 1.5vw;/* 글자크기 */
-        }
+        
         /* 화살표 크기 */
         .triangle-up {
           border-left: 1.5vw solid transparent;/* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
@@ -299,14 +253,84 @@
 <body>
 
     <!-- 위로가기 버튼 -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><div class="triangle-up"></div></button>
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><div class="triangle-up"></div></button> -->
 
-    <header><!-- 로고 -->
-        <h1 >강남 대공원</h1>
-        <div class="progress-container"><!-- 스크롤 보이기 -->
-            <div class="progress-bar" id="myBar"></div><!-- 화살표 -->
+    <header>
+        <!-- 메뉴 버튼 -->
+        <div class="menu">
+          <span class="menu-circle"></span>
+          <a href="#" class="menu-link">
+            <span class="menu-icon">
+              <span class="menu-line menu-line-1"></span>
+              <span class="menu-line menu-line-2"></span>
+              <span class="menu-line menu-line-3"></span>
+            </span>
+          </a>
+        </div>
+        <!-- 로고 -->
+        <div class="logo">
+          <a href="index.html"><h1>강남대공원</h1></a>
+        </div>
+        <!-- 메뉴 클릭 시 내용 -->
+        <div class="menu-overlay">
+          <div>
+            <div class="menu_title"> <!-- 메인 메뉴 -->
+              <span>소개</span>
+            </div>
+            <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+              <ul>
+                <li><a href="intro.html">벚나무산책길</a></li>
+                <li><a href="intro.html">식물원</a></li>
+                <li><a href="intro.html">중앙광장</a></li>
+                <li><a href="intro.html">생태호수</a></li>
+              </ul>
+            </div>
           </div>
-    </header>
+          <div>
+            <div class="menu_title"> <!-- 메인 메뉴 -->
+              <span>행사/예약</span>
+            </div>
+            <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+              <ul>
+                <li><a href="event_list.html">행사목록</a></li>
+                <li><a href="event_check.html">예약확인</a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="menu_title"> <!-- 메인 메뉴 -->
+              <span>시설</span>
+            </div>
+            <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+              <ul>
+                <li><a href="px_intro.html">안내도</a></li>
+                <li><a href="px_par.html">주차장</a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="menu_title"> <!-- 메인 메뉴 -->
+              <span>이용안내</span>
+            </div>
+            <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+              <ul>
+                <li><a href="guide_traf.html">오시는길</a></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="menu_title"> <!-- 메인 메뉴 -->
+              <span>공지사항</span>
+            </div>
+            <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+              <ul>
+                <li><a href="notice.html">게시판</a></li>
+              </ul>
+            </div>
+          </div>
+    
+        </div>
+      </header>
 
     <div id="px_par"><!-- 소제목 -->
         <h1>주차장 안내</h1>
@@ -412,20 +436,19 @@
         </ol>
     </div>
 
-    <footer><!-- 풋터부분 임시-->
-        <ol>
-            <li>개인정보처리방침</li>
-            <li>I</li>
-            <li>이메일무단수집거부</li>
-            <li>I</li>
-            <li>시비스이용약관</li>
-        </ol>
+    <!-- 푸터 -->
+    <div class="footer">
         <ul>
-            <li>(우편번호)서울시 강남구 ~~로</li>
-            <li>문의전화 : (주)02 - 1234 / 010 - 1234 - 5678</li>
-            <li>C copyrights all reserved</li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">서비스이용약관</a></li>
         </ul>
-    </footer>
+        <div>
+          <p>(우편번호)서울시 강남구 ~</p>
+          <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+          <p>&copy; copyrights all reserved.</p>
+        </div>
+      </div>
 
 
    
@@ -462,5 +485,7 @@
           document.documentElement.scrollTop = 0;
         };
       </script>     
+
+<script src="../js/menu.js"></script>
 </body>
 </html>

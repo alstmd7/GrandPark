@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/event_check.css">
+    <link rel="stylesheet" href="../css/header_footer.css"/>
     <link rel="icon" href="../images/icon국립-공원.png"/>
     <script src="../js/jquery-3.6.4.js"></script>
     <title>예약 확인</title>
@@ -45,12 +46,93 @@
         })
         window.onload = function () { };
     </script>
+    <style>
+        div.footer{
+            margin-top: 20%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrap">
         <!-- 헤더 영역 -->
-        <header class="header"></header>
+        <header>
+          <!-- 메뉴 버튼 -->
+          <div class="menu">
+            <span class="menu-circle"></span>
+            <a href="#" class="menu-link">
+              <span class="menu-icon">
+                <span class="menu-line menu-line-1"></span>
+                <span class="menu-line menu-line-2"></span>
+                <span class="menu-line menu-line-3"></span>
+              </span>
+            </a>
+          </div>
+          <!-- 로고 -->
+          <div class="logo">
+            <a href="../index.html"><h1>강남대공원</h1></a>
+          </div>
+          <!-- 메뉴 클릭 시 내용 -->
+          <div class="menu-overlay">
+            <div>
+              <div class="menu_title"> <!-- 메인 메뉴 -->
+                <span>소개</span>
+              </div>
+              <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                <ul>
+                  <li><a href="intro.html">벚나무산책길</a></li>
+                  <li><a href="intro.html">식물원</a></li>
+                  <li><a href="intro.html">중앙광장</a></li>
+                  <li><a href="intro.html">생태호수</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="menu_title"> <!-- 메인 메뉴 -->
+                <span>행사/예약</span>
+              </div>
+              <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                <ul>
+                  <li><a href="event_list.html">행사목록</a></li>
+                  <li><a href="event_check.html">예약확인</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="menu_title"> <!-- 메인 메뉴 -->
+                <span>시설</span>
+              </div>
+              <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                <ul>
+                  <li><a href="px_intro.html">안내도</a></li>
+                  <li><a href="px_par.html">주차장</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="menu_title"> <!-- 메인 메뉴 -->
+                <span>이용안내</span>
+              </div>
+              <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                <ul>
+                  <li><a href="guide_traf.html">오시는길</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="menu_title"> <!-- 메인 메뉴 -->
+                <span>공지사항</span>
+              </div>
+              <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                <ul>
+                  <li><a href="notice.html">게시판</a></li>
+                </ul>
+              </div>
+            </div>
+      
+          </div>
+        </header>
+
         <!-- 행사 예약 및 취소 -->
         <div class="event_book_title">예약 확인 및 취소</div>
         <hr>
@@ -81,7 +163,23 @@
             <!-- 예약취소 버튼 -->
             <button id="event_check_cancel">예약취소</button>
         </div>
+
+        <!-- 푸터 -->
+    <div class="footer">
+        <ul>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">서비스이용약관</a></li>
+        </ul>
+        <div>
+          <p>(우편번호)서울시 강남구 ~</p>
+          <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+          <p>&copy; copyrights all reserved.</p>
+        </div>
+      </div>
     </div>
+
+    <script src="../js/menu.js"></script>
 </body>
 
 </html>

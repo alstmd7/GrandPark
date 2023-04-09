@@ -9,12 +9,6 @@
     font-weight: bold;
 }  
 
-/* 헤더 영역 */
-.header {
-    width: 100%;
-    height: 200px;
-    background-color: aquamarine;
-}
 
 /* 행사 예약 및 취소 */
 .event_book_title {

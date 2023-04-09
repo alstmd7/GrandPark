@@ -146,6 +146,7 @@ div.main_event_btn{
     padding: 0 1%;
     height: 20px;
     line-height: 25px;
+    cursor: pointer;
 }
 div.main_event_date{
     padding-left: 0.5%;
@@ -202,7 +203,7 @@ div.main_notice_content p:first-child{
     div.banner_img>img{
     width: 100%;
     /* 이미지의 최대 높이는 화면의 30% */
-    max-height: 30vh;
+    max-height: 60vh;
     }
 }
 
@@ -215,8 +216,7 @@ div.main_notice_content p:first-child{
 
     /*==== 배너 이미지 ====*/
     div.banner_img>img{
-    width: 100%;
-    /* 이미지의 최대 높이는 화면의 50% */
-    max-height: 50vh;
-}
+        width: 100%;
+        max-height: 40vh;
+    }
 }

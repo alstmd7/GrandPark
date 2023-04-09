@@ -17,5 +17,3 @@ $(function () {
     $(".menu-overlay").removeClass("open");
     $(".menu").removeClass("open");
   }));
-
-  

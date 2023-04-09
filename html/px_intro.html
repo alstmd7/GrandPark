@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>시설안내(클릭)</title>
-    <link rel="icon" href="../images/icon국립-공원.png"/>
+    <link rel="icon" href="../images/icon국립-공원.png" />
     <link href="../css/JJWresete.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/header_footer.css" />
+    <script src="../js/jquery-3.6.4.js"></script>
     <style>
-       @font-face { /* 폰트 */
-        font-family: 'LeferiPoint-WhiteObliqueA';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
+        @font-face {
+            /* 폰트 */
+            font-family: 'LeferiPoint-WhiteObliqueA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
-        div{
-        font-family:"LeferiPoint-WhiteObliqueA";
+
+        div {
+            font-family: "LeferiPoint-WhiteObliqueA";
         }
 
         @font-face {
-        font-family: 'WandohopeR';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
+            font-family: 'WandohopeR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
-        header{
-            font-family:"WandohopeR";  
+
+        header {
+            font-family: "WandohopeR";
         }
 
         /* @font-face { 두꺼운폰트
@@ -66,369 +71,439 @@
 
         /* 마우스 호시의 버튼 색상 변경 */
         #myBtn:hover {
-          background-color: #555;
+            background-color: #555;
         }
 
         /*화살표에 대한 스타일 */
         .triangle-up {
-          width: 0;  /* 삼각형(화살표)의 너비를 0으로 설정 */
-          height: 0;  /* 삼각형(화살표)의 높이를 0으로 설정 */
-          border-left: 3vw solid transparent;/* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
-          border-right: 3vw solid transparent;/* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
-          border-bottom: 5vw solid white;
-          /* 아래쪽 테두리를 만들기 위해 흰색 값으로 설정합니다. 
+            width: 0;
+            /* 삼각형(화살표)의 너비를 0으로 설정 */
+            height: 0;
+            /* 삼각형(화살표)의 높이를 0으로 설정 */
+            border-left: 3vw solid transparent;
+            /* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+            border-right: 3vw solid transparent;
+            /* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+            border-bottom: 5vw solid white;
+            /* 아래쪽 테두리를 만들기 위해 흰색 값으로 설정합니다. 
           이때 높이를 50px로 설정하여 화살표를 만듭니다. */
         }
+
         /*  */
 
-        /* 헤더,시설안내,이미지,이벤트부분 */
-        header, #px_intro_map,#text{
-            margin-bottom: 10VW;/* 밑에 간격 */
-        }
 
-        /* 로고부분 임시 */
-        header {
-            text-align: center; /* 글자 가운데 */
-            font-size: 4.5vw;/* 글자크기 */
-
-            position: fixed;/* 위치를 고정하는 포지션 */
-            top: 0;/* 위쪽에 고정 */
-            z-index: 1; /*다른 요소들보다 앞에 보여짐 */
-            width: 100%;/* 가로 */
-           /*  background-color: #c2c0c0; *//* 배경색 */
-           /* background: linear-gradient(90deg, #051937, #004d7a, #008793, #00bf72, #a8eb12); *//* 배경색 */
-           /* background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%); */
-           /* background-image: linear-gradient(-225deg, #05c42e 0%, #09b86f 29%, #01a736 67%, #002E00 100%); */
-           /* background-image: linear-gradient(100deg, #05c42e 0%, #008400 30%, #31D540 50%, #009A00 70%,#002F00 100%); */
-           background: #00b09b;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #3dc9b6, #00b00f);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #3d96c9, #00b009); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-        }
         /* 시설안내 로고 부분 */
-        #px_intro { 
-            text-align: center;/* 글자 가운데 */
-            font-size: 3vw; /* 글자 크기 */
-            margin-top: 20vw; /* 위에간격 */
-            margin-bottom: 5vw;/* 아래간격 */
+        #px_intro {
+            text-align: center;
+            /* 글자 가운데 */
+            font-size: 3vw;
+            /* 글자 크기 */
+            margin-top: 20vw;
+            /* 위에간격 */
+            margin-bottom: 5vw;
+            /* 아래간격 */
         }
 
         /* 시설안내 이미지 */
-        #px_intro_map { 
-            width: 100%; /* 가로 100% */
-            height: 20%; /* 세로 20% */
+        #px_intro_map {
+            width: 100%;
+            /* 가로 100% */
+            height: 20%;
+            /* 세로 20% */
         }
 
         /* {시설안내,전체보기 목록부분} */
         .px_intro_map_menu {
-            position: relative; /* 전체보기 창 오른쪽 위로 */
+            position: relative;
+            /* 전체보기 창 오른쪽 위로 */
         }
 
         /*{전체 매뉴,서브매뉴 전체 목록 부분}*/
         #px_intro_menu {
-            width: 30%;/* 가로 30% */
-            position: absolute;/* 위치 조정 */
-            top: 0;/* 위로 붙이기 */
-            right: 0;/* 오른쪽으로 붙이기 */
-            margin-right: 2%; /* 오른쪽 간격 2% */
+            width: 30%;
+            /* 가로 30% */
+            position: absolute;
+            /* 위치 조정 */
+            top: 0;
+            /* 위로 붙이기 */
+            right: 0;
+            /* 오른쪽으로 붙이기 */
+            margin-right: 2%;
+            /* 오른쪽 간격 2% */
         }
 
         /* 전체보기 글자부분 */
         #px_intro_menu label {
-            border: 0.8vw solid black; /* 테두리 */
-            width: 100%;/* 가로100% */
-            height: 8vw;/* 세로10vw */
-            display: block;/* 여백 없이 */
-            text-align: center;/* 글자 가운데 */
-            font-size: 5vw;/* 글자 크기 */
-            font-weight: bold;/* 글자두껍게 */
-           /*  background-color: bisque; *//* 배경색 */
-           background-image: linear-gradient(-225deg, #05c42e 30%, #09b86f 69%);/* 배경색 */
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);/* 글자 그림자 */
-            padding-top: 2vw;/* 글자 위 간격 */
-            
+            border: 0.8vw solid black;
+            /* 테두리 */
+            width: 100%;
+            /* 가로100% */
+            height: 8vw;
+            /* 세로10vw */
+            display: block;
+            /* 여백 없이 */
+            text-align: center;
+            /* 글자 가운데 */
+            font-size: 5vw;
+            /* 글자 크기 */
+            font-weight: bold;
+            /* 글자두껍게 */
+            /*  background-color: bisque; */
+            /* 배경색 */
+            background-image: linear-gradient(-225deg, #05c42e 30%, #09b86f 69%);
+            /* 배경색 */
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+            /* 글자 그림자 */
+            padding-top: 2vw;
+            /* 글자 위 간격 */
+
         }
 
         /* 서브메뉴 부분 */
         #sub-menu {
-            width: 100%;/* 가로100% */
-            margin-left: 2%;/* 왼쪽으로 간격 2% */
-            transition: all 0.55s ease-in;/* 부드럽게 생기기 */
+            width: 100%;
+            /* 가로100% */
+            margin-left: 2%;
+            /* 왼쪽으로 간격 2% */
+            transition: all 0.55s ease-in;
+            /* 부드럽게 생기기 */
         }
 
         /* 서브메뉴 글자부분 */
         #sub-menu li {
-            text-align: center;/* 글자 가운데 */
-            padding: 5% 0%;/*위아래 간격*/
-            border: 3px solid rgb(0, 0, 0);/* 테두리 */
-            /* background-color: antiquewhite; */  /* 배경색 */
-            background-image: linear-gradient(-225deg, #05c42e 30%, #09b86f 69%);/* 배경색 */
-            font-size: 3vw;/* 글자 크기 */
-            font-weight: bold;/* 글자두껍게 */
+            text-align: center;
+            /* 글자 가운데 */
+            padding: 5% 0%;
+            /*위아래 간격*/
+            border: 3px solid rgb(0, 0, 0);
+            /* 테두리 */
+            /* background-color: antiquewhite; */
+            /* 배경색 */
+            background-image: linear-gradient(-225deg, #05c42e 30%, #09b86f 69%);
+            /* 배경색 */
+            font-size: 3vw;
+            /* 글자 크기 */
+            font-weight: bold;
+            /* 글자두껍게 */
         }
 
-        label,a{/* 글자 색 */
+        label,
+        a {
+            /* 글자 색 */
             color: rgb(255, 255, 255);
         }
 
-         /* 서브메뉴에 마우스 대면 */
+        /* 서브메뉴에 마우스 대면 */
         #sub-menu a:hover {
-            text-decoration: underline;/* 밑중 생기기 */
+            text-decoration: underline;
+            /* 밑중 생기기 */
         }
 
         /* 전체 서브메뉴 이벤트부분 */
-        
+
         /* 대제목부분 */
         #text h1 {
-            font-size: 5vw;/* 글자크기 */
-            text-align: center;/* 글자 가운데 */
+            font-size: 5vw;
+            /* 글자크기 */
+            text-align: center;
+            /* 글자 가운데 */
             margin-top: 10vw;
-            font-weight: bold;/* 글자두껍게 */
+            font-weight: bold;
+            /* 글자두껍게 */
         }
 
         /* 소제목 부분 */
         #text li {
-            font-size: 3vw;/* 글자 크기 */
-            text-align: center;/* 글자 가운데 */
-            font-weight: bold;/* 글자두껍게 */
+            font-size: 3vw;
+            /* 글자 크기 */
+            text-align: center;
+            /* 글자 가운데 */
+            font-weight: bold;
+            /* 글자두껍게 */
         }
 
         /* 이미지 부분 */
-        .text_img1,.text_img2 {
-            margin-left: 10%;/* 왼쪽으로 간격 */
-            width: 80%;/* 가로크기 */
-            height: 40%;/* 세로크기 */
+        .text_img1,
+        .text_img2 {
+            margin-left: 10%;
+            /* 왼쪽으로 간격 */
+            width: 80%;
+            /* 가로크기 */
+            height: 40%;
+            /* 세로크기 */
         }
 
-        /*푸터부분 임시*/
-
-        /* 풋터 전체 부분 */
-        footer {
-            width: 100%;/* 가로 */
-            background-color: silver;/* 배경색 */
-        }
-
-        footer>ol>li {/* 글자 부분 */
-            font-size: 3.5vw; /* 글자크기 */
-            display: inline-block; /* 글자 옆으로 */
-        }
-
-        footer>ol {/* 윗부분 글자 */
-            text-align: center; /* 글자 가운데로 */
-        }
-
-        footer>ul {/* 밑부분 글자 */
-            margin-top: 30px; /* 위로간격 */
-            margin-left: 8%;/* 왼쪽 간격 */
-        }
-
-        footer>ul>li {/* 글자 부분 */
-            font-size: 3vw;/* 글자 크기 */
-        }
 
         /*클릭하면 텍스트 보이기*/
         #check-btn {
-            display: none;/* 체크박스 없애기 */
+            display: none;
+            /* 체크박스 없애기 */
         }
+
         #check-btn:checked~.menubars {
             display: block;
             /* 화면에 보여주게하기 */
         }
+
         .menubars {
-            display: none;/* 서브메뉴 숨기기 */
+            display: none;
+            /* 서브메뉴 숨기기 */
         }
 
         @media all and (min-width:768px) {
 
             /* 헤더,이미지,이벤트부분 */
-            header, #px_intro_map,#text{
-            margin-bottom: 5VW;/* 밑에 간격 */
+            header,
+            #px_intro_map,
+            #text {
+                margin-bottom: 5VW;
+                /* 밑에 간격 */
             }
+
             /* 로고부분 임시 */
             header {
-                font-size: 2vw;/* 글자 크기 */
+                font-size: 2vw;
+                /* 글자 크기 */
             }
+
             /* 시설안내 로고부분 */
             #px_intro {
                 margin-top: 7vw;
                 margin-bottom: 1vw;
-                font-size: 1.7vw;/* 글자 크기 */
+                font-size: 1.7vw;
+                /* 글자 크기 */
             }
+
             /* 시설안내 이미지 */
             #px_intro_map {
-                width: 60%;/* 가로 */
-                height: 40vw;/* 세로 */
-                margin-left: 10%;/* 왼쪽간격 */
+                width: 60%;
+                /* 가로 */
+                height: 40vw;
+                /* 세로 */
+                margin-left: 10%;
+                /* 왼쪽간격 */
             }
 
             /* 서브메뉴 부분 */
             .menubars {
-                display: block;/* 서브메뉴 보이기 */
+                display: block;
+                /* 서브메뉴 보이기 */
             }
 
             /*{전체 매뉴,서브매뉴 전체 목록 부분}*/
             #px_intro_menu {
-                width: 15%;/* 가로 */
-                height: 4vw;/* 세로 */
+                width: 15%;
+                /* 가로 */
+                height: 4vw;
+                /* 세로 */
                 margin-right: 10%;
             }
 
             /* 전체보기 글자부분 */
             #px_intro_menu label {
-                font-size: 2.5vw;/* 글자 크기 */
-                border: 0.4vw solid black;/* 테두리 */
-                padding-top: 1vw;/* 위에 간격 */
-                height: 4vw;/* 세로 */
+                font-size: 2.5vw;
+                /* 글자 크기 */
+                border: 0.4vw solid black;
+                /* 테두리 */
+                padding-top: 1vw;
+                /* 위에 간격 */
+                height: 4vw;
+                /* 세로 */
             }
 
             /* 서브메뉴 부분 */
             #sub-menu {
-                margin-left: 0%;/* 왼쪽간격 */
+                margin-left: 0%;
+                /* 왼쪽간격 */
                 width: 104%;
             }
-           
+
             /* 서브메뉴 글자부분 */
-            #sub-menu li{
-                font-size: 2vw;/* 글자크기 */
+            #sub-menu li {
+                font-size: 2vw;
+                /* 글자크기 */
             }
 
             /* 전체 이벤트 부분 */
             #text {
-                width: 70%; /* 가로 */ /* 70% */
-                height: 0%;/* 세로 */
-                margin: auto;/* 가운데로 */
-                position: relative;/* 자식 위치 조절 */
-                margin-bottom: 10vw;/* 밑에 간격 */
-                margin-left: 10%;/* 왼쪽 간격 */
+                width: 70%;
+                /* 가로 */
+                /* 70% */
+                height: 0%;
+                /* 세로 */
+                margin: auto;
+                /* 가운데로 */
+                position: relative;
+                /* 자식 위치 조절 */
+                margin-bottom: 10vw;
+                /* 밑에 간격 */
+                margin-left: 10%;
+                /* 왼쪽 간격 */
             }
 
             #text>div {
-                width: 50%;/* 가로 */
+                width: 50%;
+                /* 가로 */
             }
 
             /* 대제목부분 */
             #text h1 {
-                font-size: 3vw;/* 글자크기 */
-                text-align: left;/* 글자 왼쪽으로 */
-                margin-top: 10vw;/* 위에 간격 */
+                font-size: 3vw;
+                /* 글자크기 */
+                text-align: left;
+                /* 글자 왼쪽으로 */
+                margin-top: 10vw;
+                /* 위에 간격 */
                 margin-bottom: 10%;
             }
 
             /* 소제목 부분 */
             #text li {
-                font-size: 2vw;/* 글자크기 */
-                text-align: left;/* 글자왼쪽으로 */
-                margin-top: 2vw;/* 위에간격 */
+                font-size: 2vw;
+                /* 글자크기 */
+                text-align: left;
+                /* 글자왼쪽으로 */
+                margin-top: 2vw;
+                /* 위에간격 */
                 margin-bottom: 5%;
             }
 
             /* 이미지 부분 */
             /* 공원 이미지 */
-            .text_img1{
-                width: 85%;/* 가로 */
-                height: 40vw;/* 세로 */
+            .text_img1 {
+                width: 85%;
+                /* 가로 */
+                height: 40vw;
+                /* 세로 */
                 margin-left: 1%;
             }
+
             /* 시설 이미지 */
             img.text_img2 {
-                width: 55%;/* 가로 */
-                height: 35%;/* 세로 */
-                position: absolute;/* 위치조정 */
-                bottom:  0;  /* 밑으로*/
-                right: 0;   /* 오른쪽으로 */
+                width: 55%;
+                /* 가로 */
+                height: 35%;
+                /* 세로 */
+                position: absolute;
+                /* 위치조정 */
+                bottom: 0;
+                /* 밑으로*/
+                right: 0;
+                /* 오른쪽으로 */
             }
-            /* 푸터부분 */
-            footer>ol>li {
-                font-size: 2vw;/* 글자크기 */
-            }
-            footer>ul>li{
-                font-size: 1vw;/* 글자크기 */
-            }
+
             /* 화살표 크기 */
             .triangle-up {
-                border-left: 2vw solid transparent;/* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
-                border-right: 2vw solid transparent;/* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+                border-left: 2vw solid transparent;
+                /* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+                border-right: 2vw solid transparent;
+                /* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
                 border-bottom: 3vw solid white;
                 /* 아래쪽 테두리를 만들기 위해 흰색 값으로 설정합니다. 
                 이때 높이를 50px로 설정하여 화살표를 만듭니다. */
-                }
             }
+        }
 
-            @media all and (min-width:1024px) {
+        @media all and (min-width:1024px) {
 
             /* 로고부분 임시 */
             header {
-                font-size: 1.5vw;/* 글자 크기 */
+                font-size: 1.5vw;
+                /* 글자 크기 */
             }
+
             /* 시설안내 로고부분 */
             #px_intro {
                 margin-top: 6vw;
-                font-size: 1.1vw;/* 글자 크기 */
+                font-size: 1.1vw;
+                /* 글자 크기 */
             }
+
             /* 시설안내 이미지 */
             #px_intro_map {
-                width: 50%;/* 가로 */
-                height: 30vw;/* 세로 */
-                margin-left: 17%;/* 왼쪽간격 */
+                width: 50%;
+                /* 가로 */
+                height: 30vw;
+                /* 세로 */
+                margin-left: 17%;
+                /* 왼쪽간격 */
             }
-             /*{전체 매뉴,서브매뉴 전체 목록 부분}*/
-             #px_intro_menu {
+
+            /*{전체 매뉴,서브매뉴 전체 목록 부분}*/
+            #px_intro_menu {
                 margin-right: 12%;
-                width: 12%;/* 가로 */
+                width: 12%;
+                /* 가로 */
             }
+
             /* 전체보기 글자부분 */
             #px_intro_menu label {
-                font-size: 1.5vw;/* 글자 크기 */
-                border: 4px solid black;/* 테두리 */
+                font-size: 1.5vw;
+                /* 글자 크기 */
+                border: 4px solid black;
+                /* 테두리 */
             }
+
             /* 서브메뉴 글자부분 */
-            #sub-menu li{
-                font-size: 1.3vw;/* 글자크기 */
+            #sub-menu li {
+                font-size: 1.3vw;
+                /* 글자크기 */
                 width: 97%;
             }
 
             /* 전체 이벤트 부분 */
             #text {
-                height: 50%;/* 세로 */
+                height: 50%;
+                /* 세로 */
             }
+
             /* 대제목부분 */
             #text h1 {
-                font-size: 1.8vw;/* 글자크기 */
-                margin-left: 15%;/* 왼쪽 간격 */
-                margin-top: 5vw;/* 위에 간격 */
+                font-size: 1.8vw;
+                /* 글자크기 */
+                margin-left: 15%;
+                /* 왼쪽 간격 */
+                margin-top: 5vw;
+                /* 위에 간격 */
                 margin-bottom: 7%;
             }
+
             /* 소제목 부분 */
             #text li {
-                font-size: 1.2vw;/* 글자크기 */
-                margin-left: 15%;/* 왼쪽간격 */
+                font-size: 1.2vw;
+                /* 글자크기 */
+                margin-left: 15%;
+                /* 왼쪽간격 */
                 margin-bottom: 3%;
             }
+
             /* 이미지 부분 */
             /* 공원 이미지 */
-            .text_img1{
-                width: 73%;/* 가로 */
-                height: 30vw;/* 세로 */
+            .text_img1 {
+                width: 73%;
+                /* 가로 */
+                height: 30vw;
+                /* 세로 */
                 margin-left: 10%;
             }
+
             /* 시설 이미지 */
             img.text_img2 {
-                width: 40%;/* 가로 */
+                width: 40%;
+                /* 가로 */
             }
-            /* 푸터부분 */
-            footer>ol>li {
-                font-size: 1.5vw;/* 글자크기 */
-            }
+
             /* 화살표 크기 */
             .triangle-up {
-                border-left: 1.5vw solid transparent;/* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
-                border-right: 1.5vw solid transparent;/* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+                border-left: 1.5vw solid transparent;
+                /* 왼쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
+                border-right: 1.5vw solid transparent;
+                /* 오른쪽 테두리를 없애기 위해 투명한 값을 지정합니다. */
                 border-bottom: 2.5vw solid white;
                 /* 아래쪽 테두리를 만들기 위해 흰색 값으로 설정합니다. 
                 이때 높이를 50px로 설정하여 화살표를 만듭니다. */
-            }           
             }
+        }
     </style>
     <script>
         /* 전체보기에서 택스트 클릭시 이벤트 발생하게 하는 프로그램 */
@@ -454,15 +529,87 @@
 
 <body>
 
-     <!-- 위로가기 버튼 -->
-     <button onclick="topFunction()" id="myBtn" title="Go to top"><div class="triangle-up"></div></button>
+    <!-- 위로가기 버튼 -->
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><div class="triangle-up"></div></button> -->
 
-     <header><!-- 로고 -->
-         <h1 >강남 대공원</h1>
-         <div class="progress-container"><!-- 스크롤 보이기 -->
-             <div class="progress-bar" id="myBar"></div><!-- 화살표 -->
-           </div>
-     </header>
+    <header>
+        <!-- 메뉴 버튼 -->
+        <div class="menu">
+            <span class="menu-circle"></span>
+            <a href="#" class="menu-link">
+                <span class="menu-icon">
+                    <span class="menu-line menu-line-1"></span>
+                    <span class="menu-line menu-line-2"></span>
+                    <span class="menu-line menu-line-3"></span>
+                </span>
+            </a>
+        </div>
+        <!-- 로고 -->
+        <div class="logo">
+            <a href="../index.html">
+                <h1>강남대공원</h1>
+            </a>
+        </div>
+        <!-- 메뉴 클릭 시 내용 -->
+        <div class="menu-overlay">
+            <div>
+                <div class="menu_title"> <!-- 메인 메뉴 -->
+                    <span>소개</span>
+                </div>
+                <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                    <ul>
+                        <li><a href="intro.html">벚나무산책길</a></li>
+                        <li><a href="intro.html">식물원</a></li>
+                        <li><a href="intro.html">중앙광장</a></li>
+                        <li><a href="intro.html">생태호수</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="menu_title"> <!-- 메인 메뉴 -->
+                    <span>행사/예약</span>
+                </div>
+                <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                    <ul>
+                        <li><a href="event_list.html">행사목록</a></li>
+                        <li><a href="event_check.html">예약확인</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="menu_title"> <!-- 메인 메뉴 -->
+                    <span>시설</span>
+                </div>
+                <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                    <ul>
+                        <li><a href="px_intro.html">안내도</a></li>
+                        <li><a href="px_par.html">주차장</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="menu_title"> <!-- 메인 메뉴 -->
+                    <span>이용안내</span>
+                </div>
+                <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                    <ul>
+                        <li><a href="guide_traf.html">오시는길</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="menu_title"> <!-- 메인 메뉴 -->
+                    <span>공지사항</span>
+                </div>
+                <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
+                    <ul>
+                        <li><a href="notice.html">게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
 
     <div class="px_intro_map_menu"><!--시설안내,목록,맵 이미지 부분-->
 
@@ -471,50 +618,50 @@
         </div>
 
         <div id="px_intro_menu"><!-- 전체목록 부분 -->
-                <input id="check-btn" type="checkbox" />
-                <label for="check-btn">전체보기</label><!-- 전체보기 부분 -->
+            <input id="check-btn" type="checkbox" />
+            <label for="check-btn">전체보기</label><!-- 전체보기 부분 -->
 
-                <ul class="menubars"><!-- 서브메뉴 부분-->
-                    <ul id="sub-menu"><!-- 서브메뉴 종류 -->
-                        <div class="button"><!-- 1 -->
-                            <div class="button float_l">
-                                <li><a href="#">안내데스크</a></li>
-                            </div>
+            <ul class="menubars"><!-- 서브메뉴 부분-->
+                <ul id="sub-menu"><!-- 서브메뉴 종류 -->
+                    <div class="button"><!-- 1 -->
+                        <div class="button float_l">
+                            <li><a href="#">안내데스크</a></li>
                         </div>
-                        <div class="button"><!-- 2 -->
-                            <div class="button float_l">
-                                <li><a href="#">화장실</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 2 -->
+                        <div class="button float_l">
+                            <li><a href="#">화장실</a></li>
                         </div>
-                        <div class="button"><!-- 3 -->
-                            <div class="button float_l">
-                                <li><a href="#">야외공연장</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 3 -->
+                        <div class="button float_l">
+                            <li><a href="#">야외공연장</a></li>
                         </div>
-                        <div class="button"><!-- 4 -->
-                            <div class="button float_l">
-                                <li><a href="#">캠핑장</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 4 -->
+                        <div class="button float_l">
+                            <li><a href="#">캠핑장</a></li>
                         </div>
-                        <div class="button"><!-- 5 -->
-                            <div class="button float_l">
-                                <li><a href="#">상점<br>편의시설</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 5 -->
+                        <div class="button float_l">
+                            <li><a href="#">상점<br>편의시설</a></li>
                         </div>
-                        <div class="button"><!-- 6 -->
-                            <div class="button float_l">
-                                <li><a href="#">어린이<br>놀이터</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 6 -->
+                        <div class="button float_l">
+                            <li><a href="#">어린이<br>놀이터</a></li>
                         </div>
-                        <div class="button"><!-- 7 -->
-                            <div class="button float_l">
-                                <li><a href="#">주차장</a></li>
-                            </div>
+                    </div>
+                    <div class="button"><!-- 7 -->
+                        <div class="button float_l">
+                            <li><a href="#">주차장</a></li>
                         </div>
-                    </ul>
+                    </div>
                 </ul>
-            </div>
+            </ul>
         </div>
+    </div>
 
     <div><!-- 시설안내 맵 이미지 -->
         <img id="px_intro_map" src="../images/park.jpg" alt="My Image">
@@ -578,64 +725,66 @@
         <img class="text_img2" src="../images/px-7-1.jpg">
     </div>
 
-        <footer><!-- 풋터부분 임시-->
-            <ol>
-                <li>개인정보처리방침</li>
-                <li>I</li>
-                <li>이메일무단수집거부</li>
-                <li>I</li>
-                <li>시비스이용약관</li>
-            </ol>
-            <ul>
-                <li>(우편번호)서울시 강남구 ~~로</li>
-                <li>문의전화 : (주)02 - 1234 / 010 - 1234 - 5678</li>
-                <li>C copyrights all reserved</li>
-            </ul>
-        </footer>
+    <!-- 푸터 -->
+    <div class="footer">
+        <ul>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">서비스이용약관</a></li>
+        </ul>
+        <div>
+            <p>(우편번호)서울시 강남구 ~</p>
+            <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+            <p>&copy; copyrights all reserved.</p>
+        </div>
+    </div>
 
-        <script>
-            /* 이미지 바꾸기*/
-            const myImage = document.getElementById('px_intro_map');
-            const buttons = document.querySelectorAll('.button');
-    
-            buttons.forEach(function(button) {
-            button.addEventListener('click', function() {
-            myImage.style.display = 'none';
-            });
-            });
-          </script>
-        <script>
-            
-            //스크롤 이벤트
-            window.onscroll = function() {
-              myFunction();
-              scrollFunction();
-            };
-            
-            function myFunction() {
-              var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-              var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-              var scrolled = (winScroll / height) * 100;
-              document.getElementById("myBar").style.width = scrolled + "%";
-            }
-          
-            //위로가기 버튼
-            let mybutton = document.getElementById("myBtn");
+    <script>
+        /* 이미지 바꾸기*/
+        const myImage = document.getElementById('px_intro_map');
+        const buttons = document.querySelectorAll('.button');
 
-            /* window.onscroll = function() {scrollFunction()};  스크롤 삭제하면 생김*/
-            
-            function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                myImage.style.display = 'none';
+            });
+        });
+    </script>
+    <script>
+
+        //스크롤 이벤트
+        window.onscroll = function () {
+            myFunction();
+            scrollFunction();
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        //위로가기 버튼
+        let mybutton = document.getElementById("myBtn");
+
+        /* window.onscroll = function() {scrollFunction()};  스크롤 삭제하면 생김*/
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
-              } else {
+            } else {
                 mybutton.style.display = "none";
-              }
             }
-            
-            mybutton.onclick = function() {
-              document.body.scrollTop = 0;
-              document.documentElement.scrollTop = 0;
-            };
-          </script>
+        }
+
+        mybutton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
+
+    <script src="../js/menu.js"></script>
 </body>
+
 </html>

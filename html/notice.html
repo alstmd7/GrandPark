@@ -5,91 +5,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../images/icon국립-공원.png"/>
+    <link rel="icon" href="../images/icon국립-공원.png" />
     <!-- reset css -->
     <link href="../css/reset.css" rel="stylesheet" />
     <!-- 헤더, 푸터 css -->
     <link href="../css/header_footer.css" rel="stylesheet" />
     <!-- notice css -->
     <link href="../css/notice.css" rel="stylesheet" />
-    <!-- 제이쿼리 추가(구글) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- 제이쿼리 -->
+    <script src="../js/jquery-3.6.4.js"></script>
 
     <title>공지사항</title>
 </head>
 
 <body>
     <div class="wrap">
-        <!-- 헤더 -->
-        <div class="banner_logo">
-            <span class="logo">강남대공원</span>
-            <!-- 모바일에서만 사용하는 버튼 -->
-            <img src="../images/icon/down.svg" class="menu_toggle_btn" alt="toggle_btn svg"></img>
-        </div>
-        <div class="header_menu">
-            <div>
+        <header>
+            <!-- 메뉴 버튼 -->
+            <div class="menu">
+              <span class="menu-circle"></span>
+              <a href="#" class="menu-link">
+                <span class="menu-icon">
+                  <span class="menu-line menu-line-1"></span>
+                  <span class="menu-line menu-line-2"></span>
+                  <span class="menu-line menu-line-3"></span>
+                </span>
+              </a>
+            </div>
+            <!-- 로고 -->
+            <div class="logo">
+              <a href="../index.html"><h1>강남대공원</h1></a>
+            </div>
+            <!-- 메뉴 클릭 시 내용 -->
+            <div class="menu-overlay">
+              <div>
                 <div class="menu_title"> <!-- 메인 메뉴 -->
-                    <span>소개</span>
-                    <img src="../images/icon/down.svg" alt="down svg" />
+                  <span>소개</span>
                 </div>
                 <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
-                    <ul>
-                        <li><a href="">벚나무산책길</a></li>
-                        <li><a href="">식물원</a></li>
-                        <li><a href="">중앙광장</a></li>
-                        <li><a href="">생태호수</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="intro.html">벚나무산책길</a></li>
+                    <li><a href="intro.html">식물원</a></li>
+                    <li><a href="intro.html">중앙광장</a></li>
+                    <li><a href="intro.html">생태호수</a></li>
+                  </ul>
                 </div>
-            </div>
-
-            <!-- 메인 메뉴 리스트 -->
-            <div>
+              </div>
+              <div>
                 <div class="menu_title"> <!-- 메인 메뉴 -->
-                    <sapn>행사/예약</sapn>
-                    <img src="../images/icon/down.svg" alt="down svg" />
+                  <span>행사/예약</span>
                 </div>
                 <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
-                    <ul>
-                        <li><a href="">행사목록</a></li>
-                        <li><a href="">예약확인</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="event_list.html">행사목록</a></li>
+                    <li><a href="event_check.html">예약확인</a></li>
+                  </ul>
                 </div>
-            </div>
-            <div>
+              </div>
+              <div>
                 <div class="menu_title"> <!-- 메인 메뉴 -->
-                    <sapn>시설</sapn>
-                    <img src="../images/icon/down.svg" alt="down svg" />
+                  <span>시설</span>
                 </div>
                 <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
-                    <ul>
-                        <li><a href="">안내도</a></li>
-                        <li><a href="">주차장</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="px_intro.html">안내도</a></li>
+                    <li><a href="px_par.html">주차장</a></li>
+                  </ul>
                 </div>
-            </div>
-            <div>
+              </div>
+              <div>
                 <div class="menu_title"> <!-- 메인 메뉴 -->
-                    <span>이용안내</span>
-                    <img src="../images/icon/down.svg" alt="down svg" />
+                  <span>이용안내</span>
                 </div>
                 <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
-                    <ul>
-                        <li><a href="">오시는길</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="guide_traf.html">오시는길</a></li>
+                  </ul>
                 </div>
-            </div>
-            <div>
+              </div>
+              <div>
                 <div class="menu_title"> <!-- 메인 메뉴 -->
-                    <span>공지사항</span>
-                    <img src="../images/icon/down.svg" alt="down svg" />
+                  <span>공지사항</span>
                 </div>
                 <div class="menu_sub"> <!-- 서브 메뉴 항목 -->
-                    <ul>
-                        <li><a href="">게시판</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="notice.html">게시판</a></li>
+                  </ul>
                 </div>
+              </div>
+        
             </div>
-        </div>
+          </header>
+      
 
         <!-- 공지 배너 및 타이틀 -->
         <div class="notice_title">
@@ -109,11 +116,11 @@
             </div>
             <!-- 검색 -->
             <div class="notice_search">
-               <form action="#" method="post">
+                <form action="#" method="post">
                     <input type="text" placeholder="검색어를 입력해 주세요.">
-                        <button type="submit">
-                            <img src="../images/icon/search.svg" alt="검색"/>
-                        </button>
+                    <button type="submit">
+                        <img src="../images/icon/search.svg" alt="검색" />
+                    </button>
                 </form>
             </div>
         </div>
@@ -204,17 +211,19 @@
                 <li><a href="#">이메일무단수집거부</a></li>
                 <li><a href="#">서비스이용약관</a></li>
             </ul>
-            <div><p>(우편번호)서울시 강남구 ~</p>
-            <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
-            <p>&copy; copyrights all reserved.</p></div>
+            <div>
+                <p>(우편번호)서울시 강남구 ~</p>
+                <p>문의전화 : (주)02-1234 / 010-1234-1234</p>
+                <p>&copy; copyrights all reserved.</p>
+            </div>
         </div>
-        </div>
+
 
     </div>
 
+
     <!-- 자바스크립트 추가 -->
-    <!-- 모바일일 경우 -->
-    <script type="text/javascript" src="../js/menu.js" media="(max-width:767px)"></script>
+    <script src="../js/menu.js"></script>
 </body>
 
 </html>
