@@ -31,42 +31,6 @@
             font-family:"WandohopeR";  
         }
 
-       /*  @font-face { 두꺼운폰트
-        font-family: 'SBAggroB';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        }
-        
-        *, html{
-        font-family:"SBAggroB";
-        } */
-
-        /* 스크롤 이벤트 */
-
-        /* 스크롤바를 표시하는 바(gauge)에 대한 스타일 */
-        /* .progress-container {
-          width: 100%;
-            바의 가로
-          height: 8px;
-            바의 세로
-          background: #ccc;
-          바의 배경 색상
-        }
-
-        실제로 채워지는 스크롤바(gauge)에 대한 스타일
-        .progress-bar {
-          height: 8px;
-            스크롤바의 세로
-          background: #04AA6D;  
-          스크롤바의 배경 색
-          background: linear-gradient(90deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-          배경색
-          width: 0%;
-            스크롤바의 길이를 0%로 초기화
-        } 
-        */
-
         /* 마우스 호시의 버튼 색상 변경 */
         #myBtn:hover {
           background-color: #555;
@@ -83,6 +47,11 @@
           이때 높이를 50px로 설정하여 화살표를 만듭니다. */
         }
 
+        /* 주소 부분 */
+        #guide_traf_addr li {
+            font-size: 0.8rem;/* 글자크기 */
+            line-height: 30px;
+        }
 
         /*  */    
         /* 전체 밑에 간격 */
@@ -94,7 +63,7 @@
                #guide_traf {
             margin-top: 20vw;/* 위에 간격 */
             text-align: center;/* 글자 가운데 */
-            font-size: 3vw; /* 글자 크기 */
+            font-size: 1.2rem; /* 글자 크기 */
         }
         /* 맵 지도 부분 */
         #guide_traf_map {
@@ -103,7 +72,7 @@
         }
         /* 주소 부분 */
         #guide_traf_addr {
-           font-size: 3vw;/* 글자크기 */
+           font-size: 0.8rem;/* 글자크기 */
         }
 
         /* 교통정보 전체 부분 */
@@ -289,13 +258,9 @@
         }
 
         @media all and (min-width:1024px){/* pc버전 */
-        /* 헤더부분 임시 */
-        header {
-            font-size: 1.5vw;/* 글자크기 */
-        }
         /* 오시는 길, 대중교통안내*/
         #guide_traf {
-            font-size: 1.1vw;/* 글자크기 */
+            font-size: 1.5rem;/* 글자크기 */
         }
         /* 맵 지도 부분 */
         #guide_traf_map {
@@ -303,7 +268,8 @@
         }
         /* 주소 부분 */
         #guide_traf_addr {
-            font-size: 1.0vw;/* 글자크기 */
+            font-size: 0.8rem;/* 글자크기 */
+            line-height: 30px;
             margin-left: 15%;/* 왼쪾으로 간격 */
         }
         /* 교통정보 전체부분 */
@@ -370,7 +336,7 @@
         </div>
         <!-- 로고 -->
         <div class="logo">
-          <a href="../index.html"><h1>강남대공원</h1></a>
+          <a href="../index.html">강남대공원</a>
         </div>
         <!-- 메뉴 클릭 시 내용 -->
         <div class="menu-overlay">
@@ -434,7 +400,7 @@
       </header>
 
     <div id="guide_traf"><!-- 오시는길 -->
-        <h1>오시는길</h1>
+        오시는길
     </div>
 
     <!-- 맵 지도 부분 -->
@@ -446,10 +412,10 @@
     <div id="guide_traf_addr"><!-- 주소부분 -->
         <ul>
             <li>
-                <h3>주소 : 강남대공원</h3>
+                주소 : 강남대공원
             </li>
             <li>
-                <h3>서울특별시 강남구 테헤란로5길 24 </h3>
+                서울특별시 강남구 테헤란로5길 24
             </li>
         </ul>
     </div>

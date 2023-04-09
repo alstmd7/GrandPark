@@ -7,15 +7,14 @@
 *, html {
     font-family: "LeferiPoint-WhiteObliqueA";
     font-weight: bold;
-}   
-
+}
 
 /* 행사 예약 */
 .event_book_title {
     text-align: center;
     height: 70px;
     margin-top: 80px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -36,7 +35,7 @@
 
 /* 행사 예약 내용 행사이름 */
 .event_book_info h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
@@ -45,6 +44,7 @@
 .event_book_info p {
     margin: 30px 0;
     text-align: left;
+    font-size: 18px;
 }
 
 /* 행사 예약 내용 텍스트 영역 */
@@ -151,6 +151,7 @@ th, td {
 .event_book_form label {
     display: inline-block;
     margin: 5px 0;
+    font-size: 17px;
 }
 
 /* 행사 예약 폼 입력목록 입력 영역 */
@@ -161,7 +162,7 @@ th, td {
 
 #event_date_text {
     color: blue;
-    font-size: 0.9rem;
+    font-size: 15px;
 }
 
 /* 행사 예약 폼 신청인원 카운트 숫자 영역 */
@@ -169,6 +170,7 @@ th, td {
     display: inline-block;
     width: 20px;
     text-align: center;
+    font-size: 15px;
 }
 
 /* 행사 예약 폼 신청인원 카운트 버튼 */
@@ -180,12 +182,15 @@ th, td {
     text-align: center;
     font-size: 1.0rem;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 /* 개인정보활용동의 알림 텍스트 */
 .form_error {
     color: red;
-    font-size: 0.8rem;
+    font-size: 15px;
     display: flex;
     justify-content: right;
     padding-right: 20px;
@@ -214,9 +219,10 @@ input[type="submit"] {
     max-width: 960px;
     margin: 0 auto;
     line-height: 30px;
-    font-size: 0.9rem;
+    font-size: 15px;
     color: rgb(68, 68, 68);
     font-weight: bold;
+    font-size: 17px;
 }
 
 /* 예약 시 주의사항 텍스트 */

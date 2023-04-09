@@ -9,7 +9,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    font-size: 2.5rem;
+    font-size: 38px;
     font-weight: bold;
     text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 }
@@ -78,18 +78,18 @@
 /* 행사 목록 이미지 행사이름 */
 .event_list_name {
     color: white;
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: bold;
-    margin: 3vh 2vw;
+    margin: 1.5vh 2vw;
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
 }
 
 /* 행사 목록 이미지 자세히보기 */
 .event_list_detail {
     color: white;
-    font-size: 1.2rem;
+    font-size: 20px;
     position: absolute;
-    bottom: 3vh;
+    bottom: 1vh;
     left: 2vw;
     font-weight: bold;
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
@@ -98,9 +98,9 @@
 /* 행사 목록 이미지 행사날짜 */
 .event_list_date {
     color: white;
-    font-size: 1.2rem;
+    font-size: 20px;
     position: absolute;
-    bottom: 3vh;
+    bottom: 1vh;
     right: 1vw;
     font-weight: bold;
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
