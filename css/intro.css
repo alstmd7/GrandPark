@@ -95,7 +95,7 @@ div.wrap>div {
 
   /* 탭 메뉴 호버 */
   .inttab_menu li:hover{
-    background-color: rgb(252, 130, 85);
+    background-color: pink;
     color: rgb(255, 255, 255);
   }
 
@@ -109,7 +109,7 @@ div.wrap>div {
   /* 마우스 선택된 border 전체에 배경색 지정 */
   .inttab_menu li.active {
     font-weight: bold;
-    background-color: rgb(252, 130, 85);
+    background-color:pink;
   }
   
   /* 탭 버튼 클릭시 소개 이미지, 텍스트 감싸는 부분 */
@@ -177,40 +177,6 @@ div.wrap>div {
   .intro_text span {
    display: block;
    }
-
-/* @#@#===== 푸터 =====#@#@ */
-div.footer{
-  background-color: gray;
-  margin-bottom: 0;
-  font-size: 0.5rem;
-  color: white;
-}
-div.footer>ul{
-  text-align: center;
-  padding: 2%;
-}
-div.footer>ul>li{
-  /* 각 리스트 inline-block(줄바꿈하지 않고, 각 크기(너비,높이)는 가지게 함) */
-  display: inline-block;
-  padding: 0 2%;
-}
-div.footer>ul>li:nth-child(2){
-  /* 리스트 양 옆에 테두리로 | 표시 주기 */
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-div.footer>div{
-  /* 마진, 패딩 조정 */
-  margin: 0;
-  padding: 0 0 2% 2%;
-}
-div.footer p{
-  font-size: 0.5rem;
-  padding-top: 2%;
-}
-div.footer a{
-  color: white;
-}
 
 /* =================모바일 단 끝================= */
 
