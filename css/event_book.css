@@ -1,3 +1,14 @@
+/* 폰트 */
+@font-face {
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+}
+
+*, html {
+    font-family: "LeferiPoint-WhiteObliqueA";
+    font-weight: bold;
+}   
+
 /* 헤더 영역 */
 .header {
     width: 100%;
@@ -24,6 +35,9 @@
     justify-content: space-around;
     align-items: center;
     border: 1.5px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 /* 행사 예약 내용 행사이름 */
@@ -151,7 +165,7 @@ th, td {
     width: 250px;
 }
 
-.event_date_text {
+#event_date_text {
     color: blue;
     font-size: 0.9rem;
 }

@@ -1,3 +1,14 @@
+/* 폰트 */
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+}
+
+*, html {
+  font-family: "LeferiPoint-WhiteObliqueA";
+  font-weight: bold;
+} 
+
 html {
     /* 기준이 되는 루트 요소(html)의 폰트 사이즈 설정 */
     font-size: 12px;
@@ -614,7 +625,7 @@ div.footer a{
       border: 0px solid black;
       display: table-cell;
       /* font-size: 2.7rem; */
-      font-size: 5.362vh;
+      font-size: 1.7rem;
       text-align: center;
       /* display: inline-block; <-- 활성화 하면 border-collapse: collapse; 적용 안됨 */
       padding: 10px 20px;
@@ -667,7 +678,7 @@ div.footer a{
       padding: 2% 0%;
       margin-top: -2.4%;
       /* opacity: 0; <- 이미지 투명(0), 불투명(1) 조절, .intro_img에서 적용되어 있으므로 따로 적용 필요없음 */
-      transition: opacity 0.5s ease-in-out; /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
+      transition: opacity 0.5s ease-in-out;  /* "탭 메뉴를 클릭"했을때 이미지가 인 아웃되는 속도 */
       /* margin-bottom: 1%; */
       }
       
